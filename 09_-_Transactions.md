@@ -23,9 +23,8 @@ Hence, a valid Transaction requires both **Serialisbility** and **Atomicity**
 
 ### Transaction Problems
 
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/incorrect-summary-problem.png?raw=true)
-
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/lost-update-problem.png?raw=true)
+![](images/incorrect-summary-problem.jpg)
+![](images/lost-update-problem.jpg)
 
 ### Transaction Lifecycle
 
@@ -36,8 +35,7 @@ Hence, a valid Transaction requires both **Serialisbility** and **Atomicity**
     - COMMIT_TRANSACTION
     - ROLLBACK (or ABORT)
     
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/transaction-life-cycle.png?raw=true)
- 
+   
 ### ACID
 
 ### Schedules and Serialisability
