@@ -23,8 +23,8 @@ Hence, a valid Transaction requires both **Serialisbility** and **Atomicity**
 
 ### Transaction Problems
 
-![](images/incorrect-summary-problem.jpg)
-![](images/lost-update-problem.jpg)
+![incorrect-summary-problem](images/incorrect-summary-problem.jpg)
+![lost-update-problem](images/lost-update-problem.jpg)
 
 ### Transaction Lifecycle
 
