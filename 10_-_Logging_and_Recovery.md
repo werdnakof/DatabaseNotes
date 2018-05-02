@@ -20,8 +20,14 @@ and operations:
 |output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 
 ### Logging
-main approach to recovering from system 
+main approach to recovering from a system crash relies on a persistent record of changes made during a transaction
+
+3 ways:
+- undo logging
+- redo logging
+- undo/redo logging
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA5MzQyMzUsODIwMTc3NzU3LDYyNjY2Nz
-A0NywtMTc4MTEwMTg1N119
+eyJoaXN0b3J5IjpbLTMzNzk2Njg2LDgyMDE3Nzc1Nyw2MjY2Nj
+cwNDcsLTE3ODExMDE4NTddfQ==
 -->
