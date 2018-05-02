@@ -94,9 +94,11 @@ have not yet committed)
 1. Write \<start ckpt (T1...Tn)> to log and flush log
 2. Wait until T1..Tn have all committed or aborted
 3. Write <end ckpt> to log and flush log
-(
+(Note that new transactions may be started during step 2)
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4MDIzODQyNCwtMTgzNDIxNDYzNSwtOT
+eyJoaXN0b3J5IjpbLTM0NDgyMTY0MSwtMTgzNDIxNDYzNSwtOT
 UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
 LTE3ODExMDE4NTddfQ==
 -->
