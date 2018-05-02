@@ -26,8 +26,11 @@ main approach to recovering from a system crash relies on a persistent record of
 - undo logging
 - redo logging
 - undo/redo logging
+log records:
+- **start-T**: transaction T has started execution
+- **commit-T**: transaction T has com
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNzk2Njg2LDgyMDE3Nzc1Nyw2MjY2Nj
-cwNDcsLTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTMwNTk0NTc5Nyw4MjAxNzc3NTcsNjI2Nj
+Y3MDQ3LC0xNzgxMTAxODU3XX0=
 -->
