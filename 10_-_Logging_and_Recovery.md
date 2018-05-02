@@ -7,9 +7,9 @@ and operations:
 - output(x) - write to disk from buffer
 - input(x) - write to buffer from disk
 
-Action | X | Y | $X_m$ | $Y_m$ | $X_d$ | $Y_d$ | Log
-:--------:
+|Action | X | Y | $X_m$ | $Y_m$ | $X_d$ | $Y_d$ | Log|
+|:---------:|---|---|---|
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMDMxODA3Myw2MjY2NjcwNDcsLTE3OD
-ExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTIwNjI3NjgwMzEsNjI2NjY3MDQ3LC0xNz
+gxMTAxODU3XX0=
 -->
