@@ -9,8 +9,10 @@ and operations:
 
 | Action |  X  |  Y  |$X_m$|$Y_m$|$X_d$|$Y_d$| Log |
 |:------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| read(x)|  20 |     |_m$|$Y_m$|$X_d$|$Y_d$| Log |
+|        |     |     |     |     |20   |50   |     |
+| read(x)|  20 |     |20   |     |20   |50   |     |
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQyOTc4MzY1LDYyNjY2NzA0NywtMTc4MT
+eyJoaXN0b3J5IjpbODIwMTc3NzU3LDYyNjY2NzA0NywtMTc4MT
 EwMTg1N119
 -->
