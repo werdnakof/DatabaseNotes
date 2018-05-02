@@ -28,9 +28,12 @@ main approach to recovering from a system crash relies on a persistent record of
 - undo/redo logging
 log records:
 - **start-T**: transaction T has started execution
-- **commit-T**: transaction T has com
+- **commit-T**: transaction T has completed successfully and will make not further changes to database items
+- **abort-T**: transaction T could not complete successfully, no changes made by T will be copied to disk
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNTk0NTc5Nyw4MjAxNzc3NTcsNjI2Nj
-Y3MDQ3LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2Nj
+cwNDcsLTE3ODExMDE4NTddfQ==
 -->
