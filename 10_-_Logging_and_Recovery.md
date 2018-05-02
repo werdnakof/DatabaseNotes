@@ -98,14 +98,14 @@ have not yet committed)
 
 Two cases, depending on latest checkpoint log record:
 <end ckpt>
-All incomplete transactions began after the previous <start ckpt ()>
+All incomplete transactions began after the previous \<start ckpt ()>
 Disregard the log before the previous \<start ckpt ()>
 \<start ckpt (T1...Tn)>
 System crash occurred during checkpoint
 Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 Disregard the log before the start of the earliest incomplete transaction
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4ODEwOTc0MCwtMTgzNDIxNDYzNSwtOT
-UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
-LTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbMTYxNDI1MjI2OCwxMzg4MTA5NzQwLC0xOD
+M0MjE0NjM1LC05NTI5MzY5MSwtMjI2MzAzNzgsODIwMTc3NzU3
+LDYyNjY2NzA0NywtMTc4MTEwMTg1N119
 -->
