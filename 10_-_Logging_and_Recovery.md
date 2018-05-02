@@ -98,14 +98,17 @@ have not yet committed)
 
 **Recovery with checkpointed undo logging**
 Two cases, depending on latest checkpoint log record:
-<end ckpt>
+
+\<end ckpt>
 All incomplete transactions began after the previous \<start ckpt ()>
-Disregard the log before the previous \<start ckpt ()> and \<start ckpt (T1...Tn)>
+Disregard the log before the previous \<start ckpt ()> 
+
+\<start ckpt (T1...Tn)>
 System crash occurred during checkpoint
 Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 Disregard the log before the start of the earliest incomplete transaction
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU3ODEyNDgyLDEzODgxMDk3NDAsLTE4Mz
-QyMTQ2MzUsLTk1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcs
-NjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbLTEzODQ3OTAzMTUsNzU3ODEyNDgyLDEzOD
+gxMDk3NDAsLTE4MzQyMTQ2MzUsLTk1MjkzNjkxLC0yMjYzMDM3
+OCw4MjAxNzc3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
 -->
