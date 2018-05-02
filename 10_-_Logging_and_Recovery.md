@@ -14,10 +14,10 @@ and operations:
 | x=x-10 |  10 |     |20   |     |20   |50   |     |
 |write(x)|  10 |     |10   |     |20   |50   |     |
 | read(y)|  10 | 50  |10   | 50  |20   |50   |     |
-| read(x)|  20 |     |20   |     |20   |50   |     |
-| read(x)|  20 |     |20   |     |20   |50   |     |
+| y=y+10 |  10 | 60  |20   | 50  |20   |50   |     |
+|write(y)|  10 |     |20   |     |20   |50   |     |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0ODQyODk3OCw4MjAxNzc3NTcsNjI2Nj
-Y3MDQ3LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbNTMyMzY5MzEsODIwMTc3NzU3LDYyNjY2Nz
+A0NywtMTc4MTEwMTg1N119
 -->
