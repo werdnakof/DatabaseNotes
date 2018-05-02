@@ -71,8 +71,7 @@ Introduce a periodic checkpoint in the log
 - Only need search backwards through the log to the most recent checkpoint
 
 New log record type:
-<ckpt>
-The database has been checkpointed
+\<ckpt>: The database has been checkpointed
 
 Checkpointing
 1. Stop accepting new transactions
@@ -89,12 +88,11 @@ checkpointing
 - Allow new transactions to enter the system during the checkpoint.
 
 New log record types:
-<start ckpt (T1...Tn)>
-Checkpoint starts. T1...Tn are active transactions that
+1. \<start ckpt (T1...Tn)>: Checkpoint starts. T1...Tn are active transactions that
 have not yet committed
-<end ckpt>
+2. \<end ckpt>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzIwNDIzMjEsLTE4MzQyMTQ2MzUsLT
-k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
-LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbNzAxOTcxMjM4LC0xODM0MjE0NjM1LC05NT
+I5MzY5MSwtMjI2MzAzNzgsODIwMTc3NzU3LDYyNjY2NzA0Nywt
+MTc4MTEwMTg1N119
 -->
