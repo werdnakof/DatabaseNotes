@@ -330,3 +330,6 @@ System crash occurred during checkpoint<br>
 Incomplete transactions are those encountered before the &lt;start ckpt ()&gt; and those of T1…Tn that were not committed before the crash<br>
 Disregard the log before the start of the earliest incomplete transaction</p>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNDIzMTkwOTJdfQ==
+-->
