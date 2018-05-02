@@ -7,8 +7,9 @@ and operations:
 - output(x) - write to disk from buffer
 - input(x) - write to buffer from disk
 
-Action 
+Action | X | Y | $X_m$ | $Y_m$ | $X_d$ | $Y_d$ | Log
+:--------:
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY3MDg5MTk0LDYyNjY2NzA0NywtMTc4MT
-EwMTg1N119
+eyJoaXN0b3J5IjpbLTUwMDMxODA3Myw2MjY2NjcwNDcsLTE3OD
+ExMDE4NTddfQ==
 -->
