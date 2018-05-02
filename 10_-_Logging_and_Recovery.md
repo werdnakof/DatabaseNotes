@@ -11,8 +11,13 @@ and operations:
 |:------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |        |     |     |     |     |20   |50   |     |
 | read(x)|  20 |     |20   |     |20   |50   |     |
+| x=x-10 |  10 |     |20   |     |20   |50   |     |
+|write(x)|  10 |     |10   |     |20   |50   |     |
+| read(y)|  10 | 50  |10   |     |20   |50   |     |
+| read(x)|  20 |     |20   |     |20   |50   |     |
+| read(x)|  20 |     |20   |     |20   |50   |     |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwMTc3NzU3LDYyNjY2NzA0NywtMTc4MT
-EwMTg1N119
+eyJoaXN0b3J5IjpbLTE4NjExNjA0NzUsODIwMTc3NzU3LDYyNj
+Y2NzA0NywtMTc4MTEwMTg1N119
 -->
