@@ -300,4 +300,5 @@ What should be locked?
 – Database
 
 **Coarser** granularity gives lower degree of concurrency
+
 **Finer** granularity gives higher overhead
