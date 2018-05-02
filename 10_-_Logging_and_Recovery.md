@@ -7,8 +7,8 @@ and operations:
 - output(x) - write to disk from buffer 
 - input(x) - write to buffer from disk
 
-| Action |  X  |  Y  |$X_m$|$Y_m$|$X_d$|$Y_d$| Log |
-|:------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Action  |  X  |  Y  |$X_b$|$Y_b$|$X_d$|$Y_d$| Log |
+|:-------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |         |     |     |     |     |20   |50   |     |
 | read(x) |  20 |     |20   |     |20   |50   |     |
 | x=x-10  |  10 |     |20   |     |20   |50   |     |
@@ -19,7 +19,9 @@ and operations:
 |output(x)|  10 | 60  |10   | 60  |10   |50   |     |
 |output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 
+### Logging
+main approach to recovering from system 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzcyODgwMTg3LDgyMDE3Nzc1Nyw2MjY2Nj
-cwNDcsLTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbMzA5MzQyMzUsODIwMTc3NzU3LDYyNjY2Nz
+A0NywtMTc4MTEwMTg1N119
 -->
