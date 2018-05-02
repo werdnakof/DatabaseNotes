@@ -82,7 +82,7 @@ Checkpointing
 6. Resume accepting transactions
 
 ### Nonquiescent Checkpointing
-Need to stop transaction processing while checkpointing
+- Need to stop transaction processing while checkpointing (method above)
 - System may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
 
@@ -91,7 +91,7 @@ New log record types:
 have not yet committed
 2. \<end ckpt>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyNTQxNTI0MCwtMTgzNDIxNDYzNSwtOT
-UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
-LTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTE0MTg2ODQ5MzQsLTE4MzQyMTQ2MzUsLT
+k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
+LC0xNzgxMTAxODU3XX0=
 -->
