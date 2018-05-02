@@ -50,9 +50,22 @@ log records:
 |         |     |     |     |     |     |     |\<commit-T\>|
 |flush log|
 
-
+### Recovery with Undo Logging
+for each log entry <T, X, old>, scanning backwards {
+if <commit T> has been seen {
+do nothing
+} else {
+change the value of X in the database back to
+old
+}
+}
+for each incomplete transaction T (that was not
+aborted) {
+write <abort T> to log
+}
+flush log
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzQyMTQ2MzUsLTk1MjkzNjkxLC0yMj
-YzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3
-XX0=
+eyJoaXN0b3J5IjpbMTgyNDk3MTgyNCwtMTgzNDIxNDYzNSwtOT
+UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
+LTE3ODExMDE4NTddfQ==
 -->
