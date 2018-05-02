@@ -90,8 +90,13 @@ New log record types:
 1. \<start ckpt (T1...Tn)>: Checkpoint starts. T1...Tn are active transactions that
 have not yet committed
 2. \<end ckpt>
+
+1. Write \<start ckpt (T1...Tn)> to log and flush log
+2. Wait until T1..Tn have all committed or aborted
+3. Write <end ckpt> to log and flush log
+Note that new transactions may be started during step 2
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTg2ODQ5MzQsLTE4MzQyMTQ2MzUsLT
-k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
-LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbLTIxNjM2NDAxMiwtMTgzNDIxNDYzNSwtOT
+UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
+LTE3ODExMDE4NTddfQ==
 -->
