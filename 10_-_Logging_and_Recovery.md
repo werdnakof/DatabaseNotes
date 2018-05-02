@@ -74,9 +74,15 @@ New log record type:
 <ckpt>
 The database has been checkpointed
 
-
+Checkpointing
+1. Stop accepting new transactions
+2. Wait until all active transactions commit/abort and write <commit T>/<abort T> to the log
+3. flush log
+4. write <ckpt> to log
+5. flush log
+6. Resume accepting transactions
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5OTQ2Njc4MjEsLTE4MzQyMTQ2MzUsLT
+eyJoaXN0b3J5IjpbLTE1OTUxMTU2MTYsLTE4MzQyMTQ2MzUsLT
 k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
 LC0xNzgxMTAxODU3XX0=
 -->
