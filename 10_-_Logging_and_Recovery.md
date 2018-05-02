@@ -31,8 +31,10 @@ log records:
 - **commit-T**: transaction T has completed successfully and will make not further changes to database items
 - **abort-T**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
-
+### Undo Logging Rules
+1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
+2. If a transaction T commits 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NDU5NzI3MiwtMjI2MzAzNzgsODIwMT
-c3NzU3LDYyNjY2NzA0NywtMTc4MTEwMTg1N119
+eyJoaXN0b3J5IjpbNzI0NjQ0OTExLC0yMjYzMDM3OCw4MjAxNz
+c3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
 -->
