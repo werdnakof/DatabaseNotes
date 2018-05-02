@@ -81,8 +81,20 @@ Checkpointing
 4. write <ckpt> to log
 5. flush log
 6. Resume accepting transactions
+
+### Nonquiescent Checkpointing
+Need to stop transaction processing while
+checkpointing
+- System may appear to stall
+- Allow new transactions to enter the system during the checkpoint.
+
+New log record types:
+<start ckpt (T1...Tn)>
+Checkpoint starts. T1...Tn are active transactions that
+have not yet committed
+<end ckpt>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTUxMTU2MTYsLTE4MzQyMTQ2MzUsLT
+eyJoaXN0b3J5IjpbLTE0NzIwNDIzMjEsLTE4MzQyMTQ2MzUsLT
 k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
 LC0xNzgxMTAxODU3XX0=
 -->
