@@ -65,7 +65,7 @@ log records:
 		flush log
 
 ### Checkpointing with Undo Logging
-Disadvantage of this approach: we must scan the entire log
+Disadvantage of this approach: we must scan the entire log.
 Introduce a periodic checkpoint in the log
 - Before checkpoint, all transactions have committed or aborted
 - Only need search backwards through the log to the most recent checkpoint
@@ -73,8 +73,10 @@ Introduce a periodic checkpoint in the log
 New log record type:
 <ckpt>
 The database has been checkpointed
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MjY2MTU2NywtMTgzNDIxNDYzNSwtOT
-UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
-LTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTE5OTQ2Njc4MjEsLTE4MzQyMTQ2MzUsLT
+k1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3
+LC0xNzgxMTAxODU3XX0=
 -->
