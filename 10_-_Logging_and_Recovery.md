@@ -32,8 +32,7 @@ log records:
 - **abort-T**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
 
-
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2Nj
-cwNDcsLTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTQ0NDU5NzI3MiwtMjI2MzAzNzgsODIwMT
+c3NzU3LDYyNjY2NzA0NywtMTc4MTEwMTg1N119
 -->
