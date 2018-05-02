@@ -44,12 +44,15 @@ log records:
 | read(y) |  10 | 50  |10   | 50  |20   |50   |     |
 | y=y+10  |  10 | 60  |10   | 50  |20   |50   |     |
 |write(y) |  10 | 60  |10   | 60  |20   |50   |\<T, Y, 50\>|
-|flush log|     |     |     |     |     |     |     |
+|flush log|
 |output(x)|  10 | 60  |10   | 60  |10   |50   |     |
 |output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 |         |     |     |     |     |     |     |\<commit-T\>|
+|flush log|
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwOTk2NzA0NywtOTUyOTM2OTEsLTIyNj
-MwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcsLTE3ODExMDE4NTdd
-fQ==
+eyJoaXN0b3J5IjpbLTE4MzQyMTQ2MzUsLTk1MjkzNjkxLC0yMj
+YzMDM3OCw4MjAxNzc3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3
+XX0=
 -->
