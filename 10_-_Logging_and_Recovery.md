@@ -33,8 +33,10 @@ log records:
 
 ### Undo Logging Rules
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
-2. If a transaction T commits 
+2. If a transaction T commits, then its \<commit-T\> log record must be written to disk only after all database items changed by T have been written to disk
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI0NjQ0OTExLC0yMjYzMDM3OCw4MjAxNz
-c3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbLTE0NDYwMTk4NDIsLTIyNjMwMzc4LDgyMD
+E3Nzc1Nyw2MjY2NjcwNDcsLTE3ODExMDE4NTddfQ==
 -->
