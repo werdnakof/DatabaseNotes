@@ -51,21 +51,21 @@ log records:
 |flush log|
 
 ### Recovery with Undo Logging
-for each log entry <T, X, old>, scanning backwards {
-if <commit T> has been seen {
-do nothing
-} else {
-change the value of X in the database back to
-old
-}
-}
-for each incomplete transaction T (that was not
-aborted) {
-write <abort T> to log
-}
-flush log
+
+		for each log entry <T, X, old>, scanning backwards {
+			if <commit T> has been seen {
+				do nothing
+			} else {
+				change the value of X in the database back to old
+			}
+		}
+		for each incomplete transaction T (that was not borted) {
+			write <abort T> to log
+		}
+		flush log
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNDk3MTgyNCwtMTgzNDIxNDYzNSwtOT
+eyJoaXN0b3J5IjpbLTY5Mzc4NTI3NywtMTgzNDIxNDYzNSwtOT
 UyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1Nyw2MjY2NjcwNDcs
 LTE3ODExMDE4NTddfQ==
 -->
