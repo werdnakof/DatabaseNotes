@@ -96,6 +96,7 @@ have not yet committed)
 3. Write <end ckpt> to log and flush log
 (Note that new transactions may be started during step 2)
 
+**Recovery with checkpointed undo **
 Two cases, depending on latest checkpoint log record:
 <end ckpt>
 All incomplete transactions began after the previous \<start ckpt ()>
@@ -104,7 +105,7 @@ System crash occurred during checkpoint
 Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 Disregard the log before the start of the earliest incomplete transaction
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5MDUwNDI2NSwxMzg4MTA5NzQwLC0xOD
-M0MjE0NjM1LC05NTI5MzY5MSwtMjI2MzAzNzgsODIwMTc3NzU3
-LDYyNjY2NzA0NywtMTc4MTEwMTg1N119
+eyJoaXN0b3J5IjpbLTE5NTU3ODE2ODMsMTM4ODEwOTc0MCwtMT
+gzNDIxNDYzNSwtOTUyOTM2OTEsLTIyNjMwMzc4LDgyMDE3Nzc1
+Nyw2MjY2NjcwNDcsLTE3ODExMDE4NTddfQ==
 -->
