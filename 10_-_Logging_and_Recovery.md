@@ -107,8 +107,10 @@ Disregard the log before the previous \<start ckpt ()>
 System crash occurred during checkpoint
 Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 Disregard the log before the start of the earliest incomplete transaction
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODQ3OTAzMTUsNzU3ODEyNDgyLDEzOD
-gxMDk3NDAsLTE4MzQyMTQ2MzUsLTk1MjkzNjkxLC0yMjYzMDM3
-OCw4MjAxNzc3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
+eyJoaXN0b3J5IjpbMTUwOTc5MzA3Myw3NTc4MTI0ODIsMTM4OD
+EwOTc0MCwtMTgzNDIxNDYzNSwtOTUyOTM2OTEsLTIyNjMwMzc4
+LDgyMDE3Nzc1Nyw2MjY2NjcwNDcsLTE3ODExMDE4NTddfQ==
 -->
