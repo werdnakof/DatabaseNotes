@@ -8,16 +8,18 @@ and operations:
 - input(x) - write to buffer from disk
 
 | Action |  X  |  Y  |$X_m$|$Y_m$|$X_d$|$Y_d$| Log |
-|:------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|        |     |     |     |     |20   |50   |     |
-| read(x)|  20 |     |20   |     |20   |50   |     |
-| x=x-10 |  10 |     |20   |     |20   |50   |     |
-|write(x)|  10 |     |10   |     |20   |50   |     |
-| read(y)|  10 | 50  |10   | 50  |20   |50   |     |
-| y=y+10 |  10 | 60  |20   | 50  |20   |50   |     |
-|write(y)|  10 |     |20   |     |20   |50   |     |
+|:------ |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|         |     |     |     |     |20   |50   |     |
+| read(x) |  20 |     |20   |     |20   |50   |     |
+| x=x-10  |  10 |     |20   |     |20   |50   |     |
+|write(x) |  10 |     |10   |     |20   |50   |     |
+| read(y) |  10 | 50  |10   | 50  |20   |50   |     |
+| y=y+10  |  10 | 60  |10   | 50  |20   |50   |     |
+|write(y) |  10 | 60  |10   | 60  |20   |50   |     |
+|output(x)|  10 | 60  |10   | 60  |10   |50   |     |
+|output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTMyMzY5MzEsODIwMTc3NzU3LDYyNjY2Nz
-A0NywtMTc4MTEwMTg1N119
+eyJoaXN0b3J5IjpbMzcyODgwMTg3LDgyMDE3Nzc1Nyw2MjY2Nj
+cwNDcsLTE3ODExMDE4NTddfQ==
 -->
