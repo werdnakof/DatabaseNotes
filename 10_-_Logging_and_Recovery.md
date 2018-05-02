@@ -35,8 +35,18 @@ log records:
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
 2. If a transaction T commits, then its \<commit-T\> log record must be written to disk only after all database items changed by T have been written to disk
 
-
+| Action  |  X  |  Y  |$X_b$|$Y_b$|$X_d$|$Y_d$| Log |
+|:-------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|         |     |     |     |     |20   |50   |\<start-T\>|
+| read(x) |  20 |     |20   |     |20   |50   |     |
+| x=x-10  |  10 |     |20   |     |20   |50   |     |
+|write(x) |  10 |     |10   |     |20   |50   |     |
+| read(y) |  10 | 50  |10   | 50  |20   |50   |     |
+| y=y+10  |  10 | 60  |10   | 50  |20   |50   |     |
+|write(y) |  10 | 60  |10   | 60  |20   |50   |     |
+|output(x)|  10 | 60  |10   | 60  |10   |50   |     |
+|output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDYwMTk4NDIsLTIyNjMwMzc4LDgyMD
-E3Nzc1Nyw2MjY2NjcwNDcsLTE3ODExMDE4NTddfQ==
+eyJoaXN0b3J5IjpbLTk1MjkzNjkxLC0yMjYzMDM3OCw4MjAxNz
+c3NTcsNjI2NjY3MDQ3LC0xNzgxMTAxODU3XX0=
 -->
