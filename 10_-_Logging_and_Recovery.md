@@ -156,9 +156,11 @@ flush log
 2. Write to disk all database items that have been written to buffers but not yet to disk, by transactions that have already committed
 3. Write log record <end ckpt> and flush log
 
-### Recovery with checki
+### Recovery with checkpointing
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjgzNTc4ODMsLTU0MDk2MTQ3NSwtMT
+eyJoaXN0b3J5IjpbLTE2NzgwNzQwOTYsLTU0MDk2MTQ3NSwtMT
 M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
 MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
 Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
