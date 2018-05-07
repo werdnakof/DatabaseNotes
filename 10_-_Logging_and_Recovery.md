@@ -135,22 +135,24 @@ Two cases, depending on latest checkpoint log record:
 
 **Recovery**
 ```
-identify the committed transactions
+Identify the committed transactions
+
 for each log entry <T, X, new>, scanning forwards {
-if T is not committed {
-do nothing
-} else {
-write value new for X to the database
+	if T is not committed {
+		do nothing
+	} else {
+		write value new for X to the database
+	}
 }
-}
+
 for each incomplete transaction T {
-write <abort T> to log
+	write <abort T> to log
 }
 flush log
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzI2NjM5NDIsLTU0MDk2MTQ3NSwtMT
-M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
-MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
-Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbNzMyNTQyNzE0LC01NDA5NjE0NzUsLTEzNz
+EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
+NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
+wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
