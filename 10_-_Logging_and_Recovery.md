@@ -20,13 +20,11 @@ Consider a  **disk**, a  **buffer**, and a  **in-memory transaction** and operat
 
 ### Logging
 
-Logging is the main approach to recovering from a system crash relies on a persistent record of changes made during a transaction
-
+Logging is the main approach to recovering from a system crash relies on a persistent record of changes made during a transaction.
 3 ways:
-
--   undo logging
--   redo logging
--   undo/redo logging  
+1. undo logging
+2. redo logging
+3. undo/redo logging  
     log records:
 -   **start-T**: transaction T has started execution
 -   **commit-T**: transaction T has completed successfully and will make not further changes to database items
@@ -37,6 +35,6 @@ Logging is the main approach to recovering from a system crash relies on a persi
 1.  If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk  **before**the new value of X is written to disk
 2.  If a transaction T commits, then its <commit-T> log record must be written to disk only after all database items changed by T have been written to disk
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5MDg5MDAyMSwtNzQ0NzY1Mjg0LDQyMz
-E5MDkyXX0=
+eyJoaXN0b3J5IjpbNzcxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMT
+kwOTJdfQ==
 -->
