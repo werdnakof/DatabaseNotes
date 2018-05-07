@@ -53,11 +53,13 @@ Within in dbms application, there are multiple processes i.e. coordinator proces
 
  ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/dbms-in-nodes.png?raw=true)
 
+and each coordinator can issue query to dbms in other nodes.
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MDg4Nzg3OCw3NTk1MDYyMDEsMjgwND
-QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
-LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTE3ODYxNzU3ODIsNzU5NTA2MjAxLDI4MD
+Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
+OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
 -->
