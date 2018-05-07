@@ -31,12 +31,13 @@ Properties:
 
 **Share Nothing**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-nothing-arch.png?raw=true)
-
-
+- each processor has unique part of the data
+- 1 page for each buffer (for each processor)
+- 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTgyNzM5ODQsMjgwNDQxNDQ4LDE1NT
-QxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3
-NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbMzY5OTI2MDI1LDI4MDQ0MTQ0OCwxNTU0MT
+UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
+LDE0OTg0OTk4MDZdfQ==
 -->
