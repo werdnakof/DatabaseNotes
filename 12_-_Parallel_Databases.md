@@ -55,11 +55,12 @@ Within in dbms application, there are multiple processes i.e. coordinator proces
 
 and each coordinator can issue query to dbms in other nodes.
 
-
+**Inter-query parallelism**: different queries excute on different processors
+**intra-query parallelism**: 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODYxNzU3ODIsNzU5NTA2MjAxLDI4MD
-Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
-OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbLTU3ODM1NzE0Miw3NTk1MDYyMDEsMjgwND
+QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
+LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
