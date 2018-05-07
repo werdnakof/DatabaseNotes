@@ -55,18 +55,20 @@ Log record types:
 | flush log |    |    |       |       |       |       |              |
 
 ### Recovery
-
-		for each log entry <T, X, old>, scanning backwards {
-			if <commit T> has been seen {
-				do nothing
-			} else {
-				change the value of X in the database back to old
-			}
-		}
-		for each incomplete transaction T (that was not borted) {
-			write <abort T> to log
-		}
-		flush log
+```
+for each log entry <T, X, old>, scanning backwards {
+	if <commit T> has been seen {
+		do nothing
+	} else {
+		change the value of X in the database back to old
+	}
+}
+for each incomplete transaction T (that was not borted) {
+	write <abort T> to log
+}
+flush log
+```
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovey.png?raw=true)
 
 ### Checkpointing with Undo Logging
 
@@ -85,12 +87,20 @@ Log record types:
 5. flush log
 6. Resume accepting transactions
 
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-checkpointing.png?raw=true)
+
+**Recovery**
+
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-with-checkpointing.png?raw=true)
+
 ### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
 - Slow, reduce pull through, system may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
 
-New log record types:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-nonquiescent-checkpointing.png?raw=true)
+
+**New log record types:**
 - \<start ckpt (T1...Tn)> (Checkpoint starts. T1...Tn are active transactions that have not yet committed)
 - \<end ckpt>
 
@@ -105,12 +115,14 @@ Two cases, depending on latest checkpoint log record:
 1. \<end ckpt>
 	- All incomplete transactions began after the previous \<start ckpt ()>
 	- Disregard the log before the previous \<start ckpt ()> 
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-1.png?raw=true)
 
 2. \<start ckpt (T1...Tn)>
 	- System crash occurred during checkpoint
 	- Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 	- Disregard the log before the start of the earliest incomplete transaction
-
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-2.png?raw=true)
+	
 # Redo Logging
 - Opposite of undo logging, \<commite T> is written before changes are written to disk
 - The ideal is about ignoreing incomplete transactions
@@ -165,8 +177,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4ODc3MDA1OSwyMDAzMjU3NDUxLC01ND
-A5NjE0NzUsLTEzNzEyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTky
-MDEyMzgsMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0Nj
-U1LDc3MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTE2MDM1MjE1OTgsNzIyMDUyMTYyLC01OD
+g3NzAwNTksMjAwMzI1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgz
+Mjc3LC0yMDY3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOT
+YsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0
+NDc2NTI4NCw0MjMxOTA5Ml19
 -->
