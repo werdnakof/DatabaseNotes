@@ -15,6 +15,7 @@
 ### Parallel Architectures
 
 **Shared Memory Architecture**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-memory-arch.png?raw=true)
 Properties:
 - less complex
 - limited scalability
@@ -25,6 +26,7 @@ Properties:
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNz
-M2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbMTE1MDQyODg2OCwxNTU0MTUyOTYsLTE4NT
+Y3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3LDE0OTg0OTk4
+MDZdfQ==
 -->
