@@ -17,16 +17,16 @@
 **Shared Memory Architecture**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-memory-arch.png?raw=true)
 Properties:
-- less complex
+- less complex software
 - limited scalability
-- single buffer
+- single buffer, more consistent
 - single database storage
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MDQyODg2OCwxNTU0MTUyOTYsLTE4NT
-Y3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3LDE0OTg0OTk4
-MDZdfQ==
+eyJoaXN0b3J5IjpbMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Nj
+c4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgw
+Nl19
 -->
