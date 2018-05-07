@@ -21,14 +21,14 @@ and operations:
 | output(y) | 10 | 60 |  10  |  60  |   10  |   60  |     |
 
 ### Logging
-main approach to recovering from a system crash relies on a persistent record of changes made during a transaction
+main approach of recovering from a system crash relies on a persistent record of changes made during a transaction
 
-3 ways:
+3 approaches:
 - undo logging
 - redo logging
 - undo/redo logging
 
-log records:
+Log record types:
 - **start-T**: transaction T has started execution
 - **commit-T**: transaction T has completed successfully and will make not further changes to database items
 - **abort-T**: transaction T could not complete successfully, no changes made by T will be copied to disk
@@ -112,7 +112,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMj
-A4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDky
-XX0=
+eyJoaXN0b3J5IjpbMTA4MzU0MzY1MCwxNDM0MjQ3Mzk2LDE2Mj
+c4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUy
+ODQsNDIzMTkwOTJdfQ==
 -->
