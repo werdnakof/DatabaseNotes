@@ -34,7 +34,9 @@ Log record types:
 - **\<abort-T>**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
 ### Undo Logging Rules
+
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
+
 2. If a transaction T commits, then its \<commit-T\> log record must be written to disk only after all database items changed by T have been written to disk
 
 |   Action  |  X |  Y | $X_b$ | $Y_b$ | $X_d$ | $Y_d$ |      Log     |
@@ -67,6 +69,7 @@ Log record types:
 		flush log
 
 ### Checkpointing with Undo Logging
+
 Disadvantage of this approach: we must scan the entire log.
 
 Introduce a periodic checkpoint in the log
@@ -112,7 +115,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MzkyODExNjQsMTQzNDI0NzM5NiwxNj
-I3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1
-Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbMTE0ODMzMjE1OCwxNDM0MjQ3Mzk2LDE2Mj
+c4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUy
+ODQsNDIzMTkwOTJdfQ==
 -->
