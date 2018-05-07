@@ -111,9 +111,10 @@ Two cases, depending on latest checkpoint log record:
 	- Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 	- Disregard the log before the start of the earliest incomplete transaction
 
+# Redo Logging
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwOTk1MzExNiwtMTcxOTIwMTIzOCwxND
-M0MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4
-ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMT
+QzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5
+ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
