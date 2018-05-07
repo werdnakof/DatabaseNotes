@@ -6,6 +6,8 @@ Consider a  **disk**, a  **buffer**, and a  **in-memory transaction** and operat
 -   output(x) - write to disk from buffer
 -   input(x) - write to buffer from disk
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0NDc2NTI4NCw0MjMxOTA5Ml19
+eyJoaXN0b3J5IjpbLTcyMTI4MTA3OCwtNzQ0NzY1Mjg0LDQyMz
+E5MDkyXX0=
 -->
