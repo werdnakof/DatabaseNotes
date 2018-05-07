@@ -14,7 +14,7 @@
  
 ### Parallel Architectures
 
-**Shared Memory Architecture**
+**Shared Memory**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-memory-arch.png?raw=true)
 Properties:
 - less complex software
@@ -22,11 +22,19 @@ Properties:
 - single buffer, more consistent
 - single database storage
 
+**Shared Disc**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-disc-arch.png?raw=true)
+(S - switch)
+- avoid memory bottleck by introducing buffer for each processor
+- incoherence issues: same page can be in more than one buffer ("page" means "virtual page" (i.e. a chunk of virtual address space)
+- requires global lock
+
+**
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Nj
-c4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgw
-Nl19
+eyJoaXN0b3J5IjpbMTUwNzkxMTYyMiwyODA0NDE0NDgsMTU1ND
+E1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0
+NywxNDk4NDk5ODA2XX0=
 -->
