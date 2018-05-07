@@ -113,10 +113,11 @@ Two cases, depending on latest checkpoint log record:
 
 # Redo Logging
 - Opposite of undo logging, \<commite T> is written before changes are written to disk
-- Ignore
+- The ideal is about ignoreing incomplete transactions
+- a new r
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0ODgwNDA2MywtMTM3MTI4MzI3NywtMj
-A2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LDE2Mjc4
-MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyOD
-QsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbNjQ3NTE3ODk5LC0xMzcxMjgzMjc3LC0yMD
+Y3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMTYyNzgz
+MDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2NTI4NC
+w0MjMxOTA5Ml19
 -->
