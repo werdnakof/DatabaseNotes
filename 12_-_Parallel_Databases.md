@@ -26,14 +26,14 @@ Properties:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-disc-arch.png?raw=true)
 (S - switch)
 - avoid memory bottleck by introducing buffer for each processor
-- incoherence issues: same page can be in more than one buffer
+- incoherence issues: same page can be in more than one buffer ("page" means "virtual page" (i.e. a chunk of virtual address space)
 - requires global lock
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTIzMDQ5NTgsMjgwNDQxNDQ4LDE1NT
+eyJoaXN0b3J5IjpbLTE2NjQ0MzM3MDQsMjgwNDQxNDQ4LDE1NT
 QxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3
 NDcsMTQ5ODQ5OTgwNl19
 -->
