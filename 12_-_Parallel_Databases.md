@@ -37,11 +37,14 @@ Properties:
 - need multiphase commit protocol
 - break SQL queries into multi sub queries
 
+(The followings focus on share nothing only)
 
+Challenges with **share nothing**
+- 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzgxNjIwNTksNzU5NTA2MjAxLDI4MD
-Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
-OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbMTgzMjQ1MzgzLDc1OTUwNjIwMSwyODA0ND
+E0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5Mjks
+LTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
