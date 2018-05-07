@@ -121,7 +121,8 @@ Two cases, depending on latest checkpoint log record:
 	- System crash occurred during checkpoint
 	- Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 	- Disregard the log before the start of the earliest incomplete transaction
-
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-2.png?raw=true)
+	
 # Redo Logging
 - Opposite of undo logging, \<commite T> is written before changes are written to disk
 - The ideal is about ignoreing incomplete transactions
@@ -176,9 +177,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTI2NTE4Mzg1LDcyMjA1MjE2MiwtNTg4Nz
-cwMDU5LDIwMDMyNTc0NTEsLTU0MDk2MTQ3NSwtMTM3MTI4MzI3
-NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LD
-E2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3
-NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTE2MDM1MjE1OTgsNzIyMDUyMTYyLC01OD
+g3NzAwNTksMjAwMzI1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgz
+Mjc3LC0yMDY3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOT
+YsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0
+NDc2NTI4NCw0MjMxOTA5Ml19
 -->
