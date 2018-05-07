@@ -77,7 +77,7 @@ Log record types:
 - New log record type:
 	\<ckpt>: The database has been checkpointed
 
-Checkpointing:
+**Steps**
 1. Stop accepting new transactions
 2. Wait until all active transactions commit/abort and write <commit T>/<abort T> to the log
 3. flush log
@@ -85,7 +85,7 @@ Checkpointing:
 5. flush log
 6. Resume accepting transactions
 
-### Nonquiescent Checkpointing
+**Nonquiescent Checkpointing**
 - Need to stop transaction processing while checkpointing (method above)
 - Slow, reduce pull through, system may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
@@ -99,7 +99,7 @@ New log record types:
 3. Write <end ckpt> to log and flush log
 (Note that new transactions may be started during step 2)
 
-**Recovery with checkpointed undo logging**
+**Recovery with checkpointing**
 Two cases, depending on latest checkpoint log record:
 
 1. \<end ckpt>
@@ -151,8 +151,8 @@ for each incomplete transaction T {
 flush log
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMyNTQyNzE0LC01NDA5NjE0NzUsLTEzNz
-EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
-NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
-wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTE4NzI3MDU3MjAsLTU0MDk2MTQ3NSwtMT
+M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
+MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
+Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
 -->
