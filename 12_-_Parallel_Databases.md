@@ -72,15 +72,15 @@ and each coordinator can issue query to dbms in other nodes.
  - To achieve this sort of parallelism, the data needs to be partitioned across servers.
  - e.g. a RELATION containing 1000 tuples is spread across 10 nodes, the time to search for a tuple has been reduced by a factor of 10, given we know which node to access beforehand (see next bullet point)
  - Choice of partition types affords different parallel query processing approaches:
-	 1. Range partition
+	 1. Range partition (e.g. each partition contains a specific range e.g. a-h, i-p or 1-
 	 2. Hash partition
 	 3. schema partition
 - 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2Nj
-IwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4
-LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xOD
-U2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTI2MDY3MDc1MSw1NzA2NzY4ODYsLTY4Mj
+I1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIw
+MSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNz
+M2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
