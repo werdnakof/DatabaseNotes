@@ -68,6 +68,7 @@ log records:
 
 ### Checkpointing with Undo Logging
 Disadvantage of this approach: we must scan the entire log.
+
 Introduce a periodic checkpoint in the log
 - Before checkpoint, all transactions have committed or aborted
 - Only need search backwards through the log to the most recent checkpoint
@@ -111,7 +112,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgyODA1NTg2LDE2Mjc4MzA4ODcsLTEyMD
-g1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJd
-fQ==
+eyJoaXN0b3J5IjpbMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMj
+A4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDky
+XX0=
 -->
