@@ -118,7 +118,7 @@ Two cases, depending on latest checkpoint log record:
 
 **Rule:**
 1. Before modifying an item X on disk, all log records related to the modification i.e. \<T, X, new>, \<commit T> must be written to disk. For example:
-```
+
 |   Action  |  X |  Y | $X_b$ | $Y_b$ | $X_d$ | $Y_d$ |      Log     |
 |:---------:|:--:|:--:|:-----:|:-----:|:-----:|:-----:|:------------:|
 |           |    |    |       |       |   20  |   50  |  \<start-T\> |
@@ -132,11 +132,25 @@ Two cases, depending on latest checkpoint log record:
 | flush log |    |    |       |       |       |       |              |
 | output(x) | 10 | 60 |   10  |   60  |   10  |   50  |              |
 | output(y) | 10 | 60 |   10  |   60  |   10  |   60  |              |
-```
 
+**Recovery**
+```
+identify the committed transactions
+for each log entry <T, X, new>, scanning forwards {
+if T is not committed {
+do nothing
+} else {
+write value new for X to the database
+}
+}
+for each incomplete transaction T {
+write <abort T> to log
+}
+flush log
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2NTc2MTQ1LC01NDA5NjE0NzUsLTEzNz
-EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
-NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
-wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTE2MzI2NjM5NDIsLTU0MDk2MTQ3NSwtMT
+M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
+MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
+Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
 -->
