@@ -51,11 +51,11 @@ Challenges with **share nothing**
 
 Within in dbms application, there are multiple processes i.e. coordinator process and worker processes.
 
-
+ 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc4NjU5NjQwLDc1OTUwNjIwMSwyODA0ND
-E0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5Mjks
-LTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbLTczMzE1MzUyMCw3NTk1MDYyMDEsMjgwND
+QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
+LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
