@@ -8,17 +8,17 @@ and operations:
 - output(x) - write to disk from buffer 
 - input(x) - write to buffer from disk
 
-| Action  |  X  |  Y  |Xbuf|Ybuf|Xdisk|Ydisk| Log |
-|:-------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|         |     |     |     |     |20   |50   |     |
-| read(x) |  20 |     |20   |     |20   |50   |     |
-| x=x-10  |  10 |     |20   |     |20   |50   |     |
-|write(x) |  10 |     |10   |     |20   |50   |     |
-| read(y) |  10 | 50  |10   | 50  |20   |50   |     |
-| y=y+10  |  10 | 60  |10   | 50  |20   |50   |     |
-|write(y) |  10 | 60  |10   | 60  |20   |50   |     |
-|output(x)|  10 | 60  |10   | 60  |10   |50   |     |
-|output(y)|  10 | 60  |10   | 60  |10   |60   |     |
+|   Action  |  X |  Y | Xbuf | Ybuf | Xdisk | Ydisk | Log |
+|:---------:|:--:|:--:|:----:|:----:|:-----:|:-----:|:---:|
+|           |    |    |      |      |   20  |   50  |     |
+|  read(x)  | 20 |    |  20  |      |   20  |   50  |     |
+|   x=x-10  | 10 |    |  20  |      |   20  |   50  |     |
+|  write(x) | 10 |    |  10  |      |   20  |   50  |     |
+|  read(y)  | 10 | 50 |  10  |  50  |   20  |   50  |     |
+|   y=y+10  | 10 | 60 |  10  |  50  |   20  |   50  |     |
+|  write(y) | 10 | 60 |  10  |  60  |   20  |   50  |     |
+| output(x) | 10 | 60 |  10  |  60  |   10  |   50  |     |
+| output(y) | 10 | 60 |  10  |  60  |   10  |   60  |     |
 
 ### Logging
 main approach to recovering from a system crash relies on a persistent record of changes made during a transaction
@@ -110,6 +110,6 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzYxMDk1NzEsLTEyMDg1ODQ2NTUsNz
-cxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbMTUzNzExMDgzNSwtMTIwODU4NDY1NSw3Nz
+E0OTg4NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
 -->
