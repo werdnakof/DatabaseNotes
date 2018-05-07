@@ -57,10 +57,11 @@ and each coordinator can issue query to dbms in other nodes.
 
 **Inter-query parallelism**: different queries excute on different processors
 **intra-query parallelism**: 
+	- horizontal: operators decomposed into ind
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3ODM1NzE0Miw3NTk1MDYyMDEsMjgwND
-QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
-LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTE3OTUwODA1MzQsNzU5NTA2MjAxLDI4MD
+Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
+OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
 -->
