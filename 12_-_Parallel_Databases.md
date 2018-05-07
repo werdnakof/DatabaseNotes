@@ -49,13 +49,13 @@ Challenges with **share nothing**
 
 # Parallel Query Processing
 
-Within in dbms application, there are multiple processes i.e. coordinator process and worker processes.
+Within in dbms application, there are multiple processes i.e. coordinator process (C) and worker processes (W).
 
  
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczMzE1MzUyMCw3NTk1MDYyMDEsMjgwND
+eyJoaXN0b3J5IjpbMTc3MDk5MjIyOCw3NTk1MDYyMDEsMjgwND
 QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
 LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
