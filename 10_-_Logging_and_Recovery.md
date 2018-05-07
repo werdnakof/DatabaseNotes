@@ -117,10 +117,11 @@ Two cases, depending on latest checkpoint log record:
 - a new record type **\<T, X, new>**
 
 **Rules:**
-1. 
+1. Before modifying an item X on disk, all log records related to the modification i.e. \<T, X, new>, \<commit T> must be written to disk
+2. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTQwMDQxODgsLTEzNzEyODMyNzcsLT
-IwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0NzM5NiwxNjI3
-ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1Mj
-g0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTU0MDk2MTQ3NSwtMTM3MTI4MzI3NywtMj
+A2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LDE2Mjc4
+MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyOD
+QsNDIzMTkwOTJdfQ==
 -->
