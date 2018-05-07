@@ -94,7 +94,9 @@ flush log
 - Slow, reduce pull through, system may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
 
-New log record types:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-nonquiescent-checkpointing.png?raw=true)
+
+**New log record types:**
 - \<start ckpt (T1...Tn)> (Checkpoint starts. T1...Tn are active transactions that have not yet committed)
 - \<end ckpt>
 
@@ -169,7 +171,7 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYwNjkwMjM2LC01ODg3NzAwNTksMjAwMz
+eyJoaXN0b3J5IjpbNzIyMDUyMTYyLC01ODg3NzAwNTksMjAwMz
 I1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgzMjc3LC0yMDY3NjI4
 MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMTYyNzgzMDg4Ny
 wtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2NTI4NCw0MjMx
