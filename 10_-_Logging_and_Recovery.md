@@ -37,20 +37,20 @@ log records:
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
 2. If a transaction T commits, then its \<commit-T\> log record must be written to disk only after all database items changed by T have been written to disk
 
-| Action  |  X  |  Y  |$X_b$|$Y_b$|$X_d$|$Y_d$| Log |
-|:-------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|         |     |     |     |     |20   |50   |\<start-T\>|
-| read(x) |  20 |     |20   |     |20   |50   |     |
-| x=x-10  |  10 |     |20   |     |20   |50   |     |
-|write(x) |  10 |     |10   |     |20   |50   |\<T, X, 20\>|
-| read(y) |  10 | 50  |10   | 50  |20   |50   |     |
-| y=y+10  |  10 | 60  |10   | 50  |20   |50   |     |
-|write(y) |  10 | 60  |10   | 60  |20   |50   |\<T, Y, 50\>|
-|flush log|		|	  |     |     |     |     |     |
-|output(x)|  10 | 60  |10   | 60  |10   |50   |     |
-|output(y)|  10 | 60  |10   | 60  |10   |60   |     |
-|         |     |     |     |     |     |     |\<commit-T\>|
-|flush log|     |     |     |     |     |     |     |   
+|   Action  |  X |  Y | $X_b$ | $Y_b$ | $X_d$ | $Y_d$ |      Log     |
+|:---------:|:--:|:--:|:-----:|:-----:|:-----:|:-----:|:------------:|
+|           |    |    |       |       |   20  |   50  |  \<start-T\> |
+|  read(x)  | 20 |    |   20  |       |   20  |   50  |              |
+|   x=x-10  | 10 |    |   20  |       |   20  |   50  |              |
+|  write(x) | 10 |    |   10  |       |   20  |   50  | \<T, X, 20\> |
+|  read(y)  | 10 | 50 |   10  |   50  |   20  |   50  |              |
+|   y=y+10  | 10 | 60 |   10  |   50  |   20  |   50  |              |
+|  write(y) | 10 | 60 |   10  |   60  |   20  |   50  | \<T, Y, 50\> |
+| flush log |    |    |       |       |       |       |              |
+| output(x) | 10 | 60 |   10  |   60  |   10  |   50  |              |
+| output(y) | 10 | 60 |   10  |   60  |   10  |   60  |              |
+|           |    |    |       |       |       |       | \<commit-T\> |
+| flush log |    |    |       |       |       |       |              |
 
 ### Recovery with Undo Logging
 
@@ -111,6 +111,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3Nz
-E0OTg4NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
+eyJoaXN0b3J5IjpbNTgyODA1NTg2LDE2Mjc4MzA4ODcsLTEyMD
+g1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJd
+fQ==
 -->
