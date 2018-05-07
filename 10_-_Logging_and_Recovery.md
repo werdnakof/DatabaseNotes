@@ -117,11 +117,26 @@ Two cases, depending on latest checkpoint log record:
 - a new record type **\<T, X, new>**
 
 **Rules:**
-1. Before modifying an item X on disk, all log records related to the modification i.e. \<T, X, new>, \<commit T> must be written to disk
-2. 
+1. Before modifying an item X on disk, all log records related to the modification i.e. \<T, X, new>, \<commit T> must be written to disk. For example:
+
+|   Action  |  X |  Y | $X_b$ | $Y_b$ | $X_d$ | $Y_d$ |      Log     |
+|:---------:|:--:|:--:|:-----:|:-----:|:-----:|:-----:|:------------:|
+|           |    |    |       |       |   20  |   50  |  \<start-T\> |
+|  read(x)  | 20 |    |   20  |       |   20  |   50  |              |
+|   x=x-10  | 10 |    |   20  |       |   20  |   50  |              |
+|  write(x) | 10 |    |   10  |       |   20  |   50  | \<T, X, 10\> |
+|  read(y)  | 10 | 50 |   10  |   50  |   20  |   50  |              |
+|   y=y+10  | 10 | 60 |   10  |   50  |   20  |   50  |              |
+|  write(y) | 10 | 60 |   10  |   60  |   20  |   50  | \<T, Y, 60\> |
+|           |    |    |       |       |       |       | \<commit-T\> |
+| flush log |    |    |       |       |       |       |              |
+| output(x) | 10 | 60 |   10  |   60  |   10  |   50  |              |
+| output(y) | 10 | 60 |   10  |   60  |   10  |   60  |              |
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0MDk2MTQ3NSwtMTM3MTI4MzI3NywtMj
-A2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LDE2Mjc4
-MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyOD
-QsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbNDI5NDYyMDkwLC01NDA5NjE0NzUsLTEzNz
+EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
+NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
+wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
