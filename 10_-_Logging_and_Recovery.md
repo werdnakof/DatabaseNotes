@@ -87,6 +87,8 @@ flush log
 5. flush log
 6. Resume accepting transactions
 
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-checkpointing.png?raw=true)
+
 ### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
 - Slow, reduce pull through, system may appear to stall
@@ -167,9 +169,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5NTExMzI2NywtNTg4NzcwMDU5LDIwMD
-MyNTc0NTEsLTU0MDk2MTQ3NSwtMTM3MTI4MzI3NywtMjA2NzYy
-ODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LDE2Mjc4MzA4OD
-csLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUyODQsNDIz
-MTkwOTJdfQ==
+eyJoaXN0b3J5IjpbODYwNjkwMjM2LC01ODg3NzAwNTksMjAwMz
+I1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgzMjc3LC0yMDY3NjI4
+MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMTYyNzgzMDg4Ny
+wtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2NTI4NCw0MjMx
+OTA5Ml19
 -->
