@@ -102,17 +102,17 @@ New log record types:
 **Recovery with checkpointed undo logging**
 Two cases, depending on latest checkpoint log record:
 
-\<end ckpt>
+1. \<end ckpt>
 All incomplete transactions began after the previous \<start ckpt ()>
 Disregard the log before the previous \<start ckpt ()> 
 
-\<start ckpt (T1...Tn)>
+2. \<start ckpt (T1...Tn)>
 System crash occurred during checkpoint
 Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDMxMzU4MjgsLTE3MTkyMDEyMzgsMT
+eyJoaXN0b3J5IjpbLTEwMjQ5NDg0MzUsLTE3MTkyMDEyMzgsMT
 QzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5
 ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
