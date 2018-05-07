@@ -63,11 +63,13 @@ and each coordinator can issue query to dbms in other nodes.
 	- **inter-operator (vertical)**: operations overlapped
 		- pipeline data from one stage to the next without materialisation
 		- e.g. SELECT -> PROJECT
-	- **bushy (independent)**: subtrees in query plan excuted concurrently
+	- **bushy (independent)**: 
+		- subtrees in query plan excuted concurrently
+		- 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3NDcxMzAxNSwxNjAzNjIwMDY5LDc1OT
+eyJoaXN0b3J5IjpbMjExMzkxOTE5MSwxNjAzNjIwMDY5LDc1OT
 UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
 LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
