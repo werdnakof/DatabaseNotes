@@ -47,11 +47,13 @@ Challenges with **share nothing**
 - concurrency control
 - node failure
 
-# Parallel Query Proc
+# Parallel Query Processing
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzAxMjQ3MTEsNzU5NTA2MjAxLDI4MD
-Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
-OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbLTI1MTkwOTYwOCw3NTk1MDYyMDEsMjgwND
+QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
+LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
