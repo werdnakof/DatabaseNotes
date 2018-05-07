@@ -112,6 +112,8 @@ Two cases, depending on latest checkpoint log record:
 	- All incomplete transactions began after the previous \<start ckpt ()>
 	- Disregard the log before the previous \<start ckpt ()> 
 
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-with-checkpointing.png?raw=true)
+
 2. \<start ckpt (T1...Tn)>
 	- System crash occurred during checkpoint
 	- Incomplete transactions are those encountered before the \<start ckpt ()> and those of T1...Tn that were not committed before the crash
@@ -171,9 +173,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzIyMDUyMTYyLC01ODg3NzAwNTksMjAwMz
-I1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgzMjc3LC0yMDY3NjI4
-MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMTYyNzgzMDg4Ny
-wtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2NTI4NCw0MjMx
-OTA5Ml19
+eyJoaXN0b3J5IjpbNzk4ODYwMjU4LDcyMjA1MjE2MiwtNTg4Nz
+cwMDU5LDIwMDMyNTc0NTEsLTU0MDk2MTQ3NSwtMTM3MTI4MzI3
+NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LD
+E2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3
+NjUyODQsNDIzMTkwOTJdfQ==
 -->
