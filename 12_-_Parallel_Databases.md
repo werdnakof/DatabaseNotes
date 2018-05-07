@@ -51,11 +51,13 @@ Challenges with **share nothing**
 
 Within in dbms application, there are multiple processes i.e. coordinator process (C) and worker processes (W).
 
- 
+ ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/dbms-in-nodes.png?raw=true)
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc3MDk5MjIyOCw3NTk1MDYyMDEsMjgwND
+eyJoaXN0b3J5IjpbLTY3MDg4Nzg3OCw3NTk1MDYyMDEsMjgwND
 QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
 LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
