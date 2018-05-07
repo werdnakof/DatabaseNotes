@@ -19,10 +19,12 @@ Properties:
 - less complex
 - limited scalability
 - single buffer
-- single database sto
+- single database storage
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzgxNzE3NTIxLC0xODU2Nzg5MTM0LC0zNz
+eyJoaXN0b3J5IjpbMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNz
 M2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
