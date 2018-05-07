@@ -33,7 +33,7 @@ Log record types:
 - **\<commit-T>**: transaction T has completed successfully and will make not further changes to database items
 - **\<abort-T>**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
-### Undo Logging Rules
+# Undo Logging Rules
 
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
 
@@ -113,7 +113,7 @@ Two cases, depending on latest checkpoint log record:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDM0NjI5ODAsLTE3MTkyMDEyMzgsMT
-QzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5
-ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbMTMwOTk1MzExNiwtMTcxOTIwMTIzOCwxND
+M0MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4
+ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
 -->
