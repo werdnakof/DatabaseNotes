@@ -25,13 +25,15 @@ Properties:
 **Shared Disc**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-disc-arch.png?raw=true)
 (S - switch)
-- avoid memory bottleck
+- avoid memory bottleck by introducing buffer for each processor
 - incoherence issues: same page can be in more than one buffer
-- 
+- requires global lock
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk0MDM0NjU3MywyODA0NDE0NDgsMTU1ND
-E1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0
-NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbLTEzOTIzMDQ5NTgsMjgwNDQxNDQ4LDE1NT
+QxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3
+NDcsMTQ5ODQ5OTgwNl19
 -->
