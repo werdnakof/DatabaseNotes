@@ -37,9 +37,11 @@ Properties:
 - need multiphase commit protocol
 - break SQL queries into multi sub queries
 
+
+
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MT
-UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
-LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbLTE2MzgxNjIwNTksNzU5NTA2MjAxLDI4MD
+Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
+OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
 -->
