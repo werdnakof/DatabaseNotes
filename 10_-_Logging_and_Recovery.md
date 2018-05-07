@@ -157,11 +157,18 @@ flush log
 3. Write log record <end ckpt> and flush log
 
 ### Recovery with checkpointing
-
+1. \<end ckpt>
+	- Every value written by transactions that committed before the corresponding <start ckpt ()> has been written to disk ignore
+	- Any transaction named in the checkpoint start, or which has started since, may have changes that have not been written to disk (even if the transaction has committed)
+2. \<start ckpt (T1...Tn)>
+– Can’t tell whether committed transactions prior to this
+checkpoint had their changes written to disk
+– Search back to the previous <end ckpt>, find its
+corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NzgwNzQwOTYsLTU0MDk2MTQ3NSwtMT
-M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
-MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
-Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTczNTEzMjUyNSwtNTQwOTYxNDc1LC0xMz
+cxMjgzMjc3LC0yMDY3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQy
+NDczOTYsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4ND
+QsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
 -->
