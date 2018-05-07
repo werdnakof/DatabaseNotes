@@ -112,10 +112,10 @@ Two cases, depending on latest checkpoint log record:
 	- Disregard the log before the start of the earliest incomplete transaction
 
 # Redo Logging
-Waiting for all changes to be written to disk before commits is too slow, lets changes reside in buffer memory for longer
+Opposite of undo logging, \<commite T> is written before changes are written to disk
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDYyMjQ1MTIsLTIwNjc2MjgzNjgsLT
+eyJoaXN0b3J5IjpbLTEzNzEyODMyNzcsLTIwNjc2MjgzNjgsLT
 E3MTkyMDEyMzgsMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4
 NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX
 0=
