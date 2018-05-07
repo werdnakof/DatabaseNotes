@@ -68,11 +68,13 @@ and each coordinator can issue query to dbms in other nodes.
 		- subtrees in query plan excuted concurrently
 
 ### Intra-query operator parallelism
- 
+ ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/intra-query.png?raw=true)
+ To achieve this sort of parallelism, the data needs to be partitioned across se
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NT
-k1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEz
-NCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTE5NzM5NzE3NTcsLTE2NjIwNTM4MjMsMT
+YwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5
+NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMT
+Q5ODQ5OTgwNl19
 -->
