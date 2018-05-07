@@ -70,16 +70,14 @@ Log record types:
 
 ### Checkpointing with Undo Logging
 
-Disadvantage of this approach: we must scan the entire log.
+- Disadvantage of this approach: we must scan the entire log.
+- Introduce a periodic checkpoint in the log
+	- Before checkpoint, all transactions have committed or aborted
+	- Only need search backwards through the log to the most recent checkpoint
+- New log record type:
+	\<ckpt>: The database has been checkpointed
 
-Introduce a periodic checkpoint in the log
-- Before checkpoint, all transactions have committed or aborted
-- Only need search backwards through the log to the most recent checkpoint
-
-New log record type:
-\<ckpt>: The database has been checkpointed
-
-Checkpointing
+Checkpointing:
 1. Stop accepting new transactions
 2. Wait until all active transactions commit/abort and write <commit T>/<abort T> to the log
 3. flush log
@@ -89,7 +87,7 @@ Checkpointing
 
 ### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
-- System may appear to stall
+- Slow, reduce System may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
 
 New log record types:
@@ -115,7 +113,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0ODMzMjE1OCwxNDM0MjQ3Mzk2LDE2Mj
-c4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUy
-ODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTE3MTkyMDEyMzgsMTQzNDI0NzM5NiwxNj
+I3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1
+Mjg0LDQyMzE5MDkyXX0=
 -->
