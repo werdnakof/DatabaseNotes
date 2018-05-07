@@ -50,7 +50,7 @@ log records:
 |output(x)|  10 | 60  |10   | 60  |10   |50   |     |
 |output(y)|  10 | 60  |10   | 60  |10   |60   |     |
 |         |     |     |     |     |     |     |\<commit-T\>|
-|flush log|  
+|flush log|     |     |     |     |     |     |     |   
 
 ### Recovery with Undo Logging
 
@@ -111,6 +111,6 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODEwMjYxNzEsLTEyMDg1ODQ2NTUsNz
-cxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3Nz
+E0OTg4NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
 -->
