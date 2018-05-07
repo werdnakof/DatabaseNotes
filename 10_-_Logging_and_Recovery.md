@@ -91,8 +91,7 @@ Checkpointing:
 - Allow new transactions to enter the system during the checkpoint.
 
 New log record types:
-- \<start ckpt (T1...Tn)> (Checkpoint starts. T1...Tn are active transactions that
-have not yet committed)
+- \<start ckpt (T1...Tn)> (Checkpoint starts. T1...Tn are active transactions that have not yet committed)
 - \<end ckpt>
 
 1. Write \<start ckpt (T1...Tn)> to log and flush log
@@ -113,7 +112,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTkyMDEyMzgsMTQzNDI0NzM5NiwxNj
-I3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1
-Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbOTAzMTI2OTU0LC0xNzE5MjAxMjM4LDE0Mz
+QyNDczOTYsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4
+NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
 -->
