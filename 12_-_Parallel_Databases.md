@@ -76,14 +76,15 @@ and each coordinator can issue query to dbms in other nodes.
 	 2. **Hash partition** (e.g. hash a key to access by index, but we don't know where tuple will be in which partition)
 	 3. **schema partition** (by tables)
 
-### Rebalancing data in partitions
+- Require **rebalancing data** in partitions to maintain efficiency
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEwNjkxNTY1LDU3MDY3Njg4NiwtNjgyMj
-UwMDUzLC0xNjYyMDUzODIzLDE2MDM2MjAwNjksNzU5NTA2MjAx
-LDI4MDQ0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3Mz
-YxMTkyOSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbMTA2NjU0MzI0MywzMTA2OTE1NjUsNTcwNj
+c2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMsMTYwMzYyMDA2
+OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Nj
+c4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgw
+Nl19
 -->
