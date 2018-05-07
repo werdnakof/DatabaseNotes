@@ -71,11 +71,14 @@ and each coordinator can issue query to dbms in other nodes.
  ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/intra-query.png?raw=true)
  - To achieve this sort of parallelism, the data needs to be partitioned across servers.
  - Choice of partition types affords different parallel query processing approaches:
-	 1. Range part
+	 1. Range partition
+	 2. Hash partition
+	 3. schema partition
+- 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTg0MDQwNSwtMTY2MjA1MzgyMywxNj
+eyJoaXN0b3J5IjpbLTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNj
 AzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2
 LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxND
 k4NDk5ODA2XX0=
