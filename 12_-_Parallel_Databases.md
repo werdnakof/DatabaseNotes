@@ -29,12 +29,13 @@ Properties:
 - incoherence issues: same page can be in more than one buffer ("page" means "virtual page" (i.e. a chunk of virtual address space)
 - requires global lock
 
-**
+**Share Nothing**
+!
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNzkxMTYyMiwyODA0NDE0NDgsMTU1ND
-E1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0
-NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbLTExNjU1NjAwOTMsMjgwNDQxNDQ4LDE1NT
+QxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3
+NDcsMTQ5ODQ5OTgwNl19
 -->
