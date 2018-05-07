@@ -32,12 +32,14 @@ Properties:
 **Share Nothing**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-nothing-arch.png?raw=true)
 - each processor has unique part of the data
-- 1 page for each buffer (for each processor)
-- 
+- 1 page for each buffer (for each processor), no incoherence
+- needs distributed deadlock
+- need multiphase commit protocol
+- break SQL queries into multi sub queries
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY5OTI2MDI1LDI4MDQ0MTQ0OCwxNTU0MT
+eyJoaXN0b3J5IjpbNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MT
 UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
 LDE0OTg0OTk4MDZdfQ==
 -->
