@@ -156,17 +156,18 @@ for each log entry <T, X, new>, scanning forwards {
 		write value new for X to the database
 	}
 }
-
 for each incomplete transaction T {
 	write <abort T> to log
 }
 flush log
 ```
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/redo-logging-recovery.png)
 
 ### Checkpointing
 1. Write log record <start ckpt (T1..Tn)>, where T1...Tn are uncommitted, and flush log
 2. Write to disk all database items that have been written to buffers but not yet to disk, by transactions that have already committed
 3. Write log record <end ckpt> and flush log
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/redo-logging-checkpointing.png?raw=true)
 
 ### Recovery with checkpointing
 1. \<end ckpt>
@@ -177,9 +178,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDM1MjE1OTgsNzIyMDUyMTYyLC01OD
-g3NzAwNTksMjAwMzI1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgz
-Mjc3LC0yMDY3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOT
-YsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0
-NDc2NTI4NCw0MjMxOTA5Ml19
+eyJoaXN0b3J5IjpbMTA0OTE2MDEyMSwtMTYwMzUyMTU5OCw3Mj
+IwNTIxNjIsLTU4ODc3MDA1OSwyMDAzMjU3NDUxLC01NDA5NjE0
+NzUsLTEzNzEyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMz
+gsMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3
+MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
