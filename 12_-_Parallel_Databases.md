@@ -57,7 +57,9 @@ and each coordinator can issue query to dbms in other nodes.
 
 **Inter-query parallelism**: different queries excute on different processors
 **intra-query parallelism**: 
-	- **intra-operator (horizontal, JOINs)**: operators decomposed into independent operators instances, which perform the same operation on different subsets of data
+	- **intra-operator (horizontal, JOINs)**: 
+		- operators decomposed into independent operators instances, which perform the same operation on different subsets of data
+		- e.g. JOIN, the two sub relations can be carried out seperately before join
 	- **inter-operator (vertical)**: operations overlapped
 		- pipeline data from one stage to the next without materialisation
 		- e.g. SELECT -> PROJECT
@@ -65,7 +67,7 @@ and each coordinator can issue query to dbms in other nodes.
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2NzgyMjQyNywxNjAzNjIwMDY5LDc1OT
+eyJoaXN0b3J5IjpbMTA3NDcxMzAxNSwxNjAzNjIwMDY5LDc1OT
 UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
 LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
