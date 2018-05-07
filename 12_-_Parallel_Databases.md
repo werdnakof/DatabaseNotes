@@ -79,10 +79,9 @@ and each coordinator can issue query to dbms in other nodes.
 - Require **rebalancing data** in partitions to maintain efficiency
 
 
-
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NjU0MzI0MywzMTA2OTE1NjUsNTcwNj
+eyJoaXN0b3J5IjpbMTQ3OTkyNDEyNSwzMTA2OTE1NjUsNTcwNj
 c2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMsMTYwMzYyMDA2
 OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Nj
 c4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgw
