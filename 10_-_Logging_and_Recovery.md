@@ -116,9 +116,9 @@ Two cases, depending on latest checkpoint log record:
 - The ideal is about ignoreing incomplete transactions
 - a new record type **\<T, X, new>**
 
-**Rules:**
+**Rule:**
 1. Before modifying an item X on disk, all log records related to the modification i.e. \<T, X, new>, \<commit T> must be written to disk. For example:
-
+```
 |   Action  |  X |  Y | $X_b$ | $Y_b$ | $X_d$ | $Y_d$ |      Log     |
 |:---------:|:--:|:--:|:-----:|:-----:|:-----:|:-----:|:------------:|
 |           |    |    |       |       |   20  |   50  |  \<start-T\> |
@@ -132,10 +132,10 @@ Two cases, depending on latest checkpoint log record:
 | flush log |    |    |       |       |       |       |              |
 | output(x) | 10 | 60 |   10  |   60  |   10  |   50  |              |
 | output(y) | 10 | 60 |   10  |   60  |   10  |   60  |              |
-
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDI5NDYyMDkwLC01NDA5NjE0NzUsLTEzNz
+eyJoaXN0b3J5IjpbNzQ2NTc2MTQ1LC01NDA5NjE0NzUsLTEzNz
 EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
 NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
 wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
