@@ -89,6 +89,10 @@ flush log
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-checkpointing.png?raw=true)
 
+**Recovery**
+
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-with-checkpointing.png?raw=true)
+
 ### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
 - Slow, reduce pull through, system may appear to stall
@@ -111,7 +115,7 @@ Two cases, depending on latest checkpoint log record:
 1. \<end ckpt>
 	- All incomplete transactions began after the previous \<start ckpt ()>
 	- Disregard the log before the previous \<start ckpt ()> 
-
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/undo-logging-recovery-1.png?raw=true)
 
 2. \<start ckpt (T1...Tn)>
 	- System crash occurred during checkpoint
@@ -172,9 +176,9 @@ flush log
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzMDk3NzYsNzIyMDUyMTYyLC01ODg3Nz
-AwNTksMjAwMzI1NzQ1MSwtNTQwOTYxNDc1LC0xMzcxMjgzMjc3
-LC0yMDY3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMT
-YyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2
-NTI4NCw0MjMxOTA5Ml19
+eyJoaXN0b3J5IjpbOTI2NTE4Mzg1LDcyMjA1MjE2MiwtNTg4Nz
+cwMDU5LDIwMDMyNTc0NTEsLTU0MDk2MTQ3NSwtMTM3MTI4MzI3
+NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0MjQ3Mzk2LD
+E2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3
+NjUyODQsNDIzMTkwOTJdfQ==
 -->
