@@ -30,12 +30,13 @@ Properties:
 - requires global lock
 
 **Share Nothing**
-!
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-nothing-arch.png?raw=true)
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjU1NjAwOTMsMjgwNDQxNDQ4LDE1NT
+eyJoaXN0b3J5IjpbLTExOTgyNzM5ODQsMjgwNDQxNDQ4LDE1NT
 QxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3
 NDcsMTQ5ODQ5OTgwNl19
 -->
