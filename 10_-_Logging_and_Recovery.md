@@ -8,7 +8,7 @@ and operations:
 - output(x) - write to disk from buffer 
 - input(x) - write to buffer from disk
 
-| Action  |  X  |  Y  |$X_b$|$Y_b$|$X_d$|$Y_d$| Log |
+| Action  |  X  |  Y  |Xbuf|Ybuf|Xdisk|Ydisk| Log |
 |:-------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |         |     |     |     |     |20   |50   |     |
 | read(x) |  20 |     |20   |     |20   |50   |     |
@@ -110,6 +110,6 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03ND
-Q3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTIwNzYxMDk1NzEsLTEyMDg1ODQ2NTUsNz
+cxNDk4ODQ0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
 -->
