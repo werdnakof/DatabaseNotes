@@ -29,9 +29,9 @@ main approach of recovering from a system crash relies on a persistent record of
 - undo/redo logging
 
 Log record types:
-- **start-T**: transaction T has started execution
-- **commit-T**: transaction T has completed successfully and will make not further changes to database items
-- **abort-T**: transaction T could not complete successfully, no changes made by T will be copied to disk
+- **\<start-T>**: transaction T has started execution
+- **\<commit-T>**: transaction T has completed successfully and will make not further changes to database items
+- **\<abort-T>**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
 ### Undo Logging Rules
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
@@ -112,7 +112,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4MzU0MzY1MCwxNDM0MjQ3Mzk2LDE2Mj
-c4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4ODQ0LC03NDQ3NjUy
-ODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbLTE0MzkyODExNjQsMTQzNDI0NzM5NiwxNj
+I3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NCwtNzQ0NzY1
+Mjg0LDQyMzE5MDkyXX0=
 -->
