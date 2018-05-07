@@ -33,7 +33,7 @@ Log record types:
 - **\<commit-T>**: transaction T has completed successfully and will make not further changes to database items
 - **\<abort-T>**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
-# Undo Logging Rules
+# Undo Logging
 
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
 
@@ -70,7 +70,7 @@ Log record types:
 
 ### Checkpointing with Undo Logging
 
-- Disadvantage of this approach: we must scan the entire log.
+- Disadvantage of above approach: we must scan the entire log.
 - Introduce a periodic checkpoint in the log
 	- Before checkpoint, all transactions have committed or aborted
 	- Only need search backwards through the log to the most recent checkpoint
@@ -114,9 +114,9 @@ Two cases, depending on latest checkpoint log record:
 # Redo Logging
 - Opposite of undo logging, \<commite T> is written before changes are written to disk
 - The ideal is about ignoreing incomplete transactions
-- a new r
+- a new record type
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ3NTE3ODk5LC0xMzcxMjgzMjc3LC0yMD
+eyJoaXN0b3J5IjpbMTM1NTAzMzk2LC0xMzcxMjgzMjc3LC0yMD
 Y3NjI4MzY4LC0xNzE5MjAxMjM4LDE0MzQyNDczOTYsMTYyNzgz
 MDg4NywtMTIwODU4NDY1NSw3NzE0OTg4NDQsLTc0NDc2NTI4NC
 w0MjMxOTA5Ml19
