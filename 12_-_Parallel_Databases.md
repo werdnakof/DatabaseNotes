@@ -40,11 +40,18 @@ Properties:
 (The followings focus on share nothing only)
 
 Challenges with **share nothing**
-- 
+- data partition
+- balancing partitions
+- spliting queries
+- avoiding distributed deadlock
+- concurrency control
+- node failure
+
+# Parallel Query Proc
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMjQ1MzgzLDc1OTUwNjIwMSwyODA0ND
-E0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5Mjks
-LTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbLTEwMzAxMjQ3MTEsNzU5NTA2MjAxLDI4MD
+Q0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTky
+OSwtMTg1NjU2NzQ3LDE0OTg0OTk4MDZdfQ==
 -->
