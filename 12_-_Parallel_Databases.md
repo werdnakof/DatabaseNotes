@@ -69,12 +69,14 @@ and each coordinator can issue query to dbms in other nodes.
 
 ### Intra-query operator parallelism
  ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/intra-query.png?raw=true)
- To achieve this sort of parallelism, the data needs to be partitioned across se
+ - To achieve this sort of parallelism, the data needs to be partitioned across servers.
+ - Choice of partition types affords different parallel query processing approaches:
+	 1. Range part
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzM5NzE3NTcsLTE2NjIwNTM4MjMsMT
-YwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5
-NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMT
-Q5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTIwNTg0MDQwNSwtMTY2MjA1MzgyMywxNj
+AzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2
+LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxND
+k4NDk5ODA2XX0=
 -->
