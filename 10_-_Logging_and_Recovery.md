@@ -151,10 +151,15 @@ for each incomplete transaction T {
 flush log
 ```
 
+### Checkpointing
+1. Write log record <start ckpt (T1..Tn)>, where T1...Tn are uncommitted, and flush log
+2. Write to disk all database items that have been written to buffers but not yet to disk, by transactions that have already committed
+3. Write log record <end ckpt> and flush log
 
+### Recovery with checki
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA0NTA5NTM3LC01NDA5NjE0NzUsLTEzNz
-EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
-NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
-wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTE0MjgzNTc4ODMsLTU0MDk2MTQ3NSwtMT
+M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
+MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
+Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
 -->
