@@ -15,16 +15,18 @@
 ### Parallel Architectures
 
 **Shared Memory Architecture**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/shared-memory-arch.png?raw=true)
 Properties:
-- less complex
+- less complex software
 - limited scalability
-- single buffer
+- single buffer, more consistent
 - single database storage
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNz
-M2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Nj
+c4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgw
+Nl19
 -->
