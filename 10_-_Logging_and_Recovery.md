@@ -173,14 +173,16 @@ flush log
 1. \<end ckpt>
 	- Ignore every value written by transactions that committed before the corresponding <start ckpt ()> has been written to disk
 	- Any transaction named in the checkpoint start, or which has started since, may have changes that have not been written to disk (even if the transaction has committed)
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/redo-logging-checkingpointing-recovery-1.png?raw=true)
 2. \<start ckpt (T1...Tn)>
 	- Can’t tell whether committed transactions prior to this checkpoint had their changes written to disk
 	- Search back to the previous <end ckpt>, find its corresponding <start ckpt ()> and treat as before
+	![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/redo-logging-checkpointing-recovery-2.png?raw=true)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0OTE2MDEyMSwtMTYwMzUyMTU5OCw3Mj
-IwNTIxNjIsLTU4ODc3MDA1OSwyMDAzMjU3NDUxLC01NDA5NjE0
-NzUsLTEzNzEyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMz
-gsMTQzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3
-MTQ5ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
+eyJoaXN0b3J5IjpbLTE0ODY4OTYzMDgsLTE2MDM1MjE1OTgsNz
+IyMDUyMTYyLC01ODg3NzAwNTksMjAwMzI1NzQ1MSwtNTQwOTYx
+NDc1LC0xMzcxMjgzMjc3LC0yMDY3NjI4MzY4LC0xNzE5MjAxMj
+M4LDE0MzQyNDczOTYsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3
+NzE0OTg4NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
 -->
