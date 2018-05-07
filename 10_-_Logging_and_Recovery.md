@@ -87,7 +87,7 @@ Checkpointing:
 
 ### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
-- Slow, reduce System may appear to stall
+- Slow, reduce pull through, system may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
 
 New log record types:
@@ -112,7 +112,7 @@ Incomplete transactions are those encountered before the \<start ckpt ()> and th
 Disregard the log before the start of the earliest incomplete transaction
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTAzMTI2OTU0LC0xNzE5MjAxMjM4LDE0Mz
-QyNDczOTYsMTYyNzgzMDg4NywtMTIwODU4NDY1NSw3NzE0OTg4
-NDQsLTc0NDc2NTI4NCw0MjMxOTA5Ml19
+eyJoaXN0b3J5IjpbLTEyNDMxMzU4MjgsLTE3MTkyMDEyMzgsMT
+QzNDI0NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5
+ODg0NCwtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
