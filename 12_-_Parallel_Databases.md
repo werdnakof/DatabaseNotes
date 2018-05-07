@@ -57,14 +57,15 @@ and each coordinator can issue query to dbms in other nodes.
 
 **Inter-query parallelism**: different queries excute on different processors
 **intra-query parallelism**: 
-	- **intra-operator (horizontal)**: operators decomposed into independent operators instances, which perform the same operation on different subsets of data
+	- **intra-operator (horizontal, JOINs)**: operators decomposed into independent operators instances, which perform the same operation on different subsets of data
 	- **inter-operator (vertical)**: operations overlapped
 		- pipeline data from one stage to the next without materialisation
+		- e.g. 
 	- **bushy (independent)**: subtrees in query plan excuted concurrently
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwND
-QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
-LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTE0OTc0MzY4NDEsMTYwMzYyMDA2OSw3NT
+k1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEz
+NCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
