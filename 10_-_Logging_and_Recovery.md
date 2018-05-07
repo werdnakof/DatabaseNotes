@@ -34,7 +34,7 @@ Log record types:
 - **\<abort-T>**: transaction T could not complete successfully, no changes made by T will be copied to disk
 
 # Undo Logging
-
+**Rules:**
 1. If transaction T modifies database item X, then a log record of the form <T, X, old-value> must be written to disk **before** the new value of X is written to disk
 
 2. If a transaction T commits, then its \<commit-T\> log record must be written to disk only after all database items changed by T have been written to disk
@@ -54,7 +54,7 @@ Log record types:
 |           |    |    |       |       |       |       | \<commit-T\> |
 | flush log |    |    |       |       |       |       |              |
 
-### Recovery with Undo Logging
+### Recovery
 
 		for each log entry <T, X, old>, scanning backwards {
 			if <commit T> has been seen {
@@ -85,7 +85,7 @@ Log record types:
 5. flush log
 6. Resume accepting transactions
 
-**Nonquiescent Checkpointing**
+### Nonquiescent Checkpointing
 - Need to stop transaction processing while checkpointing (method above)
 - Slow, reduce pull through, system may appear to stall
 - Allow new transactions to enter the system during the checkpoint.
@@ -150,9 +150,11 @@ for each incomplete transaction T {
 }
 flush log
 ```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzI3MDU3MjAsLTU0MDk2MTQ3NSwtMT
-M3MTI4MzI3NywtMjA2NzYyODM2OCwtMTcxOTIwMTIzOCwxNDM0
-MjQ3Mzk2LDE2Mjc4MzA4ODcsLTEyMDg1ODQ2NTUsNzcxNDk4OD
-Q0LC03NDQ3NjUyODQsNDIzMTkwOTJdfQ==
+eyJoaXN0b3J5IjpbOTA0NTA5NTM3LC01NDA5NjE0NzUsLTEzNz
+EyODMyNzcsLTIwNjc2MjgzNjgsLTE3MTkyMDEyMzgsMTQzNDI0
+NzM5NiwxNjI3ODMwODg3LC0xMjA4NTg0NjU1LDc3MTQ5ODg0NC
+wtNzQ0NzY1Mjg0LDQyMzE5MDkyXX0=
 -->
