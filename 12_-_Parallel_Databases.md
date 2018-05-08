@@ -56,16 +56,20 @@ Within in dbms application, there are multiple processes i.e. coordinator proces
 and each coordinator can issue query to dbms in other nodes.
 
 **Inter-query parallelism**: involves executing different requests simultaneously on separate CPUs. Each request (task) runs on a single thread and executes on a single processor.
-**intra-query parallelism**: 
-	- **intra-operator (horizontal, JOINs)**: 
-		- operator split into independent operators instances, 
-		  which perform the operation on different subsets of data
-		- e.g. JOIN, the two sub relations can be carried out seperately before join
-	- **inter-operator (vertical)**: operations overlapped
-		- pipeline data from one stage to the next without materialisation
-		- e.g. SELECT -> PROJECT -> ... (each stage can be excuted in different process)
-	- **bushy (independent)**: 
-		- subtrees in query plan excuted concurrently
+
+**intra-query parallelism**:  involves having more than one CPU handle a single request simultaneously, so that portions of the query are computed in parallel on multi-processor hardware. Processing of these portions is handled by the Exchange algorithm. See  [Exchange algorithm (Exchange)](http://dcx.sybase.com/1200/en/dbusage/queryopt-exchange.html).
+
+Intra-query parallelism can benefit a workload where the number of simultaneously-executing queries is usually less than the number of available processors. The maximum degree of parallelism is controlled by the setting of the max_query_tasks option. See  [max_query_tasks option](http://dcx.sybase.com/1200/en/dbadmin/dboptions-s-5481804.html).
+
+- **intra-operator (horizontal, JOINs)**: 
+	- operator split into independent operators instances, 
+	  which perform the operation on different subsets of data
+	- e.g. JOIN, the two sub relations can be carried out seperately before join
+- **inter-operator (vertical)**: operations overlapped
+	- pipeline data from one stage to the next without materialisation
+	- e.g. SELECT -> PROJECT -> ... (each stage can be excuted in different process)
+- **bushy (independent)**: 
+	- subtrees in query plan excuted concurrently
 
 ### Intra-query operator parallelism
  ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/intra-query.png?raw=true)
@@ -90,7 +94,7 @@ We try to push as much of the
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2MTk2OTg3OCw3NTYyNTAzMjUsMTU0Nj
+eyJoaXN0b3J5IjpbMTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0Nj
 cwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1
 LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2Mj
 A1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgs
