@@ -22,8 +22,7 @@
 Hence, a valid Ttransaction requires both **Serialisbility** and **Atomicity**
 
 ### Transaction Problems
-
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/incorrect-summary-problem.png?raw=true)```markdown
+**_Incorrect Summary Problem_**
 | T1        | T2         | X_T1 | Y_T1 | S  | X_T2 | Y_T2 | Xdisk | Ydisk |
 |-----------|------------|------|------|----|------|------|-------|-------|
 |           |            |      |      |    |      |      | 20    | 50    |
@@ -35,11 +34,24 @@ Hence, a valid Ttransaction requires both **Serialisbility** and **Atomicity**
 | S = S + X |            | 10   |      | 10 | 10   |      | 10    | 50    |
 | read(Y)   |            | 10   | 50   | 10 | 10   |      | 10    | 50    |
 | S = S + Y |            | 10   | 50   | 60 | 10   |      | 10    | 50    |
-|           | read(Y)    | 10   | 50   | 60 | 10   | 60   | 10    | 50    |
+|           | read(Y)    | 10   | 50   | 60 | 10   | 50   | 10    | 50    |
+|           | Y = Y + 10 | 10   | 50   | 60 | 10   | 60   | 10    | 50    |
 |           | write(Y)   | 10   | 50   | 60 | 10   | 60   | 10    | 60    |
-```
 
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/lost-update-problem.png?raw=true)
+**_Lost Update Problem_**
+| T1         | T2        | X_T1 | Y_T1 | X_T2 | Y_T2 | Xdisk | Ydisk |
+|------------|-----------|------|------|------|------|-------|-------|
+|            |           |      |      |      |      | 20    | 50    |
+| read(X)    |           | 20   |      |      |      | 20    | 50    |
+| X = X - 10 |           | 10   |      |      |      | 20    | 50    |
+|            | read(X)   | 10   |      | 20   |      | 20    | 50    |
+|            | X = X + 5 | 10   |      | 25   |      | 20    | 50    |
+| write(X)   |           | 10   |      | 25   |      | 10    | 50    |
+| read(Y)    |           | 10   | 50   | 25   |      | 10    | 50    |
+|            | write(X)  | 10   | 50   | 25   |      | 25    | 50    |
+| Y = Y + 10 |           | 10   | 60   | 25   |      | 25    | 50    |
+| write(Y)   |           | 10   | 60   | 25   |      | 25    | 60    |
+
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/temporary-update.png?raw=true)
 
@@ -317,5 +329,5 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MDY3MDY1Ml19
+eyJoaXN0b3J5IjpbLTk3MjEwMTc0MSwxOTQwNjcwNjUyXX0=
 -->
