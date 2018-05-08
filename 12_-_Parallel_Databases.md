@@ -78,22 +78,22 @@ and each coordinator can issue query to dbms in other nodes.
 
 - Require **rebalancing data** in partitions to maintain efficiency
 
-# Data Shipping
+### Data Shipping
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
 $t_{1-4}$ are the partitions of the database
 
 Assume we have 10000 tuples for a relation
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping-2.png?raw=true)
+### Query Shipping
 
-
-
-
-
+We try to 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
-gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
-LTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OT
-UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
-LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
+eyJoaXN0b3J5IjpbLTU2NTUzNzQwNiwxNTQ2NzAxOTMzLDE4Mz
+cwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUsMzEwNjkxNTY1
+LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMDUzODIzLDE2MD
+M2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MTUyOTYs
+LTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3LDE0OT
+g0OTk4MDZdfQ==
 -->
