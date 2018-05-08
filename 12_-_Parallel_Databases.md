@@ -59,11 +59,9 @@ and each coordinator can issue query to dbms in other nodes.
 
 **intra-query parallelism**:  involves having more than one CPU handle a **single request** (not mulitple requests) simultaneously, so that **portions of the query** are computed in parallel on multi-processor hardware. Processing of these portions is handled by the Exchange algorithm. See  [Exchange algorithm (Exchange)](http://dcx.sybase.com/1200/en/dbusage/queryopt-exchange.html).
 
-Intra-query parallelism can benefit a workload where the number of simultaneously-executing queries is usually less than the number of available processors. The maximum degree of parallelism is controlled by the setting of the max_query_tasks option. See  [max_query_tasks option](http://dcx.sybase.com/1200/en/dbadmin/dboptions-s-5481804.html).
-
 - **intra-operator (horizontal, JOINs)**: 
 	- operator split into independent operators instances, 
-	  which perform the operation on different subsets of data
+	  which perform the operation on different subsets of data on seperate processor
 	- e.g. JOIN, the two sub relations can be carried out seperately before join
 - **inter-operator (vertical)**: operations overlapped
 	- pipeline data from one stage to the next without materialisation
@@ -94,10 +92,11 @@ We try to push as much of the
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg5OTE0NzM2LDE0NTA0NjQwOTIsNzU2Mj
-UwMzI1LDE1NDY3MDE5MzMsMTgzNzA0MjM0MywtNTc4MDAyODQs
-MTQ3OTkyNDEyNSwzMTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNT
-AwNTMsLTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEs
-MjgwNDQxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNj
-ExOTI5LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MD
+Q2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQz
+LC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2Nz
+Y4ODYsLTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5
+LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nz
+g5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2
+XX0=
 -->
