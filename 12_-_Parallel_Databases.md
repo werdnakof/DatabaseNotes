@@ -90,8 +90,11 @@ Very slow, coordinator node needs to filter a lot of tuples.
 
 ### Query Shipping
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/query-shipping.png?raw=true)
+- We try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
+- Network traffic is minimised
+- In practise, a mixture of query shipping and data shipping are employed
 
-We try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
+
 
 
 
@@ -108,11 +111,11 @@ We try to push as much of the operators to each partition, shifting all the proc
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzI3NzYzNDcsLTQ2NDY5MjgwNyw1OD
-k5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkz
-MywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMD
-Y5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2MjA1Mzgy
-MywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1ND
-E1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0
-N119
+eyJoaXN0b3J5IjpbMzc3NjY0NTQwLC00NjQ2OTI4MDcsNTg5OT
+E0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1LDE1NDY3MDE5MzMs
+MTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwzMTA2OT
+E1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMs
+MTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNT
+I5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDdd
+fQ==
 -->
