@@ -52,20 +52,37 @@ Hence, a valid Ttransaction requires both **Serialisbility** and **Atomicity**
 | Y = Y + 10 |           | 10   | 60   | 25   |      | 25    | 50    |
 | write(Y)   |           | 10   | 60   | 25   |      | 25    | 60    |
 
+**_Temporary Update Problem_**
+| T1         | T2        | X_T1 | Y_T1 | X_T2 | Y_T2 | Xdisk | Ydisk |
+|------------|-----------|------|------|------|------|-------|-------|
+|            |           |      |      |      |      | 20    | 50    |
+| read(X)    |           | 20   |      |      |      | 20    | 50    |
+| X = X - 10 |           | 10   |      |      |      | 20    | 50    |
+| write(X)   |           | 10   |      |      |      | 10    | 50    |
+|            | read(X)   | 10   |      | 10   |      | 10    | 50    |
+|            | X = X + 5 | 10   |      | 15   |      | 10    | 50    |
+|            | write(X)  | 10   |      | 15   |      | 15    | 50    |
+| read(Y)    |           | 10   | 50   | 15   |      | 15    | 50    |
+| **crash!** |           |      |      |      |      |       |       |
+| rollback   |           |      |      |      |      | 20    | 50    |
 
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/temporary-update.png?raw=true)
-
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/unrepeatable-problem.png?raw=true)
+**_Uprepeatable Read Problem_**
+| T1      | T2         |
+|---------|------------|
+| read(X) |            |
+|         | read(X)    |
+|         | X = X - 10 |
+|         | write(X)   |
+| read(X) |            |
 
 
 ### Transaction Lifecycle
-
-- consists of multiple stages
-    - BEGIN_TRANSACTION
-    - READ, WRITE
-    - END_TRANSACTION
-    - COMMIT_TRANSACTION
-    - ROLLBACK (or ABORT)
+Consists of multiple stages
+   - BEGIN_TRANSACTION
+   - READ, WRITE
+   - END_TRANSACTION
+   - COMMIT_TRANSACTION
+   - ROLLBACK (or ABORT)
     
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/transaction-life-cycle.png?raw=true)
    
@@ -329,5 +346,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MjEwMTc0MSwxOTQwNjcwNjUyXX0=
+eyJoaXN0b3J5IjpbMjQyOTU2MTA4LC05NzIxMDE3NDEsMTk0MD
+Y3MDY1Ml19
 -->
