@@ -98,9 +98,7 @@ Allows operators with producer-consumer dependency to be excuted concurrently
 - consumer can start before producer finishes
 - no need to materialization
 
-**Exchange Operator**: a type of operator which is inserted in-between steps of a query to 1) pipeline results between inter/intra-operations 2) coordinate streams. 
-Exchange operator assists inter operations by splitting up the 
-This provides supports to both vertical and horizontal. For example:
+**Exchange Operator**: a type of operator which is inserted in-between steps of a query to 1) pipeline results between inter/intra-operations 2) coordinate streams. This provides supports to both vertical and horizontal. For example:
 ```
 SELECT county, SUM(order_item)
 FROM customer, order
@@ -112,23 +110,25 @@ Without exchange operator, it would look like:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/exchange-op-1.png?raw=true)
 with exchange operator:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/exchange-op-2.png?raw=true)
+So exchange operators sit between **multiple** producers and consumers.
+
+# Bushy Parallelism
+todo
+
+# Parallel Query Processing
+Types of parallel query operators:
+- Enquiry
+- Collocated Join
+- Directed Join
+- Broadcast join
+- repartitioned join
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-> Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwOTA4MzQwOSwzNzc2NjQ1NDAsLTQ2ND
+eyJoaXN0b3J5IjpbLTI5Mzk5Mzg2NiwzNzc2NjQ1NDAsLTQ2ND
 Y5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUs
 MTU0NjcwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OT
 I0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1Mywt
