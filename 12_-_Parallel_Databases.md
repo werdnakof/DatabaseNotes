@@ -69,7 +69,6 @@ and each coordinator can issue query to dbms in other nodes.
 - **bushy (independent)**: 
 	- subtrees in query plan excuted concurrently
 
-### Intra-query operator parallelism
  ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/intra-query.png?raw=true)
  - To achieve this sort of parallelism, the data needs to be partitioned across servers.
  - e.g. a RELATION containing 1000 tuples is spread across 10 nodes, the time to search for a tuple has been reduced by a factor of 10, given we know which node to access beforehand (see next bullet point)
@@ -80,19 +79,23 @@ and each coordinator can issue query to dbms in other nodes.
 
 - Require **rebalancing data** in partitions to maintain efficiency
 
-### Data Shipping
+# Data Shipping vs Query Shipping
 Assume we have 10000 tuples for a relation
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping-2.png?raw=true)
-we can simply retrieve all tuples from every single partition, and carry out the necessary operations on all the tuples on the coordinator node. Like this:
+**Query Shipping**: we can simply retrieve all tuples from every single partition, and carry out the necessary operations on all the tuples on the coordinator node. Like this:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
 $t_{1-4}$ are the partitions of the database
 Very slow, coordinator node needs to filter a lot of tuples.
 
-### Query Shipping
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/query-shipping.png?raw=true)
-- We try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
-- Network traffic is minimised
-- In practise, a mixture of query shipping and data shipping are employed
+**Query Shipping**: we try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
+(Network traffic is also minimised)
+In practise, a mixture of query shipping and data shipping are employed
+
+# Inter Query Paralleism
+
+Allows operators with producer-consumer dependency to be excuted concurrently
+- 
 
 
 
@@ -111,11 +114,11 @@ Very slow, coordinator node needs to filter a lot of tuples.
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc3NjY0NTQwLC00NjQ2OTI4MDcsNTg5OT
-E0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1LDE1NDY3MDE5MzMs
-MTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwzMTA2OT
-E1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMs
-MTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNT
-I5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDdd
-fQ==
+eyJoaXN0b3J5IjpbLTEyNjg1NjYxNjAsMzc3NjY0NTQwLC00Nj
+Q2OTI4MDcsNTg5OTE0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1
+LDE1NDY3MDE5MzMsMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OT
+kyNDEyNSwzMTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMs
+LTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwND
+QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
+XX0=
 -->
