@@ -79,13 +79,17 @@ and each coordinator can issue query to dbms in other nodes.
 - Require **rebalancing data** in partitions to maintain efficiency
 
 # Data Shipping
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
+$t_n$ is a partition
+
+
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3ODAwMjg0LDE0Nzk5MjQxMjUsMzEwNj
-kxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMDUzODIz
-LDE2MDM2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MT
-UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
-LDE0OTg0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OT
+kyNDEyNSwzMTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMs
+LTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwND
+QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
+LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
 -->
