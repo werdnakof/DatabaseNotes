@@ -80,16 +80,20 @@ and each coordinator can issue query to dbms in other nodes.
 
 # Data Shipping
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
-$t_n$ is a partition
+$t_{1-4}$ are the partitions of the database
+
+Assume we have 10000 tuples for a relation
+
+
 
 
 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OT
-kyNDEyNSwzMTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMs
-LTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwND
-QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
-LC0xODU2NTY3NDcsMTQ5ODQ5OTgwNl19
+eyJoaXN0b3J5IjpbMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
+gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
+LTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OT
+UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
+LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2XX0=
 -->
