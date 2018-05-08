@@ -55,7 +55,7 @@ Within in dbms application, there are multiple processes i.e. coordinator proces
 
 and each coordinator can issue query to dbms in other nodes.
 
-**Inter-query parallelism**: different queries excute on different processors
+**Inter-query parallelism**: involves executing different requests simultaneously on separate CPUs. Each request (task) runs on a single thread and executes on a single processor.
 **intra-query parallelism**: 
 	- **intra-operator (horizontal, JOINs)**: 
 		- operator split into independent operators instances, 
@@ -90,10 +90,10 @@ We try to push as much of the
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzU2MjUwMzI1LDE1NDY3MDE5MzMsMTgzNz
-A0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwzMTA2OTE1NjUs
-NTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMsMTYwMz
-YyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5Niwt
-MTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5OD
-Q5OTgwNl19
+eyJoaXN0b3J5IjpbMTY2MTk2OTg3OCw3NTYyNTAzMjUsMTU0Nj
+cwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1
+LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2Mj
+A1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgs
+MTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NT
+Y1Njc0NywxNDk4NDk5ODA2XX0=
 -->
