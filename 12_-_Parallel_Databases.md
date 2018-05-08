@@ -148,15 +148,25 @@ Locals are managed by **_participants_** nodes
 - else resend global decision until receving \<ack T> from all
 
 There also be **_logging_** between each exchanges between coordinator and participants. see below:
-**
+**logging without abort**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging.png?raw=true)
+**logging with abort**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging-abort.png?raw=true)
 
+Each node will have state and state-transistions base on message received.
+**_no abort_**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state.png?raw=true)
+**_with abort_**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state-abort.png?raw=true)
 
+State diagrams of coordinator and participants:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-coord.png?raw=true)
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-part.png?raw=true)
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjAzNDI3NjQsLTI5Mzk5Mzg2NiwzNz
+eyJoaXN0b3J5IjpbLTE2NDI4ODY5NDEsLTI5Mzk5Mzg2NiwzNz
 c2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5
 Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
 gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
