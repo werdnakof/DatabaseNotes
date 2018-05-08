@@ -86,17 +86,29 @@ $t_{1-4}$ are the partitions of the database
 
 Assume we have 10000 tuples for a relation
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping-2.png?raw=true)
-### Query Shipping
 
-We try to push as much of the 
+### Query Shipping
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/query-shipping.png?raw=true)
+We try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
+
+
+
+
+
+
+
+
+
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MD
-Q2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQz
-LC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2Nz
-Y4ODYsLTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5
-LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nz
-g5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0NywxNDk4NDk5ODA2
+eyJoaXN0b3J5IjpbMTU4NjE1NjQ4OCwtNDY0NjkyODA3LDU4OT
+kxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2NzAxOTMz
+LDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUsMzEwNj
+kxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMDUzODIz
+LDE2MDM2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MT
+UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
 XX0=
 -->
