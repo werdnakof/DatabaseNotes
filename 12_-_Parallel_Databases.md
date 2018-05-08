@@ -86,14 +86,14 @@ Assume we have 10000 tuples for a relation
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping-2.png?raw=true)
 ### Query Shipping
 
-We try to 
+We try to push as much of the 
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NTUzNzQwNiwxNTQ2NzAxOTMzLDE4Mz
-cwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUsMzEwNjkxNTY1
-LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMDUzODIzLDE2MD
-M2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MTUyOTYs
-LTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3LDE0OT
-g0OTk4MDZdfQ==
+eyJoaXN0b3J5IjpbNzU2MjUwMzI1LDE1NDY3MDE5MzMsMTgzNz
+A0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwzMTA2OTE1NjUs
+NTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNTM4MjMsMTYwMz
+YyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4LDE1NTQxNTI5Niwt
+MTg1Njc4OTEzNCwtMzczNjExOTI5LC0xODU2NTY3NDcsMTQ5OD
+Q5OTgwNl19
 -->
