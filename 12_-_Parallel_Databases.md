@@ -158,7 +158,6 @@ Each node will have state and state-transistions base on message received.
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state.png?raw=true)
 **_with abort_**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state-abort.png?raw=true)
-
 State diagrams of coordinator and participants:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-coord.png?raw=true)
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-part.png?raw=true)
@@ -166,11 +165,11 @@ State diagrams of coordinator and participants:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDI4ODY5NDEsLTI5Mzk5Mzg2NiwzNz
-c2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5
-Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
-gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
-LTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OT
-UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
-XX0=
+eyJoaXN0b3J5IjpbLTczNzgzNzEzMSwtMjkzOTkzODY2LDM3Nz
+Y2NDU0MCwtNDY0NjkyODA3LDU4OTkxNDczNiwxNDUwNDY0MDky
+LDc1NjI1MDMyNSwxNTQ2NzAxOTMzLDE4MzcwNDIzNDMsLTU3OD
+AwMjg0LDE0Nzk5MjQxMjUsMzEwNjkxNTY1LDU3MDY3Njg4Niwt
+NjgyMjUwMDUzLC0xNjYyMDUzODIzLDE2MDM2MjAwNjksNzU5NT
+A2MjAxLDI4MDQ0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzRd
+fQ==
 -->
