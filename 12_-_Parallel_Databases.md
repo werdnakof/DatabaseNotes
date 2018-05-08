@@ -93,11 +93,25 @@ Very slow, coordinator node needs to filter a lot of tuples.
 In practise, a mixture of query shipping and data shipping are employed
 
 # Inter Query Paralleism
-
 Allows operators with producer-consumer dependency to be excuted concurrently
-- 
+- results produced by producer are pipelined directly to consumer
+- consumer can start before producer finishes
+- no need to materialization
 
-
+**Exchange Operator**: a type of operator which is inserted in-between steps of a query to 1) pipeline results between inter/intra-operations 2) coordinate streams. 
+Exchange operator assists inter operations by splitting up the 
+This provides supports to both vertical and horizontal. For example:
+```
+SELECT county, SUM(order_item)
+FROM customer, order
+WHERE order.customer_id=customer_id
+GROUP BY county
+ORDER BY SUM(order_item)
+```
+Without exchange operator, it would look like:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/exchange-op-1.png?raw=true)
+with exchange operator:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/exchange-op-2.png?raw=true)
 
 
 
@@ -114,11 +128,11 @@ Allows operators with producer-consumer dependency to be excuted concurrently
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjg1NjYxNjAsMzc3NjY0NTQwLC00Nj
-Q2OTI4MDcsNTg5OTE0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1
-LDE1NDY3MDE5MzMsMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OT
-kyNDEyNSwzMTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMs
-LTE2NjIwNTM4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwND
-QxNDQ4LDE1NTQxNTI5NiwtMTg1Njc4OTEzNCwtMzczNjExOTI5
-XX0=
+eyJoaXN0b3J5IjpbMTkwOTA4MzQwOSwzNzc2NjQ1NDAsLTQ2ND
+Y5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUs
+MTU0NjcwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OT
+I0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1Mywt
+MTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0ND
+E0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5Mjld
+fQ==
 -->
