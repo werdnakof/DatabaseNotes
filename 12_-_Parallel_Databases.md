@@ -161,14 +161,15 @@ State diagrams of coordinator and participants:
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-coord.png?raw=true)
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-part.png?raw=true)
 
+### Dealing with failures
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mjg5ODgwOSwtMjkzOTkzODY2LDM3Nz
-Y2NDU0MCwtNDY0NjkyODA3LDU4OTkxNDczNiwxNDUwNDY0MDky
-LDc1NjI1MDMyNSwxNTQ2NzAxOTMzLDE4MzcwNDIzNDMsLTU3OD
-AwMjg0LDE0Nzk5MjQxMjUsMzEwNjkxNTY1LDU3MDY3Njg4Niwt
-NjgyMjUwMDUzLC0xNjYyMDUzODIzLDE2MDM2MjAwNjksNzU5NT
-A2MjAxLDI4MDQ0MTQ0OCwxNTU0MTUyOTYsLTE4NTY3ODkxMzRd
-fQ==
+eyJoaXN0b3J5IjpbNjc5NTg1ODgzLC0xNzI4OTg4MDksLTI5Mz
+k5Mzg2NiwzNzc2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYs
+MTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MD
+QyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1
+NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNj
+IwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2XX0=
+
 -->
