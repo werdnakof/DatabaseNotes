@@ -10,7 +10,7 @@ Transaction is a set of operations/changes used to achieve ACID behaviour.
 
 **Isolation** means that one transaction cannot read data from another transaction that is not yet completed. If 2 transactions are executing concurrently, each one will see the _world_ as if they were executing sequentially. If one needs to read data that is written by another, it will have to wait until the other is finished.
 
-This also means that transactions require **concurrency locking mechanisms**. They guarantee correctness even when being interleaved. Isolation brings us the benefit of hiding uncommitted state changes from the outside world, as failing transactions shouldn’t ever corrupt the state of the system.
+This also means that transactions require **concurrency locking mechanisms**. They guarantee correctness even when being _interleaved_. Isolation brings us the benefit of hiding uncommitted state changes from the outside world, as failing transactions shouldn’t ever corrupt the state of the system.
 
 **Durability** means that:
 1. a transaction must guarantee that **all of the changes** have been recorded permanently to disk, before marking it as complete.
@@ -360,6 +360,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMzQ0NjMwLC05NzIxMDE3NDEsMTk0MD
-Y3MDY1Ml19
+eyJoaXN0b3J5IjpbMjA2NTI3MDEwMiwtOTcyMTAxNzQxLDE5ND
+A2NzA2NTJdfQ==
 -->
