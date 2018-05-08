@@ -18,24 +18,12 @@ This also means that transactions require **concurrency locking mechanisms**. Th
 
 ### Transaction Processing Terminologies
 
-**Concurrency**
-- Databases nowadays are designed to be used by multiple users concurrently
-- Stored data items can be accessed concurrently
-
-**Transaction**
-- a logical unit of work that apply changes to the contents of a database
-- it groups a bunch of database operations to be executed together
-
 **Serial** vs **Serialisable**
 - (ideal) run transactions serially -> no overlap
 - (in practise) parallelism is required, too many transactions need to be executed
-- Serialisable: behave like serial, but executed concurrently
+- Serialisable: **_behave like serial, but executed concurrently_**
 
-**Atomicity**
-- Transaction need to be atomic
-- either all operations are executed, or none
-
-Hence, a valid Ttransaction requires both **Serialisbility** and **Atomicity**
+Hence, a valid transaction requires both **Serialisbility** and **Atomicity**
 
 ### Transaction Problems
 **_Incorrect Summary Problem_**
@@ -360,6 +348,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NTI3MDEwMiwtOTcyMTAxNzQxLDE5ND
-A2NzA2NTJdfQ==
+eyJoaXN0b3J5IjpbMzU5ODY4MzMsLTk3MjEwMTc0MSwxOTQwNj
+cwNjUyXX0=
 -->
