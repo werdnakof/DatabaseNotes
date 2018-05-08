@@ -246,16 +246,17 @@ We need extra rules:
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/two-phrase-locking.png?raw=true)
 
-T1:				   T2:
+| T1:               | T2:               |
+|-------------------|-------------------|
+| lock-shared(Y)    | lock-shared(X)    |
+| read(Y)           | read(X)           |
+| lock-exclusive(X) | lock-exclusive(Y) |
+| unlock(Y)         | unlock(X)         |
+| read(X)           | read(Y)           |
+| X := X + Y        | Y := X + Y        |
+| write(X)          | write(Y)          |
+| unlock(X)         | unlock(Y)         |
 
-lock-shared(Y)     lock-shared(X)
-read(Y)			   read(X)
-lock-exclusive(X)  lock-exclusive(Y)
-unlock(Y)          unlock(X)
-read(X)	           read(Y)
-X := X + Y		   Y := X + Y
-write(X)		   write(Y)
-unlock(X)		   unlock(Y)
 
 **Dead Lock**
 
@@ -347,6 +348,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEzNTg4NzMwLC05NzIxMDE3NDEsMTk0MD
+eyJoaXN0b3J5IjpbNDU3NDI1NTQ0LC05NzIxMDE3NDEsMTk0MD
 Y3MDY1Ml19
 -->
