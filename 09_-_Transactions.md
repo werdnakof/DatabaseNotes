@@ -1,6 +1,6 @@
 # Transactions and Concurrency
 
-### Transaction Processing
+### Transaction Processing Terminologies
 
 **Concurrency**
 - Databases nowadays are designed to be used by multiple users concurrently
@@ -19,11 +19,25 @@
 - Transaction need to be atomic
 - either all operations are executed, or none
 
-Hence, a valid Transaction requires both **Serialisbility** and **Atomicity**
+Hence, a valid Ttransaction requires both **Serialisbility** and **Atomicity**
 
 ### Transaction Problems
 
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/incorrect-summary-problem.png?raw=true)
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/incorrect-summary-problem.png?raw=true)```markdown
+| T1        | T2         | X_T1 | Y_T1 | S  | X_T2 | Y_T2 | Xdisk | Ydisk |
+|-----------|------------|------|------|----|------|------|-------|-------|
+|           |            |      |      |    |      |      | 20    | 50    |
+| S = 0     |            |      |      | 0  |      |      | 20    | 50    |
+|           | read(X)    |      |      | 0  | 20   |      | 20    | 50    |
+|           | X = X - 10 |      |      | 0  | 10   |      | 20    | 50    |
+|           | write(X)   |      |      | 0  | 10   |      | 10    | 50    |
+| read(X)   |            | 10   |      | 0  | 10   |      | 10    | 50    |
+| S = S + X |            | 10   |      | 10 | 10   |      | 10    | 50    |
+| read(Y)   |            | 10   | 50   | 10 | 10   |      | 10    | 50    |
+| S = S + Y |            | 10   | 50   | 60 | 10   |      | 10    | 50    |
+|           | read(Y)    | 10   | 50   | 60 | 10   | 60   | 10    | 50    |
+|           | write(Y)   | 10   | 50   | 60 | 10   | 60   | 10    | 60    |
+```
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/lost-update-problem.png?raw=true)
 
@@ -302,3 +316,6 @@ What should be locked?
 **Coarser** granularity gives lower degree of concurrency
 
 **Finer** granularity gives higher overhead
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTk0MDY3MDY1Ml19
+-->
