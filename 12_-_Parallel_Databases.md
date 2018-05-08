@@ -152,7 +152,6 @@ There also be **_logging_** between each exchanges between coordinator and parti
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging.png?raw=true)
 **logging with abort**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging-abort.png?raw=true)
-
 Each node will have state and state-transistions base on message received.
 **_no abort_**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state.png?raw=true)
@@ -165,7 +164,7 @@ State diagrams of coordinator and participants:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNzgzNzEzMSwtMjkzOTkzODY2LDM3Nz
+eyJoaXN0b3J5IjpbLTE3Mjg5ODgwOSwtMjkzOTkzODY2LDM3Nz
 Y2NDU0MCwtNDY0NjkyODA3LDU4OTkxNDczNiwxNDUwNDY0MDky
 LDc1NjI1MDMyNSwxNTQ2NzAxOTMzLDE4MzcwNDIzNDMsLTU3OD
 AwMjg0LDE0Nzk5MjQxMjUsMzEwNjkxNTY1LDU3MDY3Njg4Niwt
