@@ -2,15 +2,19 @@
 
 ### ACID
 
-A transaction is a set of related changes which is used to achieve some of the ACID properties. Transactions are tools to achieve the ACID properties.
+Transaction is a set of operations/changes used to achieve ACID behaviour.
 
-**Atomicity** means that you can guarantee that all of a transaction happens, or none of it does; you can do complex operations as one single unit, all or nothing, and a crash, power failure, error, or anything else won't allow you to be in a state in which allow partial changes.
+**Atomicity** guarantees that a **whole** transaction occurs, or none of it does; you can do complex operations as one single unit i.e. a transaction, all or nothing, and a crash, power failure, error, or anything else won't allow you to be in a state in which allow partial changes.
 
 **Consistency** means that you guarantee that your data will be consistent; none of the constraints you have on related data will ever be violated.
 
-**Isolation** means that one transaction cannot read data from another transaction that is not yet completed. If two transactions are executing concurrently, each one will see the world as if they were executing sequentially, and if one needs to read data that is written by another, it will have to wait until the other is finished.
+**Isolation** means that one transaction cannot read data from another transaction that is not yet completed. If 2 transactions are executing concurrently, each one will see the _world_ as if they were executing sequentially. If one needs to read data that is written by another, it will have to wait until the other is finished.
 
-Durability means that once a transaction is complete, it is guaranteed that all of the changes have been recorded to a durable medium (such as a hard disk), and the fact that the transaction has been completed is likewise recorded.
+This also means that transactions require **concurrency locking mechanisms**. They guarantee correctness even when being interleaved. Isolation brings us the benefit of hiding uncommitted state changes from the outside world, as failing transactions shouldn’t ever corrupt the state of the system.
+
+**Durability** means that:
+1. a transaction must guarantee that **all of the changes** have been recorded permanently to disk, before marking it as complete.
+2. The changes are recorded in a persisted transaction log. If a system crash or a power outage occurs, then all unfinished committed transactions may be replayed.
 
 ### Transaction Processing Terminologies
 
@@ -356,6 +360,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NDQ3MzM4MiwtOTcyMTAxNzQxLDE5ND
-A2NzA2NTJdfQ==
+eyJoaXN0b3J5IjpbLTQwMzQ0NjMwLC05NzIxMDE3NDEsMTk0MD
+Y3MDY1Ml19
 -->
