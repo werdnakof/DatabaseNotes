@@ -81,15 +81,19 @@ and each coordinator can issue query to dbms in other nodes.
 - Require **rebalancing data** in partitions to maintain efficiency
 
 ### Data Shipping
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
-$t_{1-4}$ are the partitions of the database
-
 Assume we have 10000 tuples for a relation
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping-2.png?raw=true)
+we can simply retrieve all tuples from every single partition, and carry out the necessary operations on all the tuples on the coordinator node. Like this:
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/data-shipping.png?raw=true)
+$t_{1-4}$ are the partitions of the database
+Very slow, coordinator node needs to filter a lot of tuples.
 
 ### Query Shipping
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/query-shipping.png?raw=true)
+
 We try to push as much of the operators to each partition, shifting all the processing to each partition node (parallel)
+
+
 
 
 
@@ -104,11 +108,11 @@ We try to push as much of the operators to each partition, shifting all the proc
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU4NjE1NjQ4OCwtNDY0NjkyODA3LDU4OT
-kxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2NzAxOTMz
-LDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUsMzEwNj
-kxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMDUzODIz
-LDE2MDM2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OCwxNTU0MT
-UyOTYsLTE4NTY3ODkxMzQsLTM3MzYxMTkyOSwtMTg1NjU2NzQ3
-XX0=
+eyJoaXN0b3J5IjpbLTEwNzI3NzYzNDcsLTQ2NDY5MjgwNyw1OD
+k5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkz
+MywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMD
+Y5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2MjA1Mzgy
+MywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1ND
+E1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5MjksLTE4NTY1Njc0
+N119
 -->
