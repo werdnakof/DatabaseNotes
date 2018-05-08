@@ -123,16 +123,30 @@ Types of parallel query operators:
 - Broadcast join
 - repartitioned join
 
+# Reliability in Parallel Databases
+Uses **Two Phase Commit** (**2PC**)
+- similar to **Two Phase Locking** for transactions, we try to enforce ACID properties on all the database nodes.
+- C, I and D are already perserved when we use Transations
+- A is not, hence we need **2PC**
 
+### Two Phase Commit
+2 forms of transactions are introduced:
+- **Global Transaction**
+- **Local Transaction** which global transaction is decomposed into
+Global is managed by the **_coordinator_** node
+Locals are managed by **_participants_** nodes
+
+**Phase 1**:
+- coordinator send 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5Mzk5Mzg2NiwzNzc2NjQ1NDAsLTQ2ND
-Y5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUs
-MTU0NjcwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OT
-I0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1Mywt
-MTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0ND
-E0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0LC0zNzM2MTE5Mjld
-fQ==
+eyJoaXN0b3J5IjpbLTE2ODk5MDY3MzEsLTI5Mzk5Mzg2NiwzNz
+c2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5
+Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
+gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
+LTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNjIwMDY5LDc1OT
+UwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2LC0xODU2Nzg5MTM0
+XX0=
 -->
