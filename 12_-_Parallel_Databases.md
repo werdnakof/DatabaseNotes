@@ -137,12 +137,26 @@ Global is managed by the **_coordinator_** node
 Locals are managed by **_participants_** nodes
 
 **Phase 1**:
-- coordinator send 
+- coordinator sends \<prepare T> to participants
+- participants response with either \<vote-commit T> or \<vote-abort T>
+- coordinator will wait for participants to response within a time period
+
+**Phase 2**
+- if all participants return \<vote-commit T>, send \<commit T> to all participants
+- participants respond with \<ack T> or \<vote-abort T> within timeout period
+- if coordinator receive \<ack T> from all, complete/mark end of transaction
+- else resend global decision until receving \<ack T> from all
+
+There also be **_logging_** between each exchanges between coordinator and participants. see below:
+**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging.png?raw=true)
+
+
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODk5MDY3MzEsLTI5Mzk5Mzg2NiwzNz
+eyJoaXN0b3J5IjpbLTExMjAzNDI3NjQsLTI5Mzk5Mzg2NiwzNz
 c2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5
 Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MDQyMzQzLC01Nz
 gwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1NzA2NzY4ODYs
