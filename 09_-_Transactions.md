@@ -142,11 +142,12 @@ Lock Operations:
 
 Outcome of lock operations on a data item:
 
-|                      | Lock Requested
-|                      | Shared  | Exclusive
-|----------------------|--------------------
-|lock mode | Shared    | Granted | Wait
-|   in X   | Exclusive | Wait    | Wait
+|            |           | (Lock    | Requested)|
+|------------|-----------|----------|-----------|
+|            |           | Shared   | Exclusive |
+| (lock mode | Shared    | Granted  | Wait      |
+| in X)      | Exclusive | Wait     | Wait      |
+
 
 Locking Rules:
 
@@ -346,6 +347,6 @@ What should be locked?
 
 **Finer** granularity gives higher overhead
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQyOTU2MTA4LC05NzIxMDE3NDEsMTk0MD
+eyJoaXN0b3J5IjpbNTEzNTg4NzMwLC05NzIxMDE3NDEsMTk0MD
 Y3MDY1Ml19
 -->
