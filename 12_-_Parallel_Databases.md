@@ -129,25 +129,25 @@ Uses **Two Phase Commit** (**2PC**)
 - C, I and D are already perserved when we use Transations
 - A is not, hence we need **2PC**
 
-### Two Phase Commit
+## Two Phase Commit
 2 forms of transactions are introduced:
 - **Global Transaction**
 - **Local Transaction** which global transaction is decomposed into
-Global is managed by the **_coordinator_** node
-Locals are managed by **_participants_** nodes
+Global is managed by the **_coordinator ( C )_** node 
+Locals are managed by **_participants ( P )_** nodes
 
 **Phase 1**:
-- coordinator sends \<prepare T> to participants
-- participants response with either \<vote-commit T> or \<vote-abort T>
-- coordinator will wait for participants to response within a time period
+- C sends \<prepare T> to Ps
+- Ps response with either \<vote-commit T> or \<vote-abort T>
+- C will wait for Ps to response within a time period
 
 **Phase 2**
-- if all participants return \<vote-commit T>, send \<commit T> to all participants
-- participants respond with \<ack T> or \<vote-abort T> within timeout period
-- if coordinator receive \<ack T> from all, complete/mark end of transaction
+- if all Ps return \<vote-commit T>, C send \<commit T> to all Ps
+- Ps respond with \<ack T> or \<vote-abort T> within timeout period
+- if C receive \<ack T> from all, complete/mark end of transaction
 - else resend global decision until receving \<ack T> from all
 
-There also be **_logging_** between each exchanges between coordinator and participants. see below:
+There also be **_logging_** between each exchanges between C and Ps. see below:
 **logging without abort**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging.png?raw=true)
 **logging with abort**
@@ -157,24 +157,35 @@ Each node will have state and state-transistions base on message received.
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state.png?raw=true)
 **_with abort_**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state-abort.png?raw=true)
-State diagrams of coordinator and participants:
+State diagrams of C and Ps:
+C
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-coord.png?raw=true)
+P
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-part.png?raw=true)
 
-### Dealing with failures
+## Dealing with Failures
 
-Coordinator and participants can fail during a commit.
+C and Ps can fail during a commit.
 - Other nodes will time out while waiting for the next message from the failed node, and invoke a **_termination protocol_**
 - When failed node restarts, it tries to resolve the state of the commit by invoking **_recovery protocol_**
 - The protocols' behaviours depends on the state the node were when they failed.
 
 ### Termination Protocol (Coordinator)
-Timeout in **Wait** state
-- coordinator is waiting for participa
+2 scenarios:
+1. Timeout in **Wait** state
+	- C waits for Ps to vote on whether they will _commit_ or _abort_
+	- a missing vote means C cannot commit a _Global Transaction_
+	- C may abort the Global Transaction
+2. Timeout in **Commit**/**Abort** states
+	- C waits for Ps to acknowledge commit or abort
+	- C resends global decision to Ps who did not acknowledge
+
+
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDg1NjkwMCw2Nzk1ODU4ODMsLTE3Mj
+eyJoaXN0b3J5IjpbMjAzNzExMTAzOSw2Nzk1ODU4ODMsLTE3Mj
 g5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwtNDY0NjkyODA3
 LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2Nz
 AxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUs
