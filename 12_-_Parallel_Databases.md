@@ -171,21 +171,36 @@ C and Ps can fail during a commit.
 - The protocols' behaviours depends on the state the node were when they failed.
 
 ### Termination Protocol (Coordinator)
-2 scenarios:
-1. Timeout in **Wait** state
+2 timeout scenarios:
+1. Timeout in **WAIT** state
 	- C waits for Ps to vote on whether they will _commit_ or _abort_
 	- a missing vote means C cannot commit a _Global Transaction_
 	- C may abort the Global Transaction
-2. Timeout in **Commit**/**Abort** states
+2. Timeout in **COMMIT**/**ABORT** states
 	- C waits for Ps to acknowledge commit or abort
 	- C resends global decision to Ps who did not acknowledge
 
+### Termination Protocol (Participant)
+2 timeout scenarios:
+1. Timeout in **INITIAL** state
+	- P waits for a \<prepare T>
+	- P may unilaterally abort the transaction after a timeout
+	- if \<prepare T> arrives after unilateral abort, either:
+		- resend the \<vote-abort T> 
+		- ignore (C will then time out on **WAIT**)
+2. Timeout in **READY** state
+	- P waits for C to receive \<commit T> or \<abort T>
+	- P can contact other Ps to find out if they know the dcision (coorperative protocol)
 
-
+### Recovery Protocol (Coordinator)
+1. Failure in **INITIAL**: simply restart commit procedure
+2. Failure in **WAIT**:
+	- C has send \<prepare T> to all Ps, but has received \<vote-commit T> or \<vote-abort T> from all Ps
+	- 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNzExMTAzOSw2Nzk1ODU4ODMsLTE3Mj
+eyJoaXN0b3J5IjpbMTA2MTQ3MTgwOCw2Nzk1ODU4ODMsLTE3Mj
 g5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwtNDY0NjkyODA3
 LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2Nz
 AxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUs
