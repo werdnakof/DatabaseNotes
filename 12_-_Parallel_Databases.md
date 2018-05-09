@@ -190,7 +190,7 @@ C and Ps can fail during a commit.
 		- ignore (C will then time out on **WAIT**)
 2. Timeout in **READY** state
 	- P waits for C to receive \<commit T> or \<abort T>
-	- P can contact other Ps to find out if they know the dcision (coorperative protocol)
+	- P can contact other Ps to find out if they know the decision (coorperative protocol)
 
 ### Recovery Protocol (Coordinator)
 1. Recover after failure in **INITIAL**: simply restart commit procedure
@@ -203,13 +203,17 @@ C and Ps can fail during a commit.
 ### Recovery Protocol (Participant)
 1. Recover after failure in **INITIAL**
 	- P has not yet voted, hence C could not have reached a decision, P should unilaterally send \<vote-abort T>
-2. 
+2. Recovery after failure in **READY**
+	- P has sent \<vote-commit T> to reach **READY** state, but didn't receive \<commit T> or \<abort T> from C (when C has reached a global decision)
+	- cooperative termination protocol
+3. Recover after failure in **COMMIT** / **ABORT**
+	- resend \<ack> to C
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjQ2MzM1NTksNjc5NTg1ODgzLC0xNz
-I4OTg4MDksLTI5Mzk5Mzg2NiwzNzc2NjQ1NDAsLTQ2NDY5Mjgw
-Nyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0Nj
-cwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1
-LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2Mj
-A1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDhd
-fQ==
+eyJoaXN0b3J5IjpbNTI5MzMyMDY2LDY3OTU4NTg4MywtMTcyOD
+k4ODA5LC0yOTM5OTM4NjYsMzc3NjY0NTQwLC00NjQ2OTI4MDcs
+NTg5OTE0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1LDE1NDY3MD
+E5MzMsMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwz
+MTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNT
+M4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4XX0=
+
 -->
