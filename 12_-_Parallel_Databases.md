@@ -163,11 +163,11 @@ C
 P
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-part.png?raw=true)
 
-## Dealing with Failures
+## Dealing with Failures/Recoveries
 
 C and Ps can fail during a commit.
-- Other nodes will time out while waiting for the next message from the failed node, and invoke a **_termination protocol_**
-- When failed node restarts, it tries to resolve the state of the commit by invoking **_recovery protocol_**
+- **_Termination protocol_** is invoked when other nodes time out while waiting for the next message from the failed node
+- **_Recovery protocol_** is invoked when failed node restarts, it tries to resolve the current state of the commit
 - The protocols' behaviours depends on the state the node were when they failed.
 
 ### Termination Protocol (Coordinator)
@@ -193,18 +193,23 @@ C and Ps can fail during a commit.
 	- P can contact other Ps to find out if they know the dcision (coorperative protocol)
 
 ### Recovery Protocol (Coordinator)
-1. Failure in **INITIAL**: simply restart commit procedure
-2. Failure in **WAIT**:
+1. Recover after failure in **INITIAL**: simply restart commit procedure
+2. Recover after failure in **WAIT**:
 	- C has send \<prepare T> to all Ps, but has received \<vote-commit T> or \<vote-abort T> from all Ps
-	- 
+	- Recovery by restarting commit procedure by sending \<prepare T>
+3. Recover after failure in **COMMIT**/**ABORT**
+	- if C doesn't receive \<ack> from all Ps, terminate commit procedure
 
-
+### Recovery Protocol (Participant)
+1. Recover after failure in **INITIAL**
+	- P has not yet voted, hence C could not have reached a decision, P should unilaterally send \<vote-abort T>
+2. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2MTQ3MTgwOCw2Nzk1ODU4ODMsLTE3Mj
-g5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwtNDY0NjkyODA3
-LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2Nz
-AxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUs
-MzEwNjkxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMD
-UzODIzLDE2MDM2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OF19
-
+eyJoaXN0b3J5IjpbLTExNjQ2MzM1NTksNjc5NTg1ODgzLC0xNz
+I4OTg4MDksLTI5Mzk5Mzg2NiwzNzc2NjQ1NDAsLTQ2NDY5Mjgw
+Nyw1ODk5MTQ3MzYsMTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0Nj
+cwMTkzMywxODM3MDQyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1
+LDMxMDY5MTU2NSw1NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2Mj
+A1MzgyMywxNjAzNjIwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDhd
+fQ==
 -->
