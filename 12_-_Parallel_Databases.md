@@ -163,13 +163,22 @@ State diagrams of coordinator and participants:
 
 ### Dealing with failures
 
+Coordinator and participants can fail during a commit.
+- Other nodes will time out while waiting for the next message from the failed node, and invoke a **_termination protocol_**
+- When failed node restarts, it tries to resolve the state of the commit by invoking **_recovery protocol_**
+- The protocols' behaviours depends on the state the node were when they failed.
+
+### Termination Protocol (Coordinator)
+Timeout in **Wait** state
+- coordinator is waiting for participa
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc5NTg1ODgzLC0xNzI4OTg4MDksLTI5Mz
-k5Mzg2NiwzNzc2NjQ1NDAsLTQ2NDY5MjgwNyw1ODk5MTQ3MzYs
-MTQ1MDQ2NDA5Miw3NTYyNTAzMjUsMTU0NjcwMTkzMywxODM3MD
-QyMzQzLC01NzgwMDI4NCwxNDc5OTI0MTI1LDMxMDY5MTU2NSw1
-NzA2NzY4ODYsLTY4MjI1MDA1MywtMTY2MjA1MzgyMywxNjAzNj
-IwMDY5LDc1OTUwNjIwMSwyODA0NDE0NDgsMTU1NDE1Mjk2XX0=
+eyJoaXN0b3J5IjpbLTEzMDg1NjkwMCw2Nzk1ODU4ODMsLTE3Mj
+g5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwtNDY0NjkyODA3
+LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MDMyNSwxNTQ2Nz
+AxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0Nzk5MjQxMjUs
+MzEwNjkxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMDUzLC0xNjYyMD
+UzODIzLDE2MDM2MjAwNjksNzU5NTA2MjAxLDI4MDQ0MTQ0OF19
 
 -->
