@@ -32,11 +32,21 @@ MQ esstenially is a datastructure which abstracts away the underlying networking
 
 **_MQ_** resolves DCP's weaknesses by **_perserving requests and responses on the queue if servers or clients are down_**
 
+**_Queued Transaction Processing_** uses the queue to handle transaction requests and responses.
+
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/queued-transaction-processing.png?raw=true) **(server side)**
+
+If _transaction_ is aborted:
+- _request_ returns to input queue
+- changes made by transaction are rolled back
+- _response_ removed from output queue if necessary
+- repeated aborts due to bad transaction request can be prevented by setting a limit on retries
+
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MjgxMzcwOSwtMTA1ODkyNzE5OSwtMT
-E1MDQ5NjAzMl19
+eyJoaXN0b3J5IjpbLTE2ODE2MzM4MDcsLTEwNTg5MjcxOTksLT
+ExNTA0OTYwMzJdfQ==
 -->
