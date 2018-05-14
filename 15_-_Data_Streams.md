@@ -12,9 +12,11 @@ Some applications might require:
 - data never stops coming
 - ongoing analysis of rapidly changeing data
 
-There are 4 **V**s in _Big Data_: 1) Volume 2) Variety 3) Veracity ) Velocity
-
+There are also two types of d:
+- **_Transactional_** data streams: logs of entities interactions.
+- **_Measurement_** data streams: monitoring evolution of entity states
  
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDMxNDk3NTgsLTEyMTc4MTg1MF19
+eyJoaXN0b3J5IjpbNzgwMTQxOTczLC0xMzAzMTQ5NzU4LC0xMj
+E3ODE4NTBdfQ==
 -->
