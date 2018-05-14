@@ -49,10 +49,13 @@ During query processing, continuous streams are combined to form the requested q
 **Tuple-at-a-time** operators: _Selection_ and _Projection_
 
 **Full Relation**
-Certain operators can be deal with tuple at a time, such as:
- _Count_, _Sum_, _Average_, _Max_, _Min_ and _Group By_. But not _Order By_
+Certain operators can be dealt by considering a tuple at a time, such as:  _Count_, _Sum_, _Average_, _Max_, _Min_ and _Group By_.
+ 
+ Others can't e.g. _Intersection_, _Difference_, _Product_, _Order By_ and _Join_. These will require accumulation.
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/full-relation-op.png?raw=true)
-Others can't e.g. _Intersection_, _difference_, _Product_ and _Join_. These may **_block_** because no output until entire input is seen and streams are unbounded _Joins_ may need to join tuples that are far apart (dislocality).
+ In addition, they may **_block_** because no output until entire input is seen and streams are unbounded _Joins_ may need to join tuples that are far apart (dislocality).
+
+
 
 
 
@@ -61,6 +64,6 @@ Others can't e.g. _Intersection_, _difference_, _Product_ and _Join_. These may 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1MTgyNTExNSwtOTgzMzUwMjM5LC0xMz
-AzMTQ5NzU4LC0xMjE3ODE4NTBdfQ==
+eyJoaXN0b3J5IjpbLTE0ODc1NDE1NjEsLTk4MzM1MDIzOSwtMT
+MwMzE0OTc1OCwtMTIxNzgxODUwXX0=
 -->
