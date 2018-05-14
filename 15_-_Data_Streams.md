@@ -34,8 +34,16 @@ There are also two types of data streams:
 | Only current state matters                       | Historical data is important |
 
 ### Query Processing is DSMS
+**_Continuous Query Language_** - queries produce/refer to relations and streams.
 
+Properties:
+- Based on SQL
+- streams as new data type
+- continuous instead of one-time semantics
+- windows on streams
+- sampling on streams
+- constructe query plan based on relational operators like DBMS
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0OTc5NDQ3OSwtOTgzMzUwMjM5LC0xMz
-AzMTQ5NzU4LC0xMjE3ODE4NTBdfQ==
+eyJoaXN0b3J5IjpbMjM1Nzg5NTYxLC05ODMzNTAyMzksLTEzMD
+MxNDk3NTgsLTEyMTc4MTg1MF19
 -->
