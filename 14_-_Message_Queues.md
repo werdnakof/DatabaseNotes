@@ -10,6 +10,11 @@
 - Systems can be heterogeneous
 - Message delivery is guaranteed
 
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/message-queue.png?raw=true)
+
+**bidirectional queue**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/bidirectional-queue.png?raw=true)
+
 MQ esstenially is a datastructure which abstracts away the underlying networking between processes. It can be used on the same system, or across many systems.
 
 **_Direct Transaction Processing (DCP)_** is **synchronous**, and has weaknesses:
@@ -25,11 +30,13 @@ MQ esstenially is a datastructure which abstracts away the underlying networking
 	- client failed
 	- response not delivered to server
 
-**_MQ_** resolves DCP's weaknesses by:
-- perserving requests and responses on the queue if servers or clients are down.
-- 
+**_MQ_** resolves DCP's weaknesses by **_perserving requests and responses on the queue if servers or clients are down_**
+
+
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTg5MjcxOTksLTExNTA0OTYwMzJdfQ
-==
+eyJoaXN0b3J5IjpbLTY2MjgxMzcwOSwtMTA1ODkyNzE5OSwtMT
+E1MDQ5NjAzMl19
 -->
