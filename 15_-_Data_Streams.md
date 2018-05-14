@@ -22,9 +22,10 @@ There are also two types of data streams:
 	 - notify me when the temperature drops below X
 	 - notify me when stock Y > 300
 
+### DSMS mechanism
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MzM1MDIzOSwtMTMwMzE0OTc1OCwtMT
-IxNzgxODUwXX0=
+eyJoaXN0b3J5IjpbOTYzODM3NjM2LC05ODMzNTAyMzksLTEzMD
+MxNDk3NTgsLTEyMTc4MTg1MF19
 -->
