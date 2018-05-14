@@ -12,8 +12,24 @@
 
 MQ esstenially is a datastructure which abstracts away the underlying networking between processes. It can be used on the same system, or across many systems.
 
-**_Direct Transaction Processing_**
+**_Direct Transaction Processing (DCP)_** is **synchronous**, and has weaknesses:
+- Difficulties with _long lived_ transactions and communication errors
+- Difficult to balance loads between servers carrying out the same task
+- Difficult to prioritise one request over another
+- Server failure - cannot distinguish between:
+	- request not delivered to server
+	- server failed
+	- reply not delivered to client
+- Client failure - cannot tell:
+	- if response has been received by client
+	- client failed
+	- response not delivered to server
+
+**_MQ_** resolves DCP's weaknesses by:
+- perserving requests and responses on the queue if servers or clients are down.
+- 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzEyNzgxNzYsLTExNTA0OTYwMzJdfQ
+eyJoaXN0b3J5IjpbLTEwNTg5MjcxOTksLTExNTA0OTYwMzJdfQ
 ==
 -->
