@@ -43,7 +43,18 @@ Properties:
 - windows on streams
 - sampling on streams
 - constructe query plan based on relational operators like DBMS
+
+During query processing, continuous streams are combined to form the requested query plan. E.g.
+
+**Tuple-at-a-time** operators: _Selection_ and _Projection_
+
+**Full Relation** operators: _Count_, _Sum_, _Average_, _Max_, _Min_ and _Group By_. But not _Order By_.
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/full-relation-op.png?raw=true)
+
+**
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM1Nzg5NTYxLC05ODMzNTAyMzksLTEzMD
-MxNDk3NTgsLTEyMTc4MTg1MF19
+eyJoaXN0b3J5IjpbLTE1NjQ2MTUwNzEsLTk4MzM1MDIzOSwtMT
+MwMzE0OTc1OCwtMTIxNzgxODUwXX0=
 -->
