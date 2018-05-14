@@ -23,9 +23,19 @@ There are also two types of data streams:
 	 - notify me when stock Y > 300
 
 ### DSMS mechanism
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/dsms.png?raw=true)
 
+| DBMS                                             | DSMS                         |
+|--------------------------------------------------|------------------------------|
+| Persistent relations (relatively static, stored) | Transient streams            |
+| One-time queries                                 | Continuous queries (CQs)     |
+| Random access                                    | Sequential access            |
+| Unbounded disk store                             | Bounded disk store           |
+| Only current state matters                       | Historical data is important |
+
+### Query Processing is DSMS
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYzODM3NjM2LC05ODMzNTAyMzksLTEzMD
-MxNDk3NTgsLTEyMTc4MTg1MF19
+eyJoaXN0b3J5IjpbMTI0OTc5NDQ3OSwtOTgzMzUwMjM5LC0xMz
+AzMTQ5NzU4LC0xMjE3ODE4NTBdfQ==
 -->
