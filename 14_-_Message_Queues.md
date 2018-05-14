@@ -1,7 +1,10 @@
+# Message Queues
+### Synchronous vs Asynchronous protocols
+**HTTP** is a synchronous protocol: request from client to server is followed by server-to-client in the same instance of TCP connection
+
+**SMTP** is an synchronous protocol: email messages are sent on a store-and-forward basis, clients need not to be active when receiving messages.
 
 
-
-> Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMjE3MjUzNV19
+eyJoaXN0b3J5IjpbLTExNTA0OTYwMzJdfQ==
 -->
