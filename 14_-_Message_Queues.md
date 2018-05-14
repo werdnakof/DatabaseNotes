@@ -30,11 +30,17 @@ MQ esstenially is a datastructure which abstracts away the underlying networking
 	- client failed
 	- response not delivered to server
 
-**_MQ_** resolves DCP's weaknesses by **_perserving requests and responses on the queue if servers or clients are down_**
+**_MQ_** resolves DCP's weaknesses by:
+-  perserving requests and responses on the queue if servers or clients are down
+- simple API hide communications complexity
+- fewer constraints on inter-program operation
+- fewer network sessions needed, and programs are less vulnerable to network failures
+- business change easier to handle
+- assured message delivery
 
 **_Queued Transaction Processing_** uses the queue to handle transaction requests and responses.
 
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/queued-transaction-processing.png?raw=true) **(server side)**
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/queued-transaction-processing-2.png?raw=true) 
 
 If _transaction_ is aborted:
 - _request_ returns to input queue
@@ -42,11 +48,15 @@ If _transaction_ is aborted:
 - _response_ removed from output queue if necessary
 - repeated aborts due to bad transaction request can be prevented by setting a limit on retries
 
+Messages (request/responses) can be **ordered**, either _FIFO_ or _highest priority first_. **Aborted transaction** may lead to _out-of-order_ processing:  T1 dequeues M1 > T2 dequeues M2 > T2 commits, T1 aborts > M1 is re-send to queue.
+
+
+
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODE2MzM4MDcsLTEwNTg5MjcxOTksLT
+eyJoaXN0b3J5IjpbLTE1NzczODAwNzYsLTEwNTg5MjcxOTksLT
 ExNTA0OTYwMzJdfQ==
 -->
