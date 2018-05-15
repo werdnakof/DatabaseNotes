@@ -56,7 +56,23 @@ Certain operators can be dealt by considering a tuple at a time / directly on in
  In addition, they may **_block_** because no output until entire input is seen and streams are unbounded _Joins_ may need to join tuples that are far apart (dislocality).
 
 ### Windows
-windows 
+Windows collect tuples from streams over a time period or certain amount of tuples.
+
+**Sliding window** updates itself by shifting out oldest tuple and shifting in newest tuple.
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/window-sliding.png?raw=true)
+
+**Tumbling window** updates itself by replacing the entire tuples entry
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/window-tumbling.png?raw=true)
+
+**Join** operation can then be carried out over two windows collected from two relations, and returns an output stream.
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/window-join.png?raw=true)
+
+### Scalability and Completeness in DBMS vs DSMS
+
+DBMS deals with **finite relations**, query evaluation should produce all results for a given query
+
+DSMS deals with unbounded data streams
+- may not return all 
 
 
 
@@ -64,6 +80,7 @@ windows
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTIzNDc2MDUsLTE0ODc1NDE1NjEsLT
-k4MzM1MDIzOSwtMTMwMzE0OTc1OCwtMTIxNzgxODUwXX0=
+eyJoaXN0b3J5IjpbLTQ1MTY4NDEwNCwtMTg1MjM0NzYwNSwtMT
+Q4NzU0MTU2MSwtOTgzMzUwMjM5LC0xMzAzMTQ5NzU4LC0xMjE3
+ODE4NTBdfQ==
 -->
