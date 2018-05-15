@@ -82,28 +82,30 @@ DSMS deals with **unbounded data streams**
 **Delete Stream (Dstream)**: whenever a tuple is deleted from relation, emit it on the stream
 **Relation Stream (Rstream**: every time instant, emit every tuple in relation on the stream
 
-_Example CQL Query:_
+**_Example CQL Query:_**
+_Example 1_
 SELECT Istream(*) FROM S [rows unbounded] WHERE S.A > 10
 - _S is converted into a relation of unbounded size_
 - _resulting relation is converted back to a stream via Istream_
 
+_Example 2_
 SELECT * 
 FROM S1[rows 1000], 
              S2[range 2 minutes]
 WHERE S1.A = S2.A AND S1.A > 10
 
+_Example 3_
+SELECT Rstream(S.A, R.B)
+FROM S [now], R
+WHERE S.A = R.A
+- _query probes a stored table R based on each tuple in stream S and streams the result._
+- [now] time-based sliding window containing tuples received in the last time step
 
-
-
-
-
-
-
-
+Continuous Query optimisation is difficult due to streams being unbounded/infinite size, contrary to traditionaly fixed size relational query. Cotinuous adaptive based optimisation is required. Some might look at rate of stream arriving, tuples/second, some look at resources require to execute the stream operations, etc
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDI2OTg1NiwtMTg1MjM0NzYwNSwtMT
-Q4NzU0MTU2MSwtOTgzMzUwMjM5LC0xMzAzMTQ5NzU4LC0xMjE3
-ODE4NTBdfQ==
+eyJoaXN0b3J5IjpbNTY4MDY3MzM2LC0xODUyMzQ3NjA1LC0xND
+g3NTQxNTYxLC05ODMzNTAyMzksLTEzMDMxNDk3NTgsLTEyMTc4
+MTg1MF19
 -->
