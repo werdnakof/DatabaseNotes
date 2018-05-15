@@ -71,8 +71,13 @@ Windows collect tuples from streams over a time period or certain amount of tupl
 
 DBMS deals with **finite relations**, query evaluation should produce all results for a given query
 
-DSMS deals with unbounded data streams
-- may not return all 
+DSMS deals with **unbounded data streams**
+- may not return all results for a given guery
+- trade-off between resource use and completeness of result set
+- size of buffers used for windows is an parameter that affects resource use and completeness
+- can further reduce resource by randomly sampling from streams
+
+
 
 
 
@@ -80,7 +85,7 @@ DSMS deals with unbounded data streams
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1MTY4NDEwNCwtMTg1MjM0NzYwNSwtMT
+eyJoaXN0b3J5IjpbLTc3OTg0ODA4NCwtMTg1MjM0NzYwNSwtMT
 Q4NzU0MTU2MSwtOTgzMzUwMjM5LC0xMzAzMTQ5NzU4LC0xMjE3
 ODE4NTBdfQ==
 -->
