@@ -77,6 +77,24 @@ DSMS deals with **unbounded data streams**
 - size of buffers used for windows is an parameter that affects resource use and completeness
 - can further reduce resource by randomly sampling from streams
 
+### Relation-to-Stream operators
+**Insert Stream (Istream)**: whenever a tuple is inserted into the relation, emit it on the stream
+**Delete Stream (Dstream)**: whenever a tuple is deleted from relation, emit it on the stream
+**Relation Stream (Rstream**: every time instant, emit every tuple in relation on the stream
+
+_Example CQL Query:_
+SELECT Istream(*) FROM S [rows unbounded] WHERE S.A > 10
+- _S is converted into a relation of unbounded size_
+- _resulting relation is converted back to a stream via Istream_
+
+SELECT * 
+FROM S1[rows 1000], 
+             S2[range 2 minutes]
+WHERE S1.A = S2.A AND S1.A > 10
+
+
+
+
 
 
 
@@ -85,7 +103,7 @@ DSMS deals with **unbounded data streams**
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3OTg0ODA4NCwtMTg1MjM0NzYwNSwtMT
+eyJoaXN0b3J5IjpbLTE5NDI2OTg1NiwtMTg1MjM0NzYwNSwtMT
 Q4NzU0MTU2MSwtOTgzMzUwMjM5LC0xMzAzMTQ5NzU4LC0xMjE3
 ODE4NTBdfQ==
 -->
