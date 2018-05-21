@@ -8,8 +8,7 @@
 * **Tertiary**: v.slow, v.cheap, v.large capacity
 
 ## Disk Structure: 
-> Platter, surface, head, actuator, cylinder
-track, geometric sector, Track-Sector, cluster
+Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector, cluster
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/disk-structure.png?raw=true)
 
@@ -17,9 +16,8 @@ track, geometric sector, Track-Sector, cluster
 
 **Disk Access Costs**
 
-* **Cost of Reading Disk** = Seek time + Rotational delay + Transfer time + Negligible costs
-
-    * Seek Time: time for head to move to the track rotational delay: delayed after disk spinned
+* **Cost of Reading Disk** = seek-time + rotational-delay + transfer-time + negligible-costs
+    * Seek Time: time for head to move to the track rotational + delayed after disk spinned
     * Transfer time: Block size/transfer rate
     * negligible costs: reading the next Block -> skipping inter-Block gap, switch track (sequential i/o access is less expensive than random i/o)
 
@@ -231,5 +229,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTQxNDkyOTMsMjMwMTI1MTgyXX0=
+eyJoaXN0b3J5IjpbLTExMDgyOTY1LDIzMDEyNTE4Ml19
 -->
