@@ -41,3 +41,6 @@ Stored Data Manager
 - Manages shared buffer pool (available main memory used for transferring data to and from disc)
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTQ5OTU0MzYwMF19
+-->
