@@ -44,37 +44,32 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 - Big blocks reduce access costs i.e. fewer seeks, but increase irrelevant data reads 
 - i.e. when trying to read a single record in a block, larger blocks force you to read more data
 
-**Buffer Management**
-1. Copy data into **Frames** inside a buffer pool
-2. Some of the data in that frame will be 
+## Buffer Management
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/buffer-pool.png?raw=true)
 
 **Buffer Metadata**
-
 Each **Frame** in the buffer pool contains:
-* **Pin Count**: number of users of the Block in that frame
-* **Dirty Flag**: 1 if copy in the buffer has been changed, 0 otherwise
+* **Pin Count**: no. users of the Block in that frame
+* **Dirty Flag**: 1 if buffer copy has been changed, 0 otherwise
 * **Access time**: used for LRU replacement
 * **Loading time**: used for FIFO replacement
-* **Clock flag**: used for Clock replacement
+* **Clock flag**: used for clock replacement
 
 **Requesting a Block**
-
-* If buffer pool already has a frame containing the Block then increment pin count (“pin the Block”)
-* Elseif there is an empty frame, then read Block into frame and set pin count to 1
-* Else
- 
-    Choose a frame to be replaced
-
+```
+IF block exists in a frame in the buffer pool 
+	increment pin count (“pin the Block”)
+ELS-If an empty frame is available
+	read block into frame and set pin count to 1
+Else
+    choose a frame to be replaced
     If dirty bit on the replacement frame is set
-    
-        then write Block in replacement frame to disk
-    
+        then write block in replacement frame to disk
     endif
-    
-    read requested Block into replacement frame
+    read requested block into replacement frame
   endif
 endif
-
+```
 **Buffer Replacement Strategies**
 
   A frame will not be selected for replacement until its pin count is 0
@@ -122,6 +117,7 @@ If CD is smaller than CM,
 – else keep in memory
 Break even point when CD = CM, or X = ($D P) / (I $M)
 
+---
 
 ## Disk Organisation
 
@@ -225,5 +221,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI4OTE3NjQ2XX0=
+eyJoaXN0b3J5IjpbMTYzNTgxOTkzNSw2Mjg5MTc2NDZdfQ==
 -->
