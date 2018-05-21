@@ -141,7 +141,7 @@ Consists of:
 * Variable format records: record itself self-described its format, may waste space compared to fixed format records
 
 **Blocks**
-* Each Track-Sector on disk contains a Block
+* Each track-sector on disk contains a Block
 * Records are packed into each Block
 * Block header: contains info such as
     * file id, 
@@ -152,8 +152,7 @@ Consists of:
     * pointer to other similar Blocks (relation to other records), 
     * timestamp (write time)
 
-**File**
-* A collection of Blocks
+**File** - collection of Blocks
 
 ## Placement of Records in Blocks:
 
@@ -214,5 +213,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NTE3ODY1OCw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbMTk0MDI4NDY1MCw2Mjg5MTc2NDZdfQ==
 -->
