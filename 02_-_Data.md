@@ -1,10 +1,12 @@
-Data types
-e.g. numeric, character, temporal, sptatial, image, text, audio, video
+# Data tTypes
+e.g. **Types**
+numeric, character, temporal, sptatial, image, text, audio, video
 
-Data Operations
+Data **Operations**
 E.g. comparison, arithemic, fuzzy searches, retrieve all documnets 
-that contain a given term
+ that contain a given term
 
+**_Context Specific_**
 data operations have to be meaningful i.e. context specific
 data orderings/comparisons are also context based
 
@@ -39,3 +41,6 @@ the database, and can be retrieved
 - MIDI (Musical Instrument Digital Interface): Consists of a sequence of instructions (Note_On, Note_Off, Increase_Volume), Interpreted by a synthesiser
 - Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file
 structures incorporate times sequencing of audio/video playback
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEyNjAyMDkyNzRdfQ==
+-->
