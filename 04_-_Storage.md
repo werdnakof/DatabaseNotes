@@ -176,13 +176,13 @@ Sequencing
 - physical vs indirect addressings.
 - trade off: flexibility (difficulty in moving records on insertion/deletion) vs cost of maintaining indirection
 
-Physical Addressing
+**_Physical Addressing_**
 - Block id: device, cylinder, head, section
 - record id: (has everything Block id has) + offset in block
 
-Indirect addressing
-- A table mapping between record ids and physical addresses
-- However, it needs maintanence when records are moved to different position in blocks
+**_Indirect addressing_**
+- A table mapping between **record ids** and **physical addresses**
+- Maintanence is required when records are moved to different position in blocks
 
 Indirection within a single block
 - records can be shifted within a block without changing record id
@@ -213,6 +213,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc5Njg0NzI4LDE5NDAyODQ2NTAsNjI4OT
+eyJoaXN0b3J5IjpbMzE5NzA5MDQxLDE5NDAyODQ2NTAsNjI4OT
 E3NjQ2XX0=
 -->
