@@ -1,5 +1,5 @@
 # DBMS Architecture
-## Interfaces to access DBMS
+**_Interfaces to access DBMS_**
 1. **_DDL - Data Definition Language_**: i.e. Creating tables, indices, manipulating database schema
 2. **_DML - Data Manipulation Language_**: i.e. Queries, Updating table contents
 
@@ -37,5 +37,5 @@
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NDMyOTY2NV19
+eyJoaXN0b3J5IjpbLTE1NzQxNDg5NTNdfQ==
 -->
