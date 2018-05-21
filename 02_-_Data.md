@@ -1,10 +1,9 @@
 # Data tTypes
-e.g. **Types**
+**Types**
 numeric, character, temporal, sptatial, image, text, audio, video
 
-Data **Operations**
-E.g. comparison, arithemic, fuzzy searches, retrieve all documnets 
- that contain a given term
+**Operations**
+Comparison, arithemic, fuzzy searches, retrieve all documnets that contain a given term
 
 **_Context Specific_**
 data operations have to be meaningful i.e. context specific
@@ -23,13 +22,11 @@ _Time starts and ends_ vs. _unbounded_
 - _Granularity_: depending on chronon defined
 
 We may wish to record:
-– _Valid Time of a fact_: when the fact is true in reality
-– The Transaction Time of a fact – when the fact is current in
-the database, and can be retrieved
-– Both of these (bitemporal)
+-  _Valid Time of a fact_: when the fact is true in reality
+-  _Transaction Time of a fact_ – when the fact is current in the database, and can be retrieved
+- Both (bitemporal)
 
-
-# Spatial data
+## Spatial data
 - Types: points, regions (boxes, polynomial, polygons), vectors
 - Operations: length, intersects, contains, overlaps, centre
 - Characteristics: highly complex, large volume, query via specialised graphical front ends or special operators
@@ -41,9 +38,7 @@ the database, and can be retrieved
 - BLOBs (binary large obejcts), QBIC (Query by Image Content)
 - Digitised sounds: WAV, mp3 formats, compression techniques used
 - MIDI (Musical Instrument Digital Interface): Consists of a sequence of instructions (Note_On, Note_Off, Increase_Volume), Interpreted by a synthesiser
-- Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file
-structures incorporate times sequencing of audio/video playback
+- Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file structures incorporate times sequencing of audio/video playback
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDMxNDg2NTUsLTEyNjAyMDkyNzRdfQ
-==
+eyJoaXN0b3J5IjpbMTM4Nzc0MzU1NywtMTI2MDIwOTI3NF19
 -->
