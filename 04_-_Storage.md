@@ -178,15 +178,15 @@ Sequencing
 
 Physical Addressing
 - Block id: device, cylinder, head, section
-- record id: (has everything Block id has) + offset in Block
+- record id: (has everything Block id has) + offset in block
 
 Indirect addressing
 - A table mapping between record ids and physical addresses
-- However, it needs maintanence when records are moved to different position in Blocks
+- However, it needs maintanence when records are moved to different position in blocks
 
-Indirection within a single Block
-- records can be shifted within a Block without changing record id
-- access time of a record is fast, no need to change Block
+Indirection within a single block
+- records can be shifted within a block without changing record id
+- access time of a record is fast, no need to change block
 
 Address Management
 - Every Block and record has two addresses: database address (secondary storage), memory address (buffer)
@@ -194,11 +194,11 @@ Address Management
 
 Pointer Swizzling
 - Consists of: 1 bit to indicate whether the pointer is a database address or a memory address, Database or memory pointer, as appropriate
-- A record could have been loaded into memory(buffer) already, so when loading a record which has a pointer to another in-memory record, need to swizzle the pointer to in-memory address instead of database address
+- A record could have been loaded into memory (buffer) already, so when loading a record which has a pointer to another in-memory record, need to "swizzle" the pointer to in-memory address instead of database address
 - Strategies:
-automatic: replace pointers in Block (in-memory) with new entries via translation table
-on-demand: only swizzle pointers when dereferenced
-no-swizzle: translation table to map pointers to each dereference
+	- automatic: replace pointers in block (in-memory) with new entries via translation table
+	- on-demand: only swizzle pointers when dereferenced
+	- no-swizzle: translation table to map pointers to each dereference
 - Unswizzle: rewrite sizzled pointers using translation table when a Block is written back from memory to disc (pin count can Block as other process still using the memory)
 
 Record Insertion
@@ -213,6 +213,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4Mzk1ODA0MywxOTQwMjg0NjUwLDYyOD
-kxNzY0Nl19
+eyJoaXN0b3J5IjpbNzc5Njg0NzI4LDE5NDAyODQ2NTAsNjI4OT
+E3NjQ2XX0=
 -->
