@@ -161,16 +161,16 @@ Consists of:
 - markers to indicate record
 - note down record lengths/offsets within each record or Block header
 
-**_Spanned record vs Unspanned record in Block_**
-- unspanned: each record fit within a single Block, waste space, but simpler
-- spanned: records can split between Blocks, needs a pointer to the partial record in the next Block
+**_Spanned vs Unspanned records in Block_**
+- unspanned: each record fit within a single Block - waste space, but simpler
+- spanned: records can split between blocks - pointer reqired for the partial record in the next block
 
-**Sequencing
-- ordering records in file and Block by some key value
+**_Sequencing_**
+- ordering records in file and block by some key value
 - records ordering matter when merge-join
 - more efficient
 - each record may have a pointer to idicate the next record
-- Once records are stored in sequence, in order to add a record in the middle of sequence, an overflow area is created in the Block header, the area stores pointers to data (which are added to the middle to sequence) and where they fit in the sequence
+- Once records are stored in sequence, in order to add a record in the middle of sequence, an overflow area is created in the block header, the area stores pointers to data (which are added to the middle to sequence) and where they fit in the sequence
 
 ## Indirection: how to reference our records?
 - physical vs indirect addressings.
@@ -192,14 +192,16 @@ Address Management
 - Every Block and record has two addresses: database address (secondary storage), memory address (buffer)
 - need to translate database address to memory address in buffer (pointer Swizzling)
 
-Pointer Swizzling
-- Consists of: 1 bit to indicate whether the pointer is a database address or a memory address, Database or memory pointer, as appropriate
-- A record could have been loaded into memory (buffer) already, so when loading a record which has a pointer to another in-memory record, need to "swizzle" the pointer to in-memory address instead of database address
-- Strategies:
+**_Pointer Swizzling_** - translation of database address to virtual memory address
+Swizzled pointers consists of:
+- 1 bit to indicate whether the pointer is a database address or a memory address, Database or memory pointer, as appropriate
+- A record could have been loaded into memory/buffer already, so when loading a record which has a pointer to another in-memory record, need to "swizzle" the pointer to in-memory address instead of database address
+
+**Strategies**
 	- automatic: replace pointers in block (in-memory) with new entries via translation table
 	- on-demand: only swizzle pointers when dereferenced
 	- no-swizzle: translation table to map pointers to each dereference
-- Unswizzle: rewrite sizzled pointers using translation table when a Block is written back from memory to disc (pin count can Block as other process still using the memory)
+- Unswizzle: rewrite sizzled pointers using translation table when a Block is written back from memory to disc (pin count can block as other process still using the memory)
 
 Record Insertion
 - Insert new record at end of file or in deleted slot (Easy)
@@ -213,6 +215,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwNjUxNzcxMCwxOTQwMjg0NjUwLDYyOD
-kxNzY0Nl19
+eyJoaXN0b3J5IjpbMTQ5OTE5MTQwLDE5NDAyODQ2NTAsNjI4OT
+E3NjQ2XX0=
 -->
