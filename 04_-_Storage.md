@@ -79,39 +79,36 @@ ENDIF
 2.  First In First Out (FIFO): Select the frame with the oldest loading time
 3. Clock: cycle through each buffer in turn, if a buffer hasn’t been accessed in a full cycle then mark it for replacement
 
-**_Single Buffering Cost_**
+**_Buffering Cost_**
 Single buffer time = n(P + R)
 P: time to process a block
 R: time to read a block
 n: number of Blocks
 
-Use a pair of buffers:
+Double buffer time = R + nP
 – While reading a block and writing into buffer A
 – Process block previously read into buffer B
 – After block read into process A and read next block into B
-Double buffer time = R + nP
 
 The **_Five Minute Rule_**: Data referenced every five minutes should be memory resident
 
 Assume a block is accessed every X seconds:
 
-CD = cost if we keep that Block on disk
-– $D = cost of disk unit
-– I = number of IOs that unit can perform per second
-– In X seconds, unit can do XI IOs
-– So, CD = $D / XI
+- $C_{Disk}$: cost if we keep that block on disk
+- $D$ = cost of disk unit
+- $I$: number of IOs that unit can perform per second
+- In X seconds, unit can do $XI$ IOs
+- So, $C_{Disk}$ = $D$ / $XI$
 
-CM = cost if we keep that Block in RAM
-– $M = cost of 1MB of RAM
-– P = number of pages in 1MB RAM
-– So CM = $M / P
+- $C_{ram}$: cost if we keep that block in RAM
+- $M$ = cost of 1MB of RAM
+- $P$ = number of pages in 1MB RAM
+- So $C_{ram}$ = $M$ / $P$
 
 If CD is smaller than CM,
-– keep Block on disk
-– else keep in memory
-Break even point when CD = CM, or X = ($D P) / (I $M)
-
----
+- keep Block on disk
+- else keep in memory
+- break even point when $C_{Disk}$ == $C_{ram}$, or $X$ = $D P$ / $I M$
 
 ## Disk Organisation
 
@@ -215,5 +212,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNTg1MDc2MSw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbMjA0NDQyNTY2MSw2Mjg5MTc2NDZdfQ==
 -->
