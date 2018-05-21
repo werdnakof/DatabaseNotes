@@ -14,6 +14,16 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/zone-bit-recording.png?raw=true)
 
+* **Track-sector** are numbered from 0 to n − 1 on a disk. 
+  
+* The disk can be viewed as an array of sectors - 0 to n − 1 is thus the **_Address Space_** of the drive.
+
+* Track-sector's size changes along with radius
+
+* **_Zone Bit recording_**: vary the number of Track-sector per track, improved overall storage density
+
+* Each Track-Sector is called a **Block**
+
 **Disk Access Costs**
 
 * **Cost of Reading Disk** = seek-time + rotational-delay + transfer-time + negligible-costs
@@ -21,25 +31,10 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
     * Transfer time: Block size/transfer rate
     * negligible costs: reading the next Block -> skipping inter-Block gap, switch track (sequential i/o access is less expensive than random i/o)
 
-* **Cost of Writing Disk** = Seek Time + Rotational Delay(0.5 rotation) + Transfer Time(writing) + Rotational Delay(full rotation) + Transfer Time (for verification)
+* **Cost of Writing Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 
-* **Cost of Modifying Disk** = Seek Time + Rotational Delay(0.5 rotation) + Transfer Time(reading) + Rotational Delay(full rotation) + Transfer Time(writing) + Rotational Delay(full rotation) + Transfer Time (for verification)
-
-**Structure**
-
-* **Track-Sector** are numbered from 0 to n − 1 on a disk with n
-  sectors. 
-  
-* The disk can be viewed as an array of sectors; 0 to n − 1 is
-  thus the **address space** of the drive.
-
-* Track-Sector's size changes along with radius
-
-* **Zone Bit recording**: vary the number of Track-Sector per track, improved overall storage density
-
-* Each Track-Sector is called a **Block**
-
-
+* **Cost of Modifying Disk** = seek-time + rotational-delay(0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
+* 
 ## Logical Block Addressing (LBA)
 * **Blocks** are located by integer index
 * HDD firmware maps LBA addresses to physical location on disk
@@ -229,5 +224,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDgyOTY1LDIzMDEyNTE4Ml19
+eyJoaXN0b3J5IjpbMTY0ODcxMTU0NSwyMzAxMjUxODJdfQ==
 -->
