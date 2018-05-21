@@ -86,14 +86,14 @@ R: time to read a block
 n: number of Blocks
 
 Use a pair of buffers:
-– While reading a Block and writing into buffer A
-– Process Block previously read into buffer B
-– After Block read into A, process A and read next Block into B
+– While reading a block and writing into buffer A
+– Process block previously read into buffer B
+– After block read into process A and read next block into B
 Double buffer time = R + nP
 
-The Five Minute Rule: Data referenced every five minutes should be memory resident
+The **_Five Minute Rule_**: Data referenced every five minutes should be memory resident
 
-Assume a Block is accessed every X seconds:
+Assume a block is accessed every X seconds:
 
 CD = cost if we keep that Block on disk
 – $D = cost of disk unit
@@ -215,5 +215,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDkyMzk5OCw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbMTgxNTg1MDc2MSw2Mjg5MTc2NDZdfQ==
 -->
