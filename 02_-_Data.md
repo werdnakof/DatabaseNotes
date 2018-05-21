@@ -31,7 +31,7 @@ We may wish to record:
 - Operations: length, intersects, contains, overlaps, centre
 - Characteristics: highly complex, large volume, query via specialised graphical front ends or special operators
 
-# Multimedia data
+## Multimedia data
 - markup languages e.g. html
 - XML (structured data)
 - CLOBs (character large objects, large text documents) allowing text search
@@ -40,5 +40,6 @@ We may wish to record:
 - MIDI (Musical Instrument Digital Interface): Consists of a sequence of instructions (Note_On, Note_Off, Increase_Volume), Interpreted by a synthesiser
 - Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file structures incorporate times sequencing of audio/video playback
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4Nzc0MzU1NywtMTI2MDIwOTI3NF19
+eyJoaXN0b3J5IjpbLTEyNTc1OTIyMzAsLTEyNjAyMDkyNzRdfQ
+==
 -->
