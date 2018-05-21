@@ -10,7 +10,10 @@
 ## Disk Structure: 
 > Platter, surface, head, actuator, cylinder
 track, geometric sector, Track-Sector, cluster
-(see lecture slides for diagram)
+
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/disk-structure.png?raw=true)
+
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/zone-bit-recording.png?raw=true)
 
 **Disk Access Costs**
 
@@ -228,5 +231,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMwMTI1MTgyXX0=
+eyJoaXN0b3J5IjpbLTEyOTQxNDkyOTMsMjMwMTI1MTgyXX0=
 -->
