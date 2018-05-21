@@ -1,4 +1,4 @@
-# Data tTypes
+# Data Types
 **Types**
 numeric, character, temporal, sptatial, image, text, audio, video
 
@@ -40,6 +40,5 @@ We may wish to record:
 - MIDI (Musical Instrument Digital Interface): Consists of a sequence of instructions (Note_On, Note_Off, Increase_Volume), Interpreted by a synthesiser
 - Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file structures incorporate times sequencing of audio/video playback
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTc1OTIyMzAsLTEyNjAyMDkyNzRdfQ
-==
+eyJoaXN0b3J5IjpbMTQ4MjIyNDI1NCwtMTI2MDIwOTI3NF19
 -->
