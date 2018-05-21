@@ -11,10 +11,10 @@ data orderings/comparisons are also context based
 
 ## Temporal data Properties
 **_Characteristics_**
-linear, branching time, directed acyclic, periodic
+linear, possible futures, branching time, directed acyclic graph, periodic/cyclic
 
 **_Boundedness of time_**
-_Time starts and ends_ vs. _unbounded_
+_start-end_ vs. _unbounded_
 
 **_Density / Granularity_**
 - _sequences_ vs _intervals_ vs _fixed periods_
@@ -25,6 +25,11 @@ We may wish to record:
 -  _Valid Time of a fact_: when the fact is true in reality
 -  _Transaction Time of a fact_ – when the fact is current in the database, and can be retrieved
 - Both (bitemporal)
+
+**_Operations_**
+- WHEN clause in SQL to retrieve by timestamps
+- TIME-SLICE: to specify a time domain
+- BEFORE/AFTER, FOLLOWS/PRECEDES, DURING, ADJACENT, 
 
 ## Spatial data
 - Types: points, regions (boxes, polynomial, polygons), vectors
@@ -40,5 +45,6 @@ We may wish to record:
 - MIDI (Musical Instrument Digital Interface): Consists of a sequence of instructions (Note_On, Note_Off, Increase_Volume), Interpreted by a synthesiser
 - Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file structures incorporate times sequencing of audio/video playback
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MjIyNDI1NCwtMTI2MDIwOTI3NF19
+eyJoaXN0b3J5IjpbMTMyMTc2OTk1MywxNDgyMjI0MjU0LC0xMj
+YwMjA5Mjc0XX0=
 -->
