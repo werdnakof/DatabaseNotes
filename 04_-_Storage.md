@@ -27,13 +27,13 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 **Disk Access Costs**
 
 * **Cost of Reading Disk** = seek-time + rotational-delay + transfer-time + negligible-costs
-    * Seek Time: time for head to move to the track rotational + delayed after disk spinned
+    * Seek Time: time for head to move to the track, delayed after disk spinned
     * Transfer time: Block size/transfer rate
-    * negligible costs: reading the next Block -> skipping inter-Block gap, switch track (sequential i/o access is less expensive than random i/o)
+    * negligible costs: reading the next Block -> skipping inter-block gap, switch track (sequential i/o access is less expensive than random i/o)
 
 * **Cost of Writing Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 
-* **Cost of Modifying Disk** = seek-time + rotational-delay(0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
+* **Cost of Modifying Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 * 
 ## Logical Block Addressing (LBA)
 * **Blocks** are located by integer index
@@ -224,5 +224,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0ODcxMTU0NSwyMzAxMjUxODJdfQ==
+eyJoaXN0b3J5IjpbNTM0OTA3MTEsMjMwMTI1MTgyXX0=
 -->
