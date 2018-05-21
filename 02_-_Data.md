@@ -10,18 +10,20 @@ E.g. comparison, arithemic, fuzzy searches, retrieve all documnets
 data operations have to be meaningful i.e. context specific
 data orderings/comparisons are also context based
 
-Temporal data
-# Time characteristics:
-- linear, branching time, directed acyclic, periodic
-# Boundedness of time:
-- time starts and ends, unbounded
-# Density
-- sequences/intervals/fixed periods
-- chronons: fixed periods in a timeline
-- Granularity: depending on chronon defined
+## Temporal data Properties
+**_Characteristics_**
+linear, branching time, directed acyclic, periodic
 
-We may wish to record
-– The Valid Time of a fact – when the fact is true in reality
+**_Boundedness of time_**
+_Time starts and ends_ vs. _unbounded_
+
+**_Density / Granularity_**
+- _sequences_ vs _intervals_ vs _fixed periods_
+- _Chronons_: fixed periods in a timeline
+- _Granularity_: depending on chronon defined
+
+We may wish to record:
+– _Valid Time of a fact_: when the fact is true in reality
 – The Transaction Time of a fact – when the fact is current in
 the database, and can be retrieved
 – Both of these (bitemporal)
@@ -42,5 +44,6 @@ the database, and can be retrieved
 - Video: space hungry (sequency of frames of megabytes), To integrate video and audio, interleaved file
 structures incorporate times sequencing of audio/video playback
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjAyMDkyNzRdfQ==
+eyJoaXN0b3J5IjpbLTE5MDMxNDg2NTUsLTEyNjAyMDkyNzRdfQ
+==
 -->
