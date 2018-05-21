@@ -227,3 +227,6 @@ Record Deletion, 2 options
 - deletion marking: add a new field for indicating whether it is deleted
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMjMwMTI1MTgyXX0=
+-->
