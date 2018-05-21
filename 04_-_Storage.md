@@ -24,7 +24,7 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 
 * Each Track-Sector is called a **Block**
 
-**Disk Access Costs**
+## Disk Access Costs
 
 * **Cost of Reading Disk** = seek-time + rotational-delay + transfer-time + negligible-costs
     * Seek Time: time for head to move to the track, delayed after disk spinned
@@ -34,14 +34,15 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 * **Cost of Writing Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 
 * **Cost of Modifying Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
-* 
+
 ## Logical Block Addressing (LBA)
 * **Blocks** are located by integer index
 * HDD firmware maps LBA addresses to physical location on disk
-* Allows remapping of bad Blocks
+* Allows remapping of bad blocks (damaged track sector)
 
 **Block size vs access costs trade-off**
-> Big Blocks reduce access costs i.e. fewer seeks, but increase irrelevant data reads i.e. when trying to read a single record in a Block, larger Blocks force you to read more data
+- Big blocks reduce access costs i.e. fewer seeks, but increase irrelevant data reads 
+- i.e. when trying to read a single record in a block, larger blocks force you to read more data
 
 **Buffer Management**
 1. Copy data into **Frames** inside a buffer pool
@@ -224,5 +225,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMjY5MDMsMjMwMTI1MTgyXX0=
+eyJoaXN0b3J5IjpbNjI4OTE3NjQ2XX0=
 -->
