@@ -173,10 +173,10 @@ Sequencing
 - Once records are stored in sequence, in order to add a record in the middle of sequence, an overflow area is created in the Block header, the area stores pointers to data (which are added to the middle to sequence) and where they fit in the sequence
 
 ## Indirection: how to reference our records?
-- physical, indirect addressings.
+- physical vs indirect addressings.
 - trade off: flexibility (difficulty in moving records on insertion/deletion) vs cost of maintaining indirection
 
-Physical addressing
+Physical Addressing
 - Block id: device, cylinder, head, section
 - record id: (has everything Block id has) + offset in Block
 
@@ -190,7 +190,7 @@ Indirection within a single Block
 
 Address Management
 - Every Block and record has two addresses: database address (secondary storage), memory address (buffer)
-- need to translate database address to memory address in buffer (Pointer Swizzling)
+- need to translate database address to memory address in buffer (pointer Swizzling)
 
 Pointer Swizzling
 - Consists of: 1 bit to indicate whether the pointer is a database address or a memory address, Database or memory pointer, as appropriate
@@ -213,5 +213,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0MDI4NDY1MCw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbMTQ4Mzk1ODA0MywxOTQwMjg0NjUwLDYyOD
+kxNzY0Nl19
 -->
