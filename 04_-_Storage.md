@@ -58,37 +58,31 @@ Each **Frame** in the buffer pool contains:
 **Requesting a Block**
 ```
 IF block exists in a frame in the buffer pool 
-	increment pin count (“pin the Block”)
-ELS-If an empty frame is available
+	increment pin count
+ELSE-IF an empty frame is available
 	read block into frame and set pin count to 1
-Else
+ELSE
     choose a frame to be replaced
-    If dirty bit on the replacement frame is set
+    IF dirty bit on the replacement frame is set
         then write block in replacement frame to disk
-    endif
+    ENDIF
     read requested block into replacement frame
-  endif
-endif
+  ENDIF
+ENDIF
 ```
-**Buffer Replacement Strategies**
+**_Buffer Replacement Strategies_**
+- A frame will NOT be selected for replacement until its pin count is 0
+- If there’s more than one frame with a pin count of 0,
+-  use a replacement strategy to choose the frame to be replaced
 
-  A frame will not be selected for replacement until its pin count is 0
-  If there’s more than one frame with a pin count of 0,
-  use a replacement strategy to choose the frame to be replaced
-  
-  Least Recently Used (LRU): Select the frame with the oldest access time
+1.  Least Recently Used (LRU): Select the frame with the oldest access time
+2.  First In First Out (FIFO): Select the frame with the oldest loading time
+3. Clock: cycle through each buffer in turn, if a buffer hasn’t been accessed in a full cycle then mark it for replacement
 
-  First In First Out (FIFO): Select the frame with the oldest loading time
-
-  Clock: Approximation of LRU – cycle through each buffer in turn, if
-  a buffer hasn’t been accessed in a full cycle then mark it for
-  replacement
-
-Single Buffering Cost
-
+**_Single Buffering Cost_**
 Single buffer time = n(P + R)
-P: time to process a Block
-R: time to read a Block
+P: time to process a block
+R: time to read a block
 n: number of Blocks
 
 Use a pair of buffers:
@@ -221,5 +215,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzNTgxOTkzNSw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbLTIwMDkyMzk5OCw2Mjg5MTc2NDZdfQ==
 -->
