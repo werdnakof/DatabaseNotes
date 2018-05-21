@@ -90,7 +90,7 @@ Double buffer time = R + nP
 – Process block previously read into buffer B
 – After block read into process A and read next block into B
 
-The **_Five Minute Rule_**: Data referenced every five minutes should be memory resident
+The **_Five Minute Rule_**: data referenced every five minutes should be memory resident
 
 Assume a block is accessed every X seconds:
 
@@ -109,6 +109,8 @@ If CD is smaller than CM,
 - keep Block on disk
 - else keep in memory
 - break even point when $C_{Disk}$ == $C_{ram}$, or $X$ = $D P$ / $I M$
+
+as the speed of disk increases (disk drive to ssd), the data referenced period increases because it doesn't have to be in memory as often.
 
 ## Disk Organisation
 
@@ -212,5 +214,5 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NDQyNTY2MSw2Mjg5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbLTQ0NTE3ODY1OCw2Mjg5MTc2NDZdfQ==
 -->
