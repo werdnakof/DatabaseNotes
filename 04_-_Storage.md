@@ -143,7 +143,7 @@ Consists of:
 **Blocks**
 * Each track-sector on disk contains a Block
 * Records are packed into each Block
-* Block header: contains info such as
+* **Block header**: contains info:
     * file id, 
     * Block id, 
     * record directory (a structure of pointers to each record), 
@@ -156,16 +156,16 @@ Consists of:
 
 ## Placement of Records in Blocks:
 
-Separating records in Block
+**_Separating records in Block_**
 - fixed length, no need to separate
 - markers to indicate record
 - note down record lengths/offsets within each record or Block header
 
-Spanned record vs unspanned record in Block
+**_Spanned record vs Unspanned record in Block_**
 - unspanned: each record fit within a single Block, waste space, but simpler
 - spanned: records can split between Blocks, needs a pointer to the partial record in the next Block
 
-Sequencing
+**Sequencing
 - ordering records in file and Block by some key value
 - records ordering matter when merge-join
 - more efficient
@@ -213,6 +213,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE5NzA5MDQxLDE5NDAyODQ2NTAsNjI4OT
-E3NjQ2XX0=
+eyJoaXN0b3J5IjpbMTUwNjUxNzcxMCwxOTQwMjg0NjUwLDYyOD
+kxNzY0Nl19
 -->
