@@ -1,16 +1,13 @@
-Interface
-# DDL - Data Definition Language
-- I.e. Creating tables, indices, manipulating database schema
-# DML - Data Manipulation Language
-- I.e. Queries, Updating table contents
+# DBMS Architecture
+## Interfaces to access DBMS
+1. **_DDL - Data Definition Language_**: i.e. Creating tables, indices, manipulating database schema
+2. **_DML - Data Manipulation Language_**: i.e. Queries, Updating table contents
 
-# System Catalogue
-- Contains metadata about stored data and schemas
-- E.g. names and sizes of files, storage details of files, names and data types of data items, mappings between schemas, constraints, statistical information
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/DBMS-components.png?raw=true)
 
-DDL Compiler
-- process schema definitions
-- store schema descriptions in system catalogue
+**_System Catalogue_** - **_Contains metadata about stored data and schemas_** e.g. names and sizes of files, storage details of files, names and data types of data items, mappings between schemas, constraints, statistical information
+
+**_DDL Compiler_** - 1) Process schema definitions 2) Store schema descriptions in system catalogue
 
 Query compiler
 - Parses and validates queries
@@ -42,5 +39,5 @@ Stored Data Manager
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5OTU0MzYwMF19
+eyJoaXN0b3J5IjpbMTUwMDM2Njg1Nl19
 -->
