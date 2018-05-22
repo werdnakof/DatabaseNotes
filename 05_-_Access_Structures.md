@@ -39,9 +39,7 @@
 * Sparse Index cannot tel whether an actual record exists, Dense index can
 
 **Duplicate Primary Keys Allowed**
-
-* Dense Index still points to the starting tuple in the Data Block, 
-  follow by tuples of same primary key
+* Dense Index still points to the starting tuple in the Data Block, follow by tuples of same primary key
 
 * Sparse Index needs to points the Data Block containing the first appearance of a primary key.
   This also means some Data Block will not be pointed,
@@ -109,5 +107,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MDA0MTMwNiwxMjA2NTA5MjkwXX0=
+eyJoaXN0b3J5IjpbLTE5NjI0MzMwOTgsMTIwNjUwOTI5MF19
 -->
