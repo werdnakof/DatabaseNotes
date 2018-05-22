@@ -1,38 +1,35 @@
 **Goal: Reduce the number of blocks accessed**
 
 ## Index basics
-* Data file: a file i.e. a collection of Blocks
+* Data file / file: a collection of blocks
 * Relations: stored in files
-* Blocks: contain multiple tuples and their relationships
-* Tuple/Record: a single row in a relational database.
+* blocks: contain multiple tuples and their relationships
+* Tuple: a single row in a relational database.
 
 ## Sequential Files
-* Tuple are sorted by their primary key
-* Tuples are distributed to blocks following this order
-* Free space is usually left in each block to allow further insertions
-* Let's call these blocks - **Data Blocks**
+* Tuples are sorted by their primary key, and distributed to blocks following this order
+* Free space is usually left in each block for further insertions
 
-## Sparse Indexes
-**Trade-off of Indexing**
-> Time of retrieval vs Time to update indexes after modification
+## Indexing Methods
+**_Trade-off_**: Time of retrieval vs Time to update indexes after modification
 
-## Dense Indexes
+### Dense Indexes
 * Sequence of Blocks: containing only indexes 
   (i.e. keys and pointers to a specific tuple in a Data Block)
-* These Index Blocks are smaller in size
-* Follow the same order as the tuples spread across Data Blocks
-* Each Index Block will contain a range e.g. range 50, and keys are 10, 21, 29, 35, 45, 50 i.e. tuple's primary key
+* These Index blocks are smaller in size
+* Follow the same order as the tuples spread across blocks
+* Each block will contain a range e.g. range 50, and keys are 10, 21, 29, 35, 45, 50 i.e. tuple's primary key
 * When querying 45 or 56, we don't have to scan all tuples, saving time
-* A binary search can be used
+* Binary search can be used
 
-## Sparse indexes
+### Sparse indexes
 * Also a sequence of blocks! Just like dense indexes
-* However, each Index block points to a starting Data block of a specific range
+* However, each Index block points to a starting block of a specific range
 * E.g. Sparse Index Block has key values 20, 40, 60, 80 of range 20
 * key 20 will point to Data Block containing tuples (21, 29, 35)
 * Longer to find Data Block than dense index, but **save more space**
 
-## Multi-level indexes
+### Multi-level indexes
 * Sparse Index on top of dense index
 * Each Sparse Index entry points to a Dense Index Block
 * Sparse Index pointer is called **Block Pointers** - points to starting Dense Index Block
@@ -112,5 +109,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTM4OTAxMzYsMTIwNjUwOTI5MF19
+eyJoaXN0b3J5IjpbMTg5MDA0MTMwNiwxMjA2NTA5MjkwXX0=
 -->
