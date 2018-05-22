@@ -80,15 +80,13 @@ ENDIF
 3. **_Clock_**: cycle through each buffer in turn, if a buffer hasn’t been accessed in a full cycle then mark it for replacement
 
 **_Buffering Cost_**
-Single buffer time = n(P + R)
+
 P: block process time
 R: block read time
 n: no. blocks
 
-Double buffer time = R + nP
-– While reading a block and writing into buffer A
-– Process block previously read into buffer B
-– After block read into process A and read next block into B
+- Single buffer time = n(P + R)
+- Double buffer time = R + nP
 
 The **_Five Minute Rule_**: data referenced every five minutes should be memory resident
 
@@ -211,6 +209,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjIxODU5OTUsMTk0MDI4NDY1MCw2Mj
-g5MTc2NDZdfQ==
+eyJoaXN0b3J5IjpbODAzNjczNDEsMTk0MDI4NDY1MCw2Mjg5MT
+c2NDZdfQ==
 -->
