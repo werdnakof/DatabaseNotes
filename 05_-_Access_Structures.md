@@ -38,18 +38,11 @@
 * Sparse Index requires less update in record insertions
 * Sparse Index cannot tel whether an actual record exists, Dense index can
 
-**Duplicate Primary Keys Allowed**
+**Duplicate Primary Keys Allowed (with care)**
 * Dense Index still points to the starting tuple in the Data Block, follow by tuples of same primary key
-
-* Sparse Index needs to points the Data Block containing the first appearance of a primary key.
-  This also means some Data Block will not be pointed,
-  if they contain the same primary keys as previous Data Block
-
-* Care must be taken when deleting tuple in Data Block for Sparse Index! 
-
-* If a record is inserted to a full Data Block, 
-  then an overflow Data Block will be created,
-  and will be referenced by the full Data Block,
+* Sparse Index needs to points to block containing the **_first appearance of a primary key_**, meaning some block will not be pointed.
+  if same primary key spans across multiple blocks, care must be taken when deleting tuple in Data Block for Sparse Index! 
+* If a record is inserted to a full block, then an overflow Data Block will be created, and will be referenced by the full Data Block
 
 ## Secondary Indexes
 
@@ -107,5 +100,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjI0MzMwOTgsMTIwNjUwOTI5MF19
+eyJoaXN0b3J5IjpbOTE2NzMxNzQ4LDEyMDY1MDkyOTBdfQ==
 -->
