@@ -60,7 +60,6 @@ b|2
 
 Table S
 
-
 B|C
 :---:|:---:
 1|x
@@ -74,12 +73,8 @@ A|B|C
 a|1|x
 a|1|y
 
-**Join Predicates**
-* same as theta join excepts joining the predicates of the tables
-
 **Equi Joins** 
-* An equijoin is a theta join in which 
-  the only predicate operator used is equality (=)
+* An equijoin is a theta join in which the only predicate operator used is equality (=)
 * SELECT * FROM table1 JOIN table2 ON (table1.id = table2.id)
 * Using above as example,equijoin R and S
 
@@ -228,5 +223,5 @@ or in one line
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI0Mzg0NDE3XX0=
+eyJoaXN0b3J5IjpbLTIyNTA3NTUxLDgyNDM4NDQxN119
 -->
