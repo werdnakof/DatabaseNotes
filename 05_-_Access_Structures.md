@@ -53,21 +53,14 @@ Dense:
 
 ## Secondary Indexes
 
-If **keys are not sorted**: a sorted Dense Index must first be built, then Sparse Index
-
-If repeated keys are allowed and not sorted, solutions:
-
-1. Use Dense Index, but drop repeated keys, but keeping pointers to repeated records
-   
-   Problem: each Dense Index block size are variable
-
-2. Each data record has pointer to another repeated data record (think linked list)
-
+If **unsorted keys in data blocks**: a sorted Dense Index must first be built, then Sparse Index
+If **duplicate keys in data blocks**:
+1. allow duplicate keys, but excess disk space, excess search time
+2. drop repeated keys in secondary indexes, but still keeping pointers to repeated records
+3. Each data record has pointer to another repeated data record (linked list)
     Dense Index can simply point to the first occurrence of a record primary key
-
-    Problem: need to add extra reference/field to other records of same primary key
-
-3. Make another Bucket Index layer, a continuous number of blocks containing primary key in a sorted order, then use a dense index to point to the first occurence of a primary key within the Block Index
+    Problem: need to add extra reference/field to other records of same primary key, less space
+4. Indirection via adding a Bucket Index layer, a continuous number of blocks containing primary key in a sorted order, then use a dense index to point to the first occurence of a primary key within the Block Index
 
 # B-tree
 
@@ -104,5 +97,6 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4ODkzOTA2LDEyMDY1MDkyOTBdfQ==
+eyJoaXN0b3J5IjpbLTE2OTAzMzIwNzgsLTQ4ODkzOTA2LDEyMD
+Y1MDkyOTBdfQ==
 -->
