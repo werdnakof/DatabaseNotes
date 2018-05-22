@@ -11,7 +11,6 @@
 * Free space is usually left in each block for further insertions
 
 ## Indexing Methods
-**_Trade-off_**: Time of retrieval vs Time to update indexes after modification
 
 ### Dense Indexes
 * Sequence of Blocks: containing only indexes 
@@ -29,14 +28,22 @@
 * key 20 will point to Data Block containing tuples (21, 29, 35)
 * Longer to find Data Block than dense index, but **save more space**
 
+### Tradeoff between Sparse Vs. Dense
+Sparse:
+- less index space per record can keep more of index in memory
+- better for insertions, requiring less frequent index updates
+
+Dense:
+- Can tell if a record exists without accessing file
+- needed for secondary indexes
+
 ### Multi-level indexes
 * Sparse Index on top of dense index
 * Each Sparse Index entry points to a Dense Index Block
 * Sparse Index pointer is called **Block Pointers** - points to starting Dense Index Block
 * Dense Index pointer is called **Record Pointers** - points to Data Block and the offset from that block
-* Sparse Index pointer uses less space than Dense Index pointer
-* Sparse Index requires less update in record insertions
 * Sparse Index cannot tel whether an actual record exists, Dense index can
+* Care required to maintain both dense and sparse indicies during insertion and deletion.
 
 **Duplicate Primary Keys Allowed (with care)**
 * Dense Index still points to the starting tuple in the Data Block, follow by tuples of same primary key
@@ -97,5 +104,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzQ2NTkxMzIsMTIwNjUwOTI5MF19
+eyJoaXN0b3J5IjpbLTQ4ODkzOTA2LDEyMDY1MDkyOTBdfQ==
 -->
