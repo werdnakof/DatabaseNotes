@@ -137,8 +137,6 @@ B|C
 1|x
 1|y
 
-
-
 **Mapping SQL to the Relational Algebra Examples**
 
 SQL|Relational
@@ -223,5 +221,5 @@ or in one line
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyNTA3NTUxLDgyNDM4NDQxN119
+eyJoaXN0b3J5IjpbLTQxMDY1Nzk4Nyw4MjQzODQ0MTddfQ==
 -->
