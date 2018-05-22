@@ -63,7 +63,7 @@ If **duplicate keys in data blocks**:
 4. Indirection via adding a Bucket Index layer, a continuous number of blocks containing primary key in a sorted order, then use a dense index to point to the first occurence of a primary key within the Block Index
 
 # B-tree
-
+![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/b+tree.png?raw=true)
 Contains:
 * each node will occupy a **single block**
 * Non-leaf nodes including root node
@@ -97,6 +97,6 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2OTAzMzIwNzgsLTQ4ODkzOTA2LDEyMD
-Y1MDkyOTBdfQ==
+eyJoaXN0b3J5IjpbLTcwMTQ2MDgyMywtNDg4OTM5MDYsMTIwNj
+UwOTI5MF19
 -->
