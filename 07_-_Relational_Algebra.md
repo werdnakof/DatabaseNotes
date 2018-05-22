@@ -19,8 +19,8 @@
 
 ### Relational Operations
 
-**Selection (σ)**
-* Consists of atomic predicates, which take the forms: **a $ b** or **a % v**
+**Selection (σ$\sigma$)**
+* Consists of atomic predicates, which take the forms: **a $ b** or **a %$ v**
 * **a** and **b** are **attributes**
 * **$** is binary operation: <=, <, =, >, >=
 * **v** is a constant value
@@ -227,3 +227,6 @@ or in one line
     
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbODI0Mzg0NDE3XX0=
+-->
