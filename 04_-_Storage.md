@@ -82,8 +82,8 @@ ENDIF
 **_Buffering Cost_**
 Single buffer time = n(P + R)
 P: block process time
-R: read time
-n: number of Blocks
+R: block read time
+n: no. blocks
 
 Double buffer time = R + nP
 – While reading a block and writing into buffer A
@@ -211,6 +211,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzE3ODY2NDcsMTk0MDI4NDY1MCw2Mj
+eyJoaXN0b3J5IjpbLTE4NjIxODU5OTUsMTk0MDI4NDY1MCw2Mj
 g5MTc2NDZdfQ==
 -->
