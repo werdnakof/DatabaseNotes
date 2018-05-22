@@ -41,16 +41,14 @@
 **Duplicate Primary Keys Allowed (with care)**
 * Dense Index still points to the starting tuple in the Data Block, follow by tuples of same primary key
 * Sparse Index needs to points to block containing the **_first appearance of a primary key_**, meaning some block will not be pointed.
-  if same primary key spans across multiple blocks, care must be taken when deleting tuple in Data Block for Sparse Index! 
+  if **_same primary key spans across multiple blocks_**, care must be taken when deleting tuple in Data Block for Sparse Index! 
 * If a record is inserted to a full block, then an overflow Data Block will be created, and will be referenced by the full Data Block
 
 ## Secondary Indexes
 
-If keys are not sorted:
+If **keys are not sorted**: a sorted Dense Index must first be built, then Sparse Index
 
-A sorted Dense Index must first be built, then Sparse Index
-
-If repeated keys and not sorted, solutions:
+If repeated keys are allowed and not sorted, solutions:
 
 1. Use Dense Index, but drop repeated keys, but keeping pointers to repeated records
    
@@ -62,8 +60,7 @@ If repeated keys and not sorted, solutions:
 
     Problem: need to add extra reference/field to other records of same primary key
 
-3. Make another Bucket Index layer, a continuous number of blocks containing primary key in a sorted order,
-   then use a dense index to point to the first occurence of a primary key within the Block Index
+3. Make another Bucket Index layer, a continuous number of blocks containing primary key in a sorted order, then use a dense index to point to the first occurence of a primary key within the Block Index
 
 # B-tree
 
@@ -100,5 +97,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE2NzMxNzQ4LDEyMDY1MDkyOTBdfQ==
+eyJoaXN0b3J5IjpbLTE5MzQ2NTkxMzIsMTIwNjUwOTI5MF19
 -->
