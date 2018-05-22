@@ -1,6 +1,6 @@
 **Goal: Reduce the number of blocks accessed**
 
-# Index basics
+## Index basics
 * Data file: a file i.e. a collection of Blocks
 * Relations: stored in files
 * Blocks: contain multiple tuples and their relationships
@@ -14,7 +14,7 @@
 
 ## Sparse Indexes
 **Trade-off of Indexing**
-> Time of data retrieval vs Time to update indexes after data is modified
+> Time of retrieval vs Time to update indexes after modification
 
 ## Dense Indexes
 * Sequence of Blocks: containing only indexes 
@@ -112,5 +112,5 @@ Example:
 * non-leaf node initially points to:
 > i * u blocks
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNjUwOTI5MF19
+eyJoaXN0b3J5IjpbLTExOTM4OTAxMzYsMTIwNjUwOTI5MF19
 -->
