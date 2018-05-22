@@ -24,16 +24,17 @@ Platter, surface, head, actuator, cylinder track, geometric sector, Track-Sector
 
 * Each Track-Sector is called a **Block**
 
-## Disk Access Costs
+## Access Costs
+**_Seek-time_**: head-to-track
+**Rotational-delay**: delay after disk spinned
+**_Transfer-time_**: block size / transfer-rate
+**_negligible costs_**: reading the next block -> skipping inter-block gap, switch track (sequential i/o access is less expensive than random i/o)
+    
+* **Read Cost** = seek-time + rotational-delay + transfer-time + negligible-costs
 
-* **Cost of Reading Disk** = seek-time + rotational-delay + transfer-time + negligible-costs
-    * Seek Time: time for head to move to the track, delayed after disk spinned
-    * Transfer time: Block size/transfer rate
-    * negligible costs: reading the next block -> skipping inter-block gap, switch track (sequential i/o access is less expensive than random i/o)
+* **Write Cost** = seek-time + rotational-delay (0.5 rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 
-* **Cost of Writing Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
-
-* **Cost of Modifying Disk** = seek-time + rotational-delay (0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
+* **Modify Cost** = seek-time + rotational-delay (0.5 rotation) + transfer-time (reading) + rotational-delay (full rotation) + transfer-time (writing) + rotational-delay (full rotation) + transfer-time (for verification)
 
 ## Logical Block Addressing (LBA)
 * **Blocks** are located by integer index
@@ -72,17 +73,16 @@ ENDIF
 ```
 **_Buffer Replacement Strategies_**
 - A frame will NOT be selected for replacement until its pin count is 0
-- If there’s more than one frame with a pin count of 0,
--  use a replacement strategy to choose the frame to be replaced
+- If there’s more than one frame with a pin count of 0, use a replacement strategy to choose the frame to be replaced
 
-1.  Least Recently Used (LRU): Select the frame with the oldest access time
-2.  First In First Out (FIFO): Select the frame with the oldest loading time
-3. Clock: cycle through each buffer in turn, if a buffer hasn’t been accessed in a full cycle then mark it for replacement
+1.  **_Least Recently Used (LRU)_**: Select the frame with the oldest access time
+2.  **_First In First Out (FIFO)_**: Select the frame with the oldest loading time
+3. **_Clock_**: cycle through each buffer in turn, if a buffer hasn’t been accessed in a full cycle then mark it for replacement
 
 **_Buffering Cost_**
 Single buffer time = n(P + R)
-P: time to process a block
-R: time to read a block
+P: block process time
+R: read time
 n: number of Blocks
 
 Double buffer time = R + nP
@@ -114,11 +114,7 @@ as the speed of disk increases (disk drive to ssd), the data referenced period i
 
 ## Disk Organisation
 
-Consists of:
-* Data Items
-* Records
-* Blocks
-* Files
+Consists of: Data-items > Records > Blocks > Files
 
 **Data Item**
 * bytes: 8bits i.e. 1 byte
@@ -215,6 +211,6 @@ Record Deletion, 2 options
 - there is overhead in book keeping of free space chains and detele fields
 - dealing with dangling pointers: mark as deleted and never use that pointer
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5OTE5MTQwLDE5NDAyODQ2NTAsNjI4OT
-E3NjQ2XX0=
+eyJoaXN0b3J5IjpbLTE4MzE3ODY2NDcsMTk0MDI4NDY1MCw2Mj
+g5MTc2NDZdfQ==
 -->
