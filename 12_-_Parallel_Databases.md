@@ -188,22 +188,19 @@ C and Ps can fail during a commit.
 
 ### Recovery Protocol (Coordinator)
 1. Recover after failure in **INITIAL**: **_Restart commit procedure_**
-2. Recover after failure in **WAIT**:
+2. Recover after failure in **WAIT**: **_Restarting commit procedure by sending \<prepare T>_**
 	- C has send \<prepare T> to all Ps, but has not received \<vote-commit T> or \<vote-abort T> from all Ps
-	- Recovery by restarting commit procedure by sending \<prepare T>
-3. Recover after failure in **COMMIT**/**ABORT**
-	- if C doesn't receive \<ack> from all Ps, terminate commit procedure
+3. Recover after failure in **COMMIT**/**ABORT**: **_Terminate commit procedure_**
+	- if C doesn't receive \<ack> from all Ps
 
 ### Recovery Protocol (Participant)
-1. Recover after failure in **INITIAL**
-	- P has not yet voted, hence C could not have reached a decision, P should unilaterally send \<vote-abort T>
-2. Recovery after failure in **READY**
+1. Recover after failure in **INITIAL**: **_unilaterally send \<vote-abort T>_**
+	- P has not yet voted, hence C could not have reached a decision
+2. Recovery after failure in **READY**: **_Cooperative termination protocol_**
 	- P has sent \<vote-commit T> to reach **READY** state, but didn't receive \<commit T> or \<abort T> from C (when C has reached a global decision)
-	- cooperative termination protocol
-3. Recover after failure in **COMMIT** / **ABORT**
-	- resend \<ack> to C
+3. Recover after failure in **COMMIT** / **ABORT**: **_Resend \<ack> to C_**
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTUwMTk4NDMyLDUyOTMzMjA2Niw2Nzk1OD
+eyJoaXN0b3J5IjpbMTk2NDU5NjAyLDUyOTMzMjA2Niw2Nzk1OD
 U4ODMsLTE3Mjg5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwt
 NDY0NjkyODA3LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MD
 MyNSwxNTQ2NzAxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0
