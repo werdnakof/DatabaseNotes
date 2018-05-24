@@ -153,10 +153,6 @@ There also be **_logging_** between each exchanges between C and Ps. see below:
 **logging with abort**
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-logging-abort.png?raw=true)
 Each node will have state and state-transistions base on message received.
-**_no abort_**
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state.png?raw=true)
-**_with abort_**
-![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/2PC-state-abort.png?raw=true)
 State diagrams of C and Ps:
 C
 ![](https://github.com/werdnakof/DatabaseNotes/blob/master/images/state-diag-coord.png?raw=true)
@@ -172,30 +168,28 @@ C and Ps can fail during a commit.
 
 ### Termination Protocol (Coordinator)
 2 timeout scenarios:
-1. Timeout in **WAIT** state
-	- C waits for Ps to vote on whether they will _commit_ or _abort_
-	- a missing vote means C cannot commit a _Global Transaction_
-	- C may abort the Global Transaction
-2. Timeout in **COMMIT**/**ABORT** states
-	- C waits for Ps to acknowledge commit or abort
-	- C resends global decision to Ps who did not acknowledge
+1. Timeout in **WAIT** state: **_May abort the Global Transaction_**
+	- (C waits for Ps to vote on whether they will _commit_ or _abort_)
+	- (Missing vote means C cannot commit a _Global Transaction_)
+2. Timeout in **COMMIT**/**ABORT** states: **_Resends global decision to Ps who did not acknowledge_**
+	- (C waits for Ps to acknowledge commit or abort)
 
 ### Termination Protocol (Participant)
 2 timeout scenarios:
-1. Timeout in **INITIAL** state
+1. Timeout in **INITIAL** state: **_Unilaterally abort the transaction_**
 	- P waits for a \<prepare T>
 	- P may unilaterally abort the transaction after a timeout
 	- if \<prepare T> arrives after unilateral abort, either:
 		- resend the \<vote-abort T> 
 		- ignore (C will then time out on **WAIT**)
-2. Timeout in **READY** state
+2. Timeout in **READY** state: **_Contact other Ps to find out if they know the decision (coorperative protocol)_**
 	- P waits for C to receive \<commit T> or \<abort T>
 	- P can contact other Ps to find out if they know the decision (coorperative protocol)
 
 ### Recovery Protocol (Coordinator)
-1. Recover after failure in **INITIAL**: simply restart commit procedure
+1. Recover after failure in **INITIAL**: **_Restart commit procedure_**
 2. Recover after failure in **WAIT**:
-	- C has send \<prepare T> to all Ps, but has received \<vote-commit T> or \<vote-abort T> from all Ps
+	- C has send \<prepare T> to all Ps, but has not received \<vote-commit T> or \<vote-abort T> from all Ps
 	- Recovery by restarting commit procedure by sending \<prepare T>
 3. Recover after failure in **COMMIT**/**ABORT**
 	- if C doesn't receive \<ack> from all Ps, terminate commit procedure
@@ -209,11 +203,11 @@ C and Ps can fail during a commit.
 3. Recover after failure in **COMMIT** / **ABORT**
 	- resend \<ack> to C
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI5MzMyMDY2LDY3OTU4NTg4MywtMTcyOD
-k4ODA5LC0yOTM5OTM4NjYsMzc3NjY0NTQwLC00NjQ2OTI4MDcs
-NTg5OTE0NzM2LDE0NTA0NjQwOTIsNzU2MjUwMzI1LDE1NDY3MD
-E5MzMsMTgzNzA0MjM0MywtNTc4MDAyODQsMTQ3OTkyNDEyNSwz
-MTA2OTE1NjUsNTcwNjc2ODg2LC02ODIyNTAwNTMsLTE2NjIwNT
-M4MjMsMTYwMzYyMDA2OSw3NTk1MDYyMDEsMjgwNDQxNDQ4XX0=
+eyJoaXN0b3J5IjpbNTUwMTk4NDMyLDUyOTMzMjA2Niw2Nzk1OD
+U4ODMsLTE3Mjg5ODgwOSwtMjkzOTkzODY2LDM3NzY2NDU0MCwt
+NDY0NjkyODA3LDU4OTkxNDczNiwxNDUwNDY0MDkyLDc1NjI1MD
+MyNSwxNTQ2NzAxOTMzLDE4MzcwNDIzNDMsLTU3ODAwMjg0LDE0
+Nzk5MjQxMjUsMzEwNjkxNTY1LDU3MDY3Njg4NiwtNjgyMjUwMD
+UzLC0xNjYyMDUzODIzLDE2MDM2MjAwNjksNzU5NTA2MjAxXX0=
 
 -->
